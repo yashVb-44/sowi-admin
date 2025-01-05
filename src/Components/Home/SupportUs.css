@@ -1,0 +1,185 @@
+.SupportUS {
+  padding: 5% 10% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.SupportTextUs {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center !important;
+}
+.SupportUsTextHead {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 41px !important;
+  letter-spacing: 0.5px !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.SupportUSTextParaa {
+  font-family: "Poppins" !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 30px !important;
+  margin: 0px 10% !important;
+  color: #252525 !important;
+  text-align: center !important;
+}
+
+.SupportWays {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  margin-top: 4% !important;
+}
+.SupportWaysImage {
+  width: auto !important;
+  display: flex !important;
+  justify-content: end !important;
+  align-items: end !important;
+}
+.SupportWaysImage img {
+  width: 120px !important;
+  height: 95px !important;
+  border-radius: 8px !important;
+}
+
+.SupportWaysText {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  margin: auto 20px !important;
+}
+.SupportWaysButton {
+  margin: auto 0px !important;
+  display: flex !important;
+  justify-content: end !important;
+  align-items: end !important;
+}
+.SupportWaysButtonTwo {
+  padding: 18px !important;
+  border: 0.5px solid #252525 !important;
+  border-radius: 100% !important;
+  color: #252525 !important;
+  margin: auto 0px !important;
+}
+.SupportWaysHead {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 31px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.SupportWaysPara {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 18px !important;
+  font-family: "Poppins", sans-serif !important;
+  color: #252525 !important;
+}
+
+@media (max-width: 1200px) {
+  .SupportUS {
+    padding: 5% 10% !important;
+  }
+}
+@media (max-width: 780px) {
+  .SupportUsTextHead {
+    font-size: 26px !important;
+    line-height: 30px !important;
+  }
+  .SupportUSTextParaa {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    margin: 0px !important;
+  }
+  
+  .SupportWaysImage {
+    width: auto !important;
+    display: flex !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+  .SupportWaysImage img {
+    height: 75px !important;
+  }
+  .SupportWaysText {
+    margin: 2% 0px !important;
+  }
+  .SupportWaysButtonTwo {
+    padding: 12px !important;
+  }
+  .css-1rwt2y5-MuiButtonBase-root-MuiButton-root{
+    min-width: 26px !important;
+  }
+  .SupportWaysHead {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 27px !important;
+    margin-bottom: 0px !important;
+    font-family: "DM Sans" !important;
+  }
+  .SupportWaysPara {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    line-height: 16px !important;
+    font-family: "Poppins", sans-serif !important;
+    color: #252525 !important;
+  }
+  .SupportWaysButton {
+    display: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .SupportUsTextHead {
+    font-size: 22px !important;
+    line-height: 27px !important;
+  }
+  .SupportUSTextParaa {
+    font-size: 11px !important;
+    line-height: 16px !important;
+    margin: 0px !important;
+  }
+  .SupportWays{
+    flex-wrap: wrap !important;
+  }
+
+  .SupportWaysImage {
+    width: auto !important;
+    display: flex !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+  .SupportWaysImage img {
+    height: 75px !important;
+  }
+  .SupportWaysText {
+    margin: 2% 10px !important;
+  }
+  .SupportWaysButtonTwo {
+    padding: 12px !important;
+  }
+  .css-1rwt2y5-MuiButtonBase-root-MuiButton-root{
+    min-width: 26px !important;
+  }
+  .SupportWaysHead {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 27px !important;
+    margin-bottom: 0px !important;
+    font-family: "DM Sans" !important;
+  }
+  .SupportWaysPara {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    line-height: 16px !important;
+    font-family: "Poppins", sans-serif !important;
+    color: #252525 !important;
+  }
+  .SupportWaysButton {
+    display: none !important;
+  }
+}

@@ -1,0 +1,213 @@
+.Support {
+  margin: 35% 10% 4% 15% !important;
+  padding-bottom: 2% !important;
+}
+.SupportText {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.SupportTextTwo {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: start !important;
+}
+.SupportTextHead {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: 40px !important;
+  letter-spacing: 0.5px !important;
+  color: #252525 !important;
+  text-align: start !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.SupportTextPara {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 0.5% !important;
+  text-align: start !important;
+  font-family: "Poppins" !important;
+}
+.SupportButton {
+  border-radius: 20px !important;
+  color: #fff !important;
+  background-color: #239f40 !important;
+  padding: 7px 30px !important;
+}
+.Slider {
+  margin-top: 3% !important;
+}
+.SupportCard {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: start !important;
+  gap: 2% !important;
+  margin-top: 40px !important;
+}
+.SupportCardTwo {
+  border: none !important;
+  box-shadow: none !important;
+  margin-right: 20px !important;
+}
+.SupportCardTwo:last-child {
+  margin-right: 0; /* Remove right margin from the last card */
+}
+.SupportTextNumber {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 31px !important;
+  letter-spacing: 0.5px !important;
+  text-align: start !important;
+  font-family: "DM Sans" !important;
+}
+.SupportText {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 15px !important;
+  text-align: start !important;
+  font-family: "DM Sans", sans-serif !important;
+}
+.SupportTextPara {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21px !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 10px !important;
+  text-align: start !important;
+  font-family: "Poppins" !important;
+}
+.SupportNextPrev {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+  align-items: end !important;
+  text-align: end !important;
+  margin-top: 5% !important;
+  gap: 20px !important;
+}
+.SupportNextButton {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  border-radius: 60% !important;
+  padding: 18px !important ;
+}
+.SupportPrevButton {
+  background-color: #fff !important;
+  color: #252525 !important;
+  border-radius: 60% !important;
+  padding: 18px !important ;
+  border: 0.5px solid #252525 !important;
+}
+
+@media (max-width: 1500px) {
+  .Support {
+    margin: 39% 10% 4% 15% !important;
+    padding-bottom: 2% !important;
+  }
+}
+@media (max-width: 1200px) {
+  .Support {
+    margin: 45% 10% 4% 15% !important;
+    padding-bottom: 2% !important;
+  }
+}
+@media (max-width: 780px) {
+  .Support {
+    margin: 100% 10% 4% 15% !important;
+    padding-bottom: 2% !important;
+  }
+  .SupportTextHead {
+    font-size: 26px !important;
+    line-height: 30px !important;
+  }
+  .SupportTextPara {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .SupportButton {
+    font-size: 14px !important;
+    padding: 6px 25px !important;
+  }
+  .Slider {
+    margin-top: 5% !important;
+  }
+  .SupportTextNumber {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  .SupportText {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  .SupportTextPara {
+    font-size: 11px !important;
+    line-height: 17px !important;
+  }
+  .SupportNextPrev {
+    margin-top: 5% !important;
+    gap: 15px !important;
+  }
+  .SupportNextButton {
+    border-radius: 90% !important;
+    padding: 13px !important ;
+  }
+  .SupportPrevButton {
+    border-radius: 90% !important;
+    padding: 13px !important ;
+  }
+}
+
+@media (max-width: 600px) {
+  .Support {
+    margin: 30% 10% 4% 15% !important;
+    padding-bottom: 2% !important;
+  }
+  .SupportTextHead {
+    font-size: 22px !important;
+    line-height: 27px !important;
+  }
+  .SupportTextPara {
+    font-size: 11px !important;
+    line-height: 16px !important;
+  }
+  .SupportButton {
+    font-size: 14px !important;
+    padding: 5px 20px !important;
+  }
+  .Slider {
+    margin-top: 7% !important;
+  }
+  .SupportTextNumber {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  .SupportText {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  .SupportTextPara {
+    font-size: 11px !important;
+    line-height: 17px !important;
+  }
+}
+@media (max-width: 430px) {
+  .Support {
+    margin: 100% 10% 4% 15% !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .Support {
+    margin: 120% 10% 4% 15% !important;
+  }
+}
+@media (max-width: 330px) {
+  .Support {
+    margin: 130% 10% 4% 15% !important;
+  }
+}

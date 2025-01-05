@@ -1,0 +1,203 @@
+{
+    "hope4Iran": "Hope4Iran",
+    "projectListDetail": {
+        "heading": "Support our mission, change lives today",
+        "para": "Our aim is to bring about impactful changes in the lives of people who fail to receive the basic need of survival or the right opportunity to achieve their dream. With Hope4Iran, you can be a helping hand too.",
+        "para2": "We need to bring enough money to empower the Iran. Please consider making some donation to support this initiative.",
+        "all": "All",
+        "hide": "Hide More",
+        "learn": "Learn More",
+        "organizer": "Organizer",
+        "contact": "Contact",
+        "wordSupport": "Words Of Support",
+        "noRecord": "No record found",
+        "showMore": "Show more",
+        "showLess": "Show less",
+        "peopleMadeDonation": "people have just made a donation"
+    },
+    "button": {
+        "donate": "Donate Now",
+        "share": "Share",
+        "oneTime": "One Time",
+        "monthly": "Monthly",
+        "submit": "Submit"
+    },
+    "common": {
+        "Donations": "Donations",
+        "Created": "Created",
+        "Raised": "Raised",
+        "target": "target",
+        "of": "of",
+        "shareThis": "Share This:",
+        "seeAll": "See All",
+        "logout": "Logout",
+        "noMoreCategories": "No More Categories",
+        "noMoreProject": "No More Project",
+        "loadMore": "Load More"
+    },
+    "blogDetail": {
+        "blog": "Blog",
+        "latestBlog": "latest Blog"
+    },
+    "blog": {
+        "header": "Hope4Iran Blog",
+        "heading": "Stories from the Heart of Our Charity Efforts",
+        "para": "We have been a part of several crowdfunding campaigns. Our experiences are very deliberately conveyed through these stories, which will help you understand Hope4Iran better."
+    },
+    "latestBlog": {
+        "latestBlog": "Latest Blog",
+        "para": "Our recent activities have been exciting and self-satisfactory as we were able to be a major part in helping people in need for education, sports, charity and much more. "
+    },
+    "allBlog": {
+        "allBlog": "All Blog",
+        "para": "You cannot stop yourself to be the part of our team, once you know how we work. Learn about our success stories these blogs."
+    },
+    "header": {
+        "pages": [
+            {
+                "name": "About Us",
+                "link": "About Us"
+            },
+            {
+                "name": "Categories",
+                "link": "Categories"
+            },
+            {
+                "name": "Project",
+                "link": "Project"
+            },
+            {
+                "name": "Blog",
+                "link": "Blog"
+            },
+            {
+                "name": "Contact Us",
+                "link": "Contact Us"
+            }
+        ],
+        "Categories": "Categories",
+        "Project": "Project"
+    },
+    "footer": {
+        "heading1": "Useful Links",
+        "heading2": "Fund Raise for",
+        "heading3": "Social Media",
+        "privacy": "Privacy Policy",
+        "terms": "Terms Of Use",
+        "text": "We are the leading crowdfunding platform designed to help people in financial need. We believe in the power of people coming together to support each other in times of crisis. We provide a secure, user-friendly interface, transparency, and security to help make a difference.",
+        "pages": [
+            {
+                "name": "About Us",
+                "link": "About Us"
+            },
+            {
+                "name": "Project",
+                "link": "Project"
+            },
+            {
+                "name": "Blog",
+                "link": "Blog"
+            },
+            {
+                "name": "Contact Us",
+                "link": "Contact Us"
+            }
+        ]
+    },
+    "home": {
+        "heading": "We’re On A Mission Of Big Changes. To Help People And The World.",
+        "para": "Your safety is our priority, and we ensure your ease of raising funds. Hope4Iran creates, manages, and shares your fundraising intentions and helps you in every step with dedication.",
+        "supportHeading": "Support Our Mission, Change Lives Today",
+        "supportPara": "Learn about us through these stories: We are supporting life-changing causes and making a real difference. With sincere dedication, we focus on the impact you aim to create by helping people in need.",
+        "supportUsHeading": "How You Can Support Us",
+        "supportUsPara": "You and every individual can participate in our mission, which is to become a medium between people in need of help and those willing to support them. You can be a contributor too."
+    },
+    "about": {
+        "aboutMissionHeading": "The mission and goals of our organisation",
+        "aboutMissionPara": "We are a leading crowdfunding platform, collectively working to empower individuals, organizations, and people needing help in times of emergencies or who want to achieve and grow toward their goals. At Hope4Iran, we understand the power of community and are joining hands to help and support you in achieving your fundraising goal. With a team of like-minded people who are socially active and willing to collectively contribute to society, you can never fail to create an impact with fund-raising for any genuine cause.",
+        "aboutFundHeading": "Fund Raising Trusted Charity Foundations",
+        "aboutFundPara": "We at Hope4Iran are the bridge between the people who need help and the ones who want to help. We started with the simplest approach: to create a space where people can come together to support each other in times of need.",
+        "aboutWorkHeading": "How It works - Journey",
+        "aboutWorkPara": "Hope4Iran started from a community need to become the helping hand for the people who initiate crowdfunding. We aim to minimize the gap between people in need and people willing to help through innovative solutions every time.",
+        "teamHeading": "Meet Our team",
+        "teamPara": "At Hppe4Iran, we have a team of dedicated experts from different regions who are connected with each other for the purpose of helping people raise funds and assisting those who are willing to offer help."
+    },
+    "fundraise": {
+        "fundCategories": "Fundraising categories",
+        "allCategory": "All Categories",
+        "allFundraisingFor": "All Fundraising For",
+        "heading": "Start a Fundraiser: Join Us in Helping People and Transforming Lives",
+        "para": "Trust us and be the next to experience the simplest journey toward successful fundraising. Hope4Iran aims to be the first to support and contribute to transforming lives and uplifting people struggling in various aspects of their lives.",
+        "fundCatHeading": "Explore the categories we contribute to.",
+        "fundCatPara": "At Hope4Iran, we offer a wide range of fundraising support for various needs and causes. Discover them here."
+    },
+    "project": {
+        "subHeading": "Support Our Causes Today",
+        "heading": "Find the best volunteer opportunities based in Iran.",
+        "para": "Curious about being a part of a team that supports the transformation of lives? Join Hope4Iran. With us, you can either contribute by donating or be a volunteer to work on fund-raising campaigns and be a part of our mission."
+    },
+    "contact": {
+        "heading": "Let’s make something great!",
+        "para": "Hope4Iran is the best place to collect and contribute to any cause. If you are someone trying to raise funds for anyone in need or someone willing to share and contribute to helping and supporting people in need, connect with us.",
+        "formHeading": "How Can We Help?",
+        "formPara": "We get to understand your aim, by collecting these details.",
+        "name": "Full Name",
+        "subject": "Subject",
+        "message": "Your Message (optional)",
+        "locationHeading": "Our Locations",
+        "locationPara": "Hope4Iran is a digital platform with no bars and no location. However, you can reach us at these locations. With a team of good-hearted people willing to work for a better cause, we have achieved several milestones throughout, owning these office locations is one of them. We are happy to have you.",
+        "deatilHeading": "Join Us Today",
+        "deatilPara": "Hope4Iran has a very healthy environment with a dedicated team willing to support you at any stage of fundraising. Your interest and willingness to donate reflect your support for our mission of empowering and uplifting people in need. We have made a significant contribution by providing ¬crucial funds to several individuals, families, and communities. When you join us, you become part of our team, where we continue to make meaningful differences in the lives of many.",
+        "contactDetails": "Contact Details",
+        "deatilPara2": "We look forward to connecting with you. For any queries and insights in our terms, you can directly write to us call us at the following details:"
+    },
+    "contactDetail": {
+        "emailText": "Email",
+        "email": "hoda@example.org",
+        "email2": "heidari.shervin@pashaei.org",
+        "phoneText": "Phone",
+        "Phone": "02699198762",
+        "Phone2": "02699198762",
+        "socialMedia": "Social Media"
+    },
+    "signIn": {
+        "heading": "Welcome back!",
+        "para": "Together, we can amplify hope for a better tomorrow.",
+        "email": "Email Address",
+        "password": "Password",
+        "login": "Login",
+        "signUp": "Sign up",
+        "forgetPassword": "Forgot Password ?",
+        "rememberMe": "Remember Me",
+        "dontHaveAccount": "Don't have an account?"
+    },
+    "signUp": {
+        "heading": "You're new here!",
+        "para": "Connect with people who share your desire for a more positive future for Iran.",
+        "name": "Full Name",
+        "email": "Email Address",
+        "password": "Password",
+        "iAgree": "I agree to the",
+        "terms": "Terms",
+        "and": "and",
+        "privacy": "Privacy Policy.",
+        "alreadyAccount": "Already have an account?"
+    },
+    "passwordReset": {
+        "heading": "Reset password",
+        "para": "Reset passwordLorem ipsum dolor sit amet consectetur. A convallis velit odio",
+        "newPassword": "New Password",
+        "confirmPassword": "Confirm Password",
+        "forgetPassword": "Forgot password?",
+        "forgetPasswordPara": "Don’t worry! It happens. Please enter the email associated with your account.",
+        "email": "Email Address",
+        "Continue": "Continue",
+        "returnTo": "Return to",
+        "passwordResetCode": "Password reset code",
+        "sentToEmailCode": "We’ve sent a code to your email",
+        "Verify": "Verify",
+        "passwordChanged": "Password changed",
+        "passwordChangedSuccess": "Your password has been changed successfully",
+        "backToLogin": "Back to login"
+    }
+}

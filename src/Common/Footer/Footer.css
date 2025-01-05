@@ -1,0 +1,141 @@
+.Footer {
+  padding: 5% 10% 1% 10% !important;
+  background-color: #142146 !important;
+  color: #fff !important;
+}
+.FooterSection {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.FooterLeft {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 50%;
+}
+.FooterLeft img {
+  height: 50px !important;
+  width: 150px !important;
+}
+.FooterTextPara {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 300 !important;
+  color: #ffff !important;
+  font-family: "Poppins" !important;
+  margin-top: 1% !important;
+}
+.FooterRight {
+  width: 50%;
+  display: flex !important;
+  justify-content: end !important;
+  gap: 40px !important;
+}
+.FooterTextHeader {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 28px !important;
+  color: #fff !important;
+}
+.FooterService {
+  color: #fff !important;
+  display: flex !important;
+  flex-direction: row !important;
+  margin-top: 10px !important;
+  gap: 10px;
+  font-family: "Poppins" !important;
+  text-decoration: none;
+  font-weight: 300 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+
+.FooterPrivacy {
+  border-top: 0.5px dotted #fff;
+  margin-top: 4% !important;
+}
+.FooterPrivacyText {
+  display: flex !important;
+  flex-direction: row !important;
+  font-size: 16px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: 2% !important;
+  text-decoration: none !important;
+}
+.FooterPrivacyPara {
+  font-size: 16px !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  text-decoration: none !important;
+}
+.FooterPrivacyCopyRight {
+  margin-top: 10px !important;
+  color: #fff !important;
+  text-align: center;
+  font-size: 16px !important;
+  font-weight: 500;
+}
+.SocialMediaImage {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 1px 0px 0px 0px !important;
+  padding: 1px;
+}
+.FooterCenterLine {
+  border-right: 3px solid #239f40 !important;
+  height: 20px !important;
+  margin: auto 0px !important;
+}
+
+@media (max-width: 767px) {
+  .FooterRight {
+    gap: 10px !important;
+  }
+  .FooterTextPara {
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+  .FooterTextHeader {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+  .FooterService {
+    gap: 2px;
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+  .css-19r6kue-MuiContainer-root{
+    padding: 0px !important;
+  }
+  .FooterPrivacyPara {
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+  .FooterPrivacyCopyRight {
+    margin-top: 8px !important;
+    font-size: 13px !important;
+  }
+  .SocialMediaImage img{
+    height: 28px !important;
+    margin-bottom: 5px !important;
+    width: auto !important;
+  }
+  .FooterLeft img {
+    height: 30px !important;
+    width: 100px !important;
+  }
+}
+
+.FooterCopyRight{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  text-align: center !important;
+}

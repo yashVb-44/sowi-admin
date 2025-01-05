@@ -1,0 +1,64 @@
+.PrivacyBg {
+  background-color: #f5faff !important;
+}
+.PrivacyText {
+  padding: 6% 6% !important;
+}
+.PrivacyHeadingOne {
+  font-size: 46px !important;
+  font-weight: 600 !important;
+  line-height: 60px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.PrivacyHeadingTwo {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 30px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  width: 100% !important;
+  margin-top: 2% !important;
+}
+.PrivacyHeadingThree {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 26px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  width: 100% !important;
+  margin-top: 2% !important;
+
+}
+.Privacy {
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  line-height: 28px !important;
+  color: #252525 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  margin-bottom: 1% !important;
+}
+.PrivacyPara {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  text-align: center !important;
+  color: #252525 !important;
+  margin: 15px 5% !important;
+}
+.PrivacyParaText{
+  margin: 2% 12% !important;
+}
+.PrivacyParaTwo {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  margin-top: 2% !important;
+}

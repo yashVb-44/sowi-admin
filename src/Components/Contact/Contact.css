@@ -1,0 +1,367 @@
+.Contact {
+  width: 100% !important;
+  height: 100% !important;
+}
+.Capital {
+  text-transform: capitalize;
+}
+.ContactBg {
+  background-color: #f5faff !important;
+}
+.ContactText {
+  padding: 8% 12% !important;
+}
+.HeadingOne {
+  font-size: 50px !important;
+  font-weight: 700 !important;
+  line-height: 60px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.HeadingTwoContact {
+  font-size: 45px !important;
+  font-weight: 700 !important;
+  line-height: 55px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.HeadingThreeContact {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.SubHeadingContact {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  margin: 8px 0px !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.ContactUS {
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  line-height: 28px !important;
+  color: #239f40 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.ParaContact {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+}
+.ParaTwoContact {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+}
+.SubParaContact {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  margin: auto 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.HandImage {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: end !important;
+  align-items: end !important;
+  text-align: end !important;
+}
+.HandImage img {
+  width: auto !important;
+  height: 380px !important;
+}
+
+/* contact form begins  */
+
+.ContactForm {
+  padding: 2% 10% !important;
+}
+.ContactFormText {
+  text-align: center;
+}
+.FormFields {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-left: 33% !important;
+}
+.Fileds {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  margin: 10px 0px !important;
+  text-align: center !important;
+  font-family: "Poppins" !important;
+}
+.InputLabel {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: start !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  margin: 2px 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.InputFiled {
+  background-color: #f5faff;
+  width: 50%;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+}
+.InputFiledContact {
+  background-color: #f5faff;
+  width: 54% !important;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 0px 0px 5px 0px !important;
+  height: 43px !important;
+  font-family: "Poppins" !important;
+}
+.ContactButton {
+  width: 100% !important;
+}
+.ContactButton button {
+  color: #fff !important;
+  background-color: #239f40 !important;
+  padding: 9px 30px !important;
+  width: 54%;
+  border-radius: 30px !important;
+  font-family: "DM Sans" !important;
+}
+
+/* Location css  */
+
+.Location {
+  padding: 8% 10% 0% 10% !important;
+}
+.LocationDetail {
+  display: flex !important;
+  flex-direction: row !important;
+  margin-top: 4% !important;
+}
+.LocationText {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2px !important;
+  margin-top: 10px !important;
+  width: 80% !important;
+}
+.LocationText img{
+  height: 30px;
+}
+.DonateButtonContact {
+  display: flex !important;
+  justify-content: center !important;
+  border: none !important;
+  margin-top: 5% !important;
+  font-family: "DM Sans" !important;
+}
+.DonateButtonContact button {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  padding: 10px 30px !important;
+  border-radius: 30px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: "DM Sans" !important;
+}
+.WorldImage {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+}
+.WorldImage img {
+  width: 80% !important;
+  justify-content: end !important;
+  align-items: end !important;
+}
+.ContactFlag{
+  width: 40px;
+  height: auto;
+}
+
+/* / conatct detail  */
+.ContactDetailBg {
+  background-color: #e6eaf8;
+}
+.ContactDetail {
+  padding: 8% 10% 0px 10% !important;
+}
+.ContactDetailText {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+.ConatctDetailSocial {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  /* gap: 20% !important; */
+}
+.ContactInfoSocial {
+  margin-top: 8% !important;
+}
+.ContactInfo {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 18px !important;
+  margin-top: 1% !important;
+}
+.SocialIcon {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 13px !important;
+}
+.SocialIcon img {
+  border: 0.5px solid #252525;
+  border-radius: 50%;
+}
+
+@media (max-width: 1200px) {
+  .ContactText {
+    padding: 6% 5% !important;
+  }
+  .HandImage img {
+    width: auto !important;
+    height: 350px !important;
+  }
+  .HeadingOne {
+    font-size: 40px !important;
+    line-height: 50px !important;
+  }
+  .ParaContact {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    margin-top: 8px !important;
+  }
+  .ParaTwoContact {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .HeadingThreeContact {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+  .ContactInfoSocial {
+    margin-top: 0% !important;
+  }
+}
+@media (max-width: 780px) {
+  .ContactLeaf {
+    display: none !important;
+  }
+  .ConatctDetailSocial {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    margin-top: 8% !important;
+    padding: 0px 8%;
+  }
+  .FormFields {
+    width: 80% !important;
+    margin-left: 160px !important;
+  }
+  .HandImage img {
+    display: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .HandImage img {
+    display: none !important;
+  }
+  .FormFields {
+    width: auto !important;
+    margin-left: 30px !important;
+  }
+  .HeadingOne {
+    font-size: 24px !important;
+    line-height: 30px !important;
+    margin-top: 10px ;
+  }
+  .HeadingTwoContact {
+    font-size: 22px !important;
+    line-height: 28px !important;
+    margin-top: 10px ;
+  }
+  .ParaContact {
+    font-size: 12px !important;
+    line-height: 17px !important;
+  }
+  .ParaTwoContact {
+    font-size: 10px !important;
+    line-height: 16px !important;    
+  }
+  .InputLabel {
+    font-size: 12px !important;
+  }
+  .InputFiled {
+    font-size: 10px !important;
+    padding: 3px 12px !important;
+    width: 90% !important;
+  }
+  .css-1x51dt5-MuiInputBase-input-MuiInput-input{
+    font-size: 10px !important;
+  }
+
+  .HeadingThreeContact {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+  .ParaTwoContact {
+    font-size: 10px !important;
+    line-height: 18px !important;
+  }
+  .LocationDetail {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+  .SubHeadingContact {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .SubParaContact {
+    font-size: 10px !important;
+    line-height: 16px !important;
+  }
+  .ContactFlag{
+    width: 40px;
+    height: auto;
+  }
+  .LocationText img{
+    height: 20px;
+  }
+  .DonateButtonContact button {
+    padding: 7px 20px !important;
+    font-size: 10px ;
+  }
+  .ContactButton button {
+    padding: 7px 20px !important;
+    font-size: 10px ;
+  }
+  .ContactInfo img {
+    width: 20px;
+    height: 20px;
+  }
+  .ContactDetailText img{
+    height: 30px;
+  }
+  .InputFiledContact {
+    width: 100% !important;
+  }
+  
+}

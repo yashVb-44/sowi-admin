@@ -1,0 +1,67 @@
+.ShareModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vw !important;
+  height: max-content !important;
+  /* overflow-y: scroll !important; */
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}
+.ShareModalHeadingTwo {
+  font-family: "DM Sans" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 23.44px;
+  text-align: center !important;
+}
+.ShareModalPara {
+  font-family: "Poppins" !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 14px;
+  margin-top: 4% !important;
+}
+
+.ShareModalClose {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+  text-align: end !important;
+}
+.ShareModalCloseIcon {
+  font-size: 19px !important;
+  cursor: pointer !important;
+  text-align: end !important;
+}
+.shareText{
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+.ShareIcon{
+    margin: auto 0px;
+    width: 35px !important;
+    height: auto !important;
+}
+.ShareTextTwo{
+    font-size: 12px;
+    font-weight: 'DM Sans';
+    color: #252525;
+    font-weight: 700;
+    margin: auto 0px !important;
+}
+
+@media (max-width: 780px) {
+  .ShareModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw !important;
+
+  }
+}

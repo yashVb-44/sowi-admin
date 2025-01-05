@@ -1,0 +1,119 @@
+.Navbar {
+  background-color: #ffffff !important;
+  border-radius: 30px !important;
+  box-shadow: none !important;
+  color: #252525 !important;
+  width: 80% !important;
+  padding: 1px 10px !important;
+}
+.HomeLogo {
+  width: auto !important;
+  height: 40px !important;
+  margin: auto 0px;
+}
+.Service {
+  font-size: 14px !important;
+  line-height: 24px !important;
+  letter-spacing: 0.5px !important;
+  color: #252525 !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  font-family: "DM Sans" !important;
+}
+.Service_Two {
+  font-size: 14px !important;
+  line-height: 24px !important;
+  letter-spacing: 0.5px !important;
+  gap: 5px;
+  font-family: "DM Sans" !important;
+}
+.DonateButton {
+  border: 0.5px solid #239f40 !important;
+  border-radius: 30px !important;
+  padding: 8px 20px !important;
+  color: #239f40 !important;
+  font-weight: 700 !important;
+  margin: auto 0px !important;
+}
+
+.FontFamily {
+  font-family: "DM Sans" !important;
+}
+
+/* // LanguageDropDown  */
+.LanguageDropDown {
+  border-right: 2px dotted #e6eaf8;
+  height: 60% !important;
+  margin: auto 0px !important;
+}
+.LanguageMenu {
+  margin-top: 1% !important;
+}
+.LanguageDivider {
+  border-bottom: 2px dotted #e6eaf8;
+  width: 90% !important;
+  margin: 0px auto !important;
+}
+/* // fund cat dropdown  */
+.FundRaiseDropdown {
+  /* border-right: 2px dotted #e6eaf8; */
+  height: 60% !important;
+  margin: auto 0px !important;
+}
+.FundRaiseDropdownTwo{
+  width: 180px !important;
+}
+.FundraiseSeeAll {
+  color: #239f40;
+  text-decoration: underline;
+  font-family: 'DM Sans' !important;
+}
+
+@media (max-width: 1200px) {
+  .Navbar {
+    width: 93% !important;
+  }
+  .Service {
+    font-size: 13px !important;
+    line-height: 20px !important;
+    gap: 0px !important;
+  }
+  .DonateButton {
+    font-size: 10px !important;
+    padding: 5px 12px !important;
+  }
+}
+@media (max-width: 600px) {
+  .Navbar {
+    width: 85% !important;
+  }
+  .Service_Two {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    gap: 4px;
+  }
+  .DonateButton {
+    font-size: 12px !important;
+    padding: 5px 13px !important;
+  }
+  /* .Service_Two {
+    display: none !important;
+  } */
+}
+@media (max-width: 500px) {
+  .Navbar {
+    width: 95% !important;
+  }
+  .Service_Two {
+    font-size: 10px !important;
+    line-height: 15px !important;
+    gap: 1px;
+  }
+  .DonateButton {
+    font-size: 12px !important;
+    padding: 5px 13px !important;
+  }
+  .Service_Three {
+    display: none !important;
+  }
+}

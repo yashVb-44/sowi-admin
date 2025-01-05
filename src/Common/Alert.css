@@ -1,0 +1,50 @@
+/* AlertStyles.css */
+
+.swal2-popup {
+    font-size: 15px; /* Larger text */
+    border-radius: 10px; /* Rounded corners */
+    
+}
+
+.swal2-title {
+    color: #252525; 
+    font-size: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.swal2-html-container{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0px auto !important;   
+}
+.swal2-content {
+    font-size: 12px; /* Content text size */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0px auto !important;
+}
+
+.swal2-icon {
+    border-color: #4caf50; /* Green color for the icon border */
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #4caf50; /* Green background for confirm button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.swal2-styled.swal2-cancel {
+    background-color: #f44336; /* Red background for cancel button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,98 @@
+.FundraiseCatDetailHeadingOne {
+  font-size: 45px !important;
+  font-weight: 600 !important;
+  line-height: 50px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+  width: 100% !important;
+}
+.FundraiseCatText {
+  padding: 6% 10% 0px 10% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+
+  /* client requirement  */
+.FundraiseBox {
+  width: 390px;
+  height: max-content;
+}
+.FundraiseCard {
+  border: none !important;
+  box-shadow: none !important;
+  /* margin-right: 20px !important; */
+  margin-top: 6% !important;
+}
+
+
+.FundraiseCatDetailText {
+  margin: auto 0px !important;
+}
+.FundraiseCatDetailImg {
+  width: 100%;
+  height: auto;
+}
+.FundraiseCatDetailImg img {
+  width: 100%;
+  height: 250px !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+}
+
+.FundCatDetail {
+  margin: 0px auto !important;
+  padding-bottom: 6%;
+}
+.FundCatDetail img {
+  width: 90% !important;
+  height: 60% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 0px auto !important;
+}
+.FundCatDetailText {
+  padding: 1% 0px;
+  text-align: center !important;
+  width: 85%;
+  height: max-content ;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0px auto 10% auto !important;
+}
+
+.FundraiseDonateCatDetailBtn {
+  display: flex !important;
+  justify-content: start !important;
+  width: max-content !important;
+}
+.FundraiseDonateCatDetailBtn button {
+  margin-top: 2% !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+  border: none !important;
+  background: #239f40 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+@media (max-width: 780px) {
+  .FundraiseCatDetailHeadingOne {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .FundraiseDonateCatDetailBtn button {
+    margin-top: 2% !important;
+    padding: 8px 15px !important;
+    font-size: 10px !important;
+  }
+  .FundCatDetailText {
+    height: 100% !important ;
+    margin-bottom: 5% !important;
+  }
+}

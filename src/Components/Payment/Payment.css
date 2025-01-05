@@ -1,0 +1,496 @@
+.PaymentBg {
+  background-color: #f5faff !important;
+}
+.Payment {
+  padding: 3% 9% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+.lineDivide {
+  border-top: 1px dotted #a3aebe;
+}
+.PaymentHeadingOne {
+  font-size: 36px !important;
+  font-weight: 600 !important;
+  line-height: 50px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  margin-top: 3% !important;
+}
+
+.PaymentSubHeading {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  margin: 8px 0px !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.PaymentText {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  color: #da0000 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+}
+.ProjectDetailPara {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  font-family: "Poppins" !important;
+  text-align: center !important;
+  color: #252525 !important;
+  width: 100%;
+  margin-top: 1% !important;
+}
+.PaymentParasTwo {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.PaymentSubTotals {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  margin: 1px 0px !important;
+}
+.PaymentSubPara {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  margin: auto 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  margin: 1% 0px !important                         ;
+}
+
+.PaymentDetail {
+  padding: 3% 5% !important;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px #f5faff;
+  border-radius: 20px !important;
+}
+.PaymentDetailImages {
+  width: 100%;
+  height: 300px !important;
+}
+
+/* PaymenyFormFields   */
+
+.PaymenyFormFields {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0px 13% !important;
+}
+.PaymenyCardFields {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 3% 13% 0px 13% !important;
+}
+.PaymentFileds {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  margin: 10px 0px 0px 0px !important;
+  text-align: center !important;
+  font-family: "Poppins" !important;
+}
+.PaymentInputLabel {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: start !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  margin: 2px 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.PaymentInputFiled {
+  background-color: #f5faff;
+  width: 100%;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+}
+
+.PaymentCardInputFields {
+  border: 0.7px solid #a3aebe;
+  border-radius: 20px !important;
+  width: 100% !important;
+  padding: 10px 16px !important;
+}
+.PaymentCardInputFiled {
+  background-color: #f5faff;
+  width: 90%;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+}
+
+.CardExpCvv {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  /* flex-wrap: wrap !important; */
+  gap: 6% !important;
+}
+.CheckBoxCard {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2% !important;
+  margin-top: 1% !important;
+}
+.CreditCardRadio {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1% !important;
+}
+.CardRadio {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2% !important;
+  /* border-top: 1px dotted #a3aebe; */
+  padding: 3% 0% !important;
+}
+.CardRadioCrypto {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2% !important;
+  /* border-top: 1px dotted #a3aebe; */
+  padding: 1% 0% !important;
+}
+/* Apply top border to all CardRadio elements except the first one */
+.CardRadio:not(:first-child) {
+  border-top: 1px dotted #a3aebe !important;
+}
+.CardRadioImg {
+  width: 20% !important;
+  height: auto;
+}
+.CardRadioImg img {
+  height: min-content !important;
+  width: min-content !important;
+  margin: auto 0px !important;
+}
+.CreditCardRadioImg img {
+  height: min-content !important;
+  width: min-content !important;
+  margin: auto 0px !important;
+}
+.PaymentGateWayLabel {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  margin: auto 0px !important;
+  color: #0a0d13 !important;
+}
+
+.PaymentSubTotals {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.PaymentCardButton {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: center !important;
+  margin-top: 3% !important;
+}
+.PaymentCardButton button {
+  background-color: #239f40;
+  color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  padding: 9px 0px !important;
+  font-family: "DM Sans" !important;
+  font-size: 18px;
+}
+.PaymentCardButton button:hover {
+  background-color: #239f40;
+  color: #fff;
+}
+.PaymenyCardField {
+  padding: 3% 13% !important;
+}
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 780px) {
+}
+@media (max-width: 600px) {
+  .Payment {
+    padding: 3% 3% !important;
+  }
+  .PaymenyCardField {
+    padding: 3% 1% !important;
+  }
+  .PaymentDetailImages {
+    height: 200px !important;
+  }
+  .PaymentHeadingOne {
+    margin-top: 4% !important;
+    font-size: 20px !important;
+    line-height: 26px !important;
+  }
+  .ProjectDetailPara {
+    margin-top: 4% !important;
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+  .PaymenyFormFields {
+    margin: 20px 25px 0px 0px !important;
+  }
+  .PaymenyCardField {
+    margin: 3% 0% 0px 1% !important;
+  }
+  .PaymentInputLabel {
+    font-size: 12px !important;
+    line-height: 22px !important;
+  }
+
+  .CardExpCvv {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 50% !important;
+    flex-wrap: wrap !important;
+    gap: 6% !important;
+  }
+  .CheckBoxCard {
+    margin-top: 4% !important;
+  }
+  .CardRadioImg {
+    width: 25% !important;
+    height: auto;
+  }
+  .PaymentGateWayLabel {
+    font-size: 12px !important;
+  }
+  .PaymentSubParaa {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    margin: 2% !important;
+  }
+  .PaymenyCardField {
+    margin: 3% 8% 0px 1% !important;
+  }
+  .PaymentSubHeading {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .PaymentParasTwo {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .PaymentSubTotals {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .PaymentCardButton button {
+    padding: 7px 0px !important;
+    margin-top: 2% !important;
+    font-size: 14px;
+  }
+}
+
+
+
+/* // modal css  */
+.paymetModal{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw !important;
+  height: 65vh !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+  overflow-y: scroll;
+}
+.PaymentText{
+  align-items: center !important;
+}
+.PaymentText img{
+  width: auto;
+  height: 80px;
+}
+.PaymentModalHeading{
+  font-size: 22px !important;
+  color: #252525 !important;
+  font-weight: 700 !important;
+  font-family: 'DM Sans' !important;
+}
+.PaymentModalPara{
+  font-size: 14px !important;
+  color: #252525 !important;
+  font-weight: 400 !important;
+  font-family: 'Poppins' !important;
+}
+.PaymentFormFields {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.PaymentFileds {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  margin: 10px 0px !important;
+  text-align: center !important;
+  font-family: "Poppins" !important;
+}
+.PaymentInputLabel {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: start !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  margin: 2px 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.PaymentInputFiled {
+  background-color: #f5faff;
+  width: 90%;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+}
+.FormSubmitFieldPayment {
+  display: flex !important;
+  flex-direction: row !important;
+}
+.PaymentButtonFormSubmit {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 5% !important;
+  width: 100%;
+}
+.FormCancelButtonPaymentModal {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.FormSubmitButtonPaymentModal {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #fff !important;
+  padding: 6px 50px !important;
+  background-color: #239f40 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+
+@media (max-width: 780px) {
+  .paymetModal{
+    width: 80vw !important;
+    height: 75vh !important;
+  }
+}
+
+
+
+/* // crypto modal  */
+
+.CryptoModal{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw !important;
+  height: 30vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+.CryptoPaymentModalHeading{
+  font-size: 22px !important;
+  color: #252525 !important;
+  font-weight: 700 !important;
+  font-family: 'DM Sans' !important;
+  margin-top: 4% !important;
+}
+.CryptoPaymentModalPara{
+  font-size: 16px !important;
+  color: #252525 !important;
+  font-weight: 700 !important;
+  font-family: 'DM Sans' !important;
+  margin: 12% 0px 0px 0px !important;
+}
+.CryptoButtonPaymentModal {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #fff !important;
+  padding: 6px 50px !important;
+  background-color: #239f40 !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 14% auto 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+  cursor: pointer !important;
+}
+.CryptoButtonClose {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 50px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 14% auto 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+  cursor: pointer !important;
+}
+.CryptoModalButton{
+  display: flex !important;
+  flex-direction: row !important;
+}
+.CryptoClose{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+  text-align: end !important;
+}
+.CryptoCloseIcon {
+  font-size: 19px !important;
+  cursor: pointer !important;
+  text-align: end !important;
+}
+
+

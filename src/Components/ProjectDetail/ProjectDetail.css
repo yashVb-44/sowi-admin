@@ -1,0 +1,478 @@
+.ProjectDetailBg {
+  background-color: #f5faff !important;
+}
+.ProjectDetail {
+  padding: 6% 9% !important;
+}
+
+.ProjectHeadingOne {
+  font-size: 38px !important;
+  font-weight: 600 !important;
+  line-height: 50px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+}
+
+.SubHeading {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  margin: 8px 0px !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailText {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  color: #da0000 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+}
+.ProjectDetailParaa {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  font-family: "Poppins" !important;
+  text-align: start !important;
+  color: #252525 !important;
+  width: 100%;
+  margin-top: 4% !important;
+}
+.ParaTwo {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.SubPara {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  margin: auto 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+
+.ProjectDetailImage {
+  margin-top: 3% !important;
+  width: 100% !important;
+  height: 600px;
+}
+
+.ProjectDetailButton {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: start !important;
+  margin-top: 3% !important;
+}
+.ProjectDetailButton button {
+  padding: 0px !important;
+  color: #239f40 !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  font-family: "Poppins" !important;
+}
+.ProjectDetailButtonDonate {
+  display: flex !important;
+  margin-top: 3% !important;
+  flex-wrap: wrap !important;
+}
+.ProjectDetailDonateBtn {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  text-align: center !important;
+  border-radius: 20px !important;
+  width: 100% !important;
+  padding: 8px !important;
+  font-size: 16px !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailDonateBtnShare {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: #239f40 !important;
+  border: 1px solid #239f40 !important;
+  text-align: center !important;
+  border-radius: 20px !important;
+  width: 100% !important;
+  padding: 8px !important;
+  font-size: 16px !important;
+  font-family: "DM Sans" !important;
+}
+
+/* ProjectDetailOrganiser */
+.dottedLine {
+  border-top: 2px dotted #a3aebe !important;
+}
+
+.ProjectDetailOrganiser {
+  display: flex !important;
+  margin-top: 3% !important;
+  margin-bottom: 3% !important;
+}
+.ProjectDetailHuman {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailOrganiserText {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 32px !important;
+  font-family: "DM Sans" !important;
+}
+
+.ProjectDetailOrganiserHuman {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+.ProjectDetailOrganiserName {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailOrganiserDesc {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailOrganiserHuman img {
+  height: 25px !important;
+  width: auto !important;
+  margin: 2px 0px 0px 0px !important;
+  padding: 10px !important;
+  border-radius: 50% !important;
+}
+.ProjectDetailTextDetail {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: auto 0px !important;
+}
+
+/* word of support  */
+.ProjectDetailWordSupport {
+  margin-top: 6% !important;
+  padding-left: 2.2% !important;
+}
+.ProjectDetailDonate {
+  margin-top: 2% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+.ProjectDetailDonate img {
+  height: 60px !important;
+  width: auto !important;
+}
+.ProjectDetailDonateDetail {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.ProjectDetailDonateText {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailDonateFlex {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+.ProjectDetailDonateFlexRupee {
+  color: #239f40 !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.divideline {
+  border-left: 1px dotted #a3aebe !important;
+}
+.ProjectDetailDonateFlexDay {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1px !important;
+  color: #a3aebe !important;
+  font-size: 14px !important;
+  margin: auto 0px !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectDetailDonateFlexPara {
+  margin-top: 1% !important;
+  font-size: 12px !important;
+  color: #252525 !important;
+  line-height: 18px !important;
+}
+.ProjectDetailDonateBtnShowMore {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: start !important;
+}
+.ProjectDetailDonateBtnShowMore button {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  border-radius: 30px !important;
+  padding: 10px 22px !important;
+  font-family: "DM Sans" !important;
+  margin-top: 3% !important;
+}
+
+.ProjectDetailDonateCreatedDate {
+  margin-top: 4% !important;
+  padding: 1.5% 0px !important;
+  border-top: 2px dotted #a3aebe;
+  border-bottom: 2px dotted #a3aebe;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  text-align: center !important;
+  font-family: "DM Sans" !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+/* right section  */
+
+.ProjectDetailRight {
+  margin-top: 6% !important;
+  background-color: #fff;
+  border-radius: 15px !important;
+  box-shadow: 5px 5px 10px #d6d6d6 !important;
+  padding: 8% 5% !important;
+  height: max-content !important;
+}
+.DonateCount {
+  padding: 8px 15px !important;
+  border: 0.5px solid #252525 !important;
+  border-radius: 14px !important;
+  background-color: #fffaeb !important;
+  font-family: "DM Sans" !important;
+  width: max-content !important;
+}
+.DonateAmt {
+  display: flex;
+  flex-direction: row !important;
+  gap: 5px;
+  margin-top: 3%;
+}
+.RaisedAmt {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.TargetAmt {
+  font-size: 14px !important;
+  font-weight: 500;
+  margin: auto 0px !important;
+  font-family: "DM Sans" !important;
+}
+.PeopleCount {
+  margin-top: 16px !important;
+  font-size: 14px !important;
+  font-family: "DM Sans" !important;
+}
+.DonateAmtSample {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  margin-top: 2% !important;
+}
+
+.DonateAmtSampleInput {
+  margin-top: 2% !important;
+  padding: 5px 15px !important;
+  border-radius: 10px !important;
+  justify-content: start !important;
+  font-family: "DM Sans";
+  color: #142146 !important;
+  cursor: pointer;
+  font-size: 13px !important;
+  border: 2px solid #142146; /* Default border */
+  background-color: transparent; /* Default background */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.DonateAmtSampleInput:hover {
+  background-color: #142146;
+  color: #fff !important;
+}
+
+.DonateAmtSampleInput.selected {
+  background-color: #142146;
+  color: #fff !important;
+  border: 2px solid transparent; /* Remove border when selected */
+}
+.DonateAmtInputText {
+  margin-top: 4% !important;
+}
+.AmtInputField .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+.css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0px !important;
+}
+.AmtInputField {
+  border: 2px solid #a3aebe;
+  background-color: #f5faff;
+  border-radius: 8px !important;
+  padding: 12px !important;
+}
+
+.DonateAmtButton {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  margin-top: 3% !important;
+  justify-content: space-between !important;
+  box-shadow: none !important;
+}
+
+.OneTimePayment,
+.MonthlyPayment {
+  box-shadow: none !important;
+  width: 46% !important;
+  border-radius: 10px !important;
+  font-family: "DM Sans";
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, border 0.3s ease; /* Smooth transition for background and border */
+}
+
+.OneTimePayment.selected,
+.MonthlyPayment.selected {
+  background-color: #142146 !important; /* Background color for selected button */
+  color: #fff !important; /* Text color for selected button */
+}
+
+.OneTimePayment:not(.selected),
+.MonthlyPayment:not(.selected) {
+  background-color: transparent !important; /* Transparent background for unselected button */
+  color: #142146 !important; /* Text color for unselected button */
+  border: 1px solid #142146 !important; /* Border for unselected button */
+}
+
+.DonateShare {
+  margin-top: 3% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+.ProjectDonateButton {
+  width: 100% !important;
+  border-radius: 17px !important;
+  padding: 9px 0px !important;
+  font-family: "DM Sans" !important;
+  background-color: #239f40 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.ProjectShareButton {
+  width: 100% !important;
+  border-radius: 17px !important;
+  padding: 9px 0px !important;
+  font-family: "DM Sans" !important;
+  border: 1px solid #239f40 !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+  color: #239f40 !important;
+}
+.TopMarginCreated {
+  margin-top: 45px;
+}
+
+@media (max-width: 1200px) {
+  .ProjectDetail {
+    padding: 5% 4% !important;
+  }
+  .ProjectDetailOrganiserText {
+    font-size: 20px !important;
+    line-height: 26px !important;
+  }
+  .ProjectDetailOrganiserHuman img {
+    height: 22px !important;
+    padding: 8px !important;
+  }
+  .ProjectDetailOrganiserName {
+    font-size: 16px !important;
+  }
+  .ProjectDetailOrganiserDesc {
+    font-size: 12px !important;
+  }
+  .ProjectDetailDonateBtnShowMore button {
+    font-size: 14px !important;
+    border-radius: 28px !important;
+    padding: 8px 20px !important;
+  }
+}
+@media (max-width: 780px) {
+  .TopMarginCreated {
+    margin-top: 0px;
+  }
+  .ProjectDetailImage {
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .ProjectDetailOrganiser {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .ProjectDetailWordSupport {
+    margin-top: 10% !important;
+    padding: 0px 6% !important;
+  }
+  .ProjectDetailDonate img {
+    height: 35px !important;
+    width: auto !important;
+  }
+  .ProjectDetailDonateCreatedDate {
+    margin-top: 4% !important;
+    font-size: 12px !important;
+  }
+  .ProjectDetailDonateBtnShowMore button {
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+  }
+  .RaisedAmt {
+    font-size: 18px !important;
+  }
+  .TargetAmt {
+    font-size: 12px !important;
+  }
+  .DonateCount {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .ProjectHeadingOne {
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+  .ProjectDetailParaa {
+    font-size: 12px !important;
+    line-height: 20px !important;
+    margin-top: 0% !important;
+  }
+  .ProjectDetailButton button {
+    font-size: 12px !important;
+  }
+  .ProjectDetailDonateBtn {
+    padding: 7px !important;
+    font-size: 12px !important;
+  }
+  .ProjectDetailDonateBtnShare {
+    padding: 7px !important;
+    font-size: 12px !important;
+  }
+  .ProjectDetailImage {
+    height: auto;
+  }
+}

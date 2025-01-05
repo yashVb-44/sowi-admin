@@ -1,0 +1,188 @@
+.ViewProjectModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw !important;
+  height: 80vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}
+.ViewProjectDetail {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.AddProjectCloseIcon {
+  font-size: 19px !important;
+  cursor: pointer;
+}
+.ViewProjectMarginTop{
+    margin-top: 28%;
+}
+
+.ViewProjectHeading {
+  font-size: 22px !important;
+  font-family: "DM Sans" !important;
+  font-weight: 700 !important;
+  color: #252525;
+}
+.ViewProjectHeadingTwo {
+  font-family: "DM Sans" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-top: 2% !important;
+}
+.ViewProjectHeadingThree {
+  font-family: "DM Sans" !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-top: 1% !important;
+  color: #252525 !important;
+}
+.BorderLine {
+  border-bottom: 2px dotted #a3aebe;
+  margin: 10px 0px !important;
+}
+
+.ViewProjectSubHeading {
+  font-size: 16px !important;
+  color: #da0000;
+  font-family: "DM Sans" !important;
+}
+.ProjectViewEditButton {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 6px;
+}
+.ProjectViewEditButton img {
+  height: 22px;
+  margin: auto 0px !important;
+}
+.ProjectViewEditButtonText {
+  font-size: 14px !important;
+  margin: auto 0px !important;
+  font-family: "Poppins" !important;
+}
+.ViewProjectImageCenter{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+.ViewProjectImage {
+  margin: 2% 0px !important;
+  width: 40% !important;
+  height: 40% !important;
+  text-align: center !important;
+}
+.ViewProjectPara {
+  font-size: 13px !important;
+  font-family: "Poppins" !important;
+  line-height: "26px" !important;
+  color: #252525 !important;
+}
+
+.ViewProjectFields {
+  background-color: #f5faff;
+  padding: 1% 2%;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+.AddProjectInputLabel {
+  font-size: 14px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  line-height: 24px !important;
+  font-weight: 600 !important;
+  margin-top: 10px !important;
+}
+.AddProjectInputText {
+  font-size: 14px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+}
+
+/* // submit button  */
+.FormSubmitFieldAddProject {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+}
+.AddProjectButtonFormSubmit {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 5% !important;
+}
+.FormCancelButtonAddProject {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.FormSubmitButtonAddProject {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #fff !important;
+  padding: 6px 50px !important;
+  background-color: #239f40 !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+
+.EditIconAddProject {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.FormSubmitFieldAddProject {
+  margin-top: 20px;
+}
+
+
+
+@media (max-width: 1200px) {
+
+  .ViewProjectMarginTop{
+    margin-top: 18%;
+  }
+}
+@media (max-width: 780px) {
+  .ViewProjectImage{
+    height: 58% !important;
+  }
+  .ViewProjectMarginTop{
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .ViewProjectMarginTop{
+    margin-top: 2%;
+  }
+}

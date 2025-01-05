@@ -1,0 +1,234 @@
+.BlogDetailBg {
+  background-color: #f5faff !important;
+}
+.BlogDetail {
+  padding: 6% 9% !important;
+}
+
+.BlogHeadingOne {
+  font-size: 38px !important;
+  font-weight: 600 !important;
+  line-height: 50px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+}
+
+.SubHeading {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  margin: 8px 0px !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+  margin-top: 4% !important;
+}
+.BlogDetailText {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  color: #252525 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.5% !important;
+}
+.BlogDetailTextSuccess {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  color: #239f40 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: start !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.5% !important;
+}
+.BlogDetailParaa {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  font-family: "Poppins" !important;
+  text-align: start !important;
+  color: #252525 !important;
+  width: 100%;
+}
+
+.BlogDetailImage {
+  margin-top: 3% !important;
+  width: 100% !important;
+}
+
+.BlogDetailButton {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: start !important;
+  margin-top: 3% !important;
+}
+.BlogDetailButton button {
+  padding: 0px !important;
+  color: #239f40 !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  font-family: "Poppins" !important;
+}
+.BlogDetailButtonDonate {
+  display: flex !important;
+  margin-top: 3% !important;
+  flex-wrap: wrap !important;
+}
+.BlogDetailDonateBtn {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  text-align: center !important;
+  border-radius: 20px !important;
+  width: 100% !important;
+  padding: 8px !important;
+  font-size: 16px !important;
+  font-family: "DM Sans" !important;
+}
+.BlogDetailDonateBtnShare {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: #239f40 !important;
+  border: 1px solid #239f40 !important;
+  text-align: center !important;
+  border-radius: 20px !important;
+  width: 100% !important;
+  padding: 8px !important;
+  font-size: 16px !important;
+  font-family: "DM Sans" !important;
+}
+
+.BlogDetailAuthorSection {
+  display: flex;
+  align-items: center;
+  margin: 4% 0px !important;
+}
+
+.BlogDetailAuthorSection img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.BlogDetailAuthor {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+.BlogAuthorName,
+.BlogUploadDate {
+  margin-top: 0.5%;
+}
+.BlogAuthorName {
+  font-weight: 700 !important;
+}
+.LineDivideBlogDetail {
+  border-right: 1.5px dotted #a3aebe;
+}
+
+.BlogDetailSocialMedia {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  margin-top: 4% !important;
+  padding: 1.5% 0px !important;
+  border-top: 2px dotted #a3aebe;
+  border-bottom: 2px dotted #a3aebe;
+}
+.BlogDetailSocialMedia img {
+  height: 10% !important;
+  border: 0.1px solid #252525 !important;
+  border-radius: 50% !important;
+}
+.BlogDetailDonateCreatedDate {
+  font-family: "DM Sans" !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin: auto 0px !important;
+}
+
+/* right section  */
+
+.BlogDetailRight {
+  margin-top: 6% !important;
+  background-color: #fff;
+  border-radius: 15px !important;
+  /* box-shadow: 5px 5px 10px #d6d6d6 !important; */
+  padding: 8% 5% !important;
+  height: max-content !important;
+  border: 1px solid #a3aebe !important;
+}
+/* LatestBlog */
+.LatestBlogDetail {
+  background-color: #fff !important;
+}
+.LatestBlogImageDetail {
+  width: 100% !important;
+  height: auto !important;
+}
+.LatestBlogParaDetail {
+  padding: 4% !important;
+}
+.LineDivideXaxis {
+  border-bottom: 1.5px dotted #a3aebe;
+  margin: 2% 0px !important;
+}
+
+/* search  */
+.searchBlogDetail {
+  background-color: #f5faff !important;
+  border-radius: 10px !important;
+  border: none !important;
+  padding: 5px 10px !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1200px) {
+  .BlogDetail {
+    padding: 6% 5% !important;
+  }
+}
+@media (max-width: 780px) {
+}
+@media (max-width: 600px) {
+  .BlogDetailText {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .BlogDetailTextSuccess {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .BlogHeadingOne {
+    margin: 10px 0px !important;
+    font-size: 20px !important;
+    line-height: 26px !important;
+  }
+  .BlogDetailAuthorSection img {
+    width: 25px;
+    height: 25px;
+  }
+  .BlogAuthorName,
+  .BlogUploadDate {
+   font-size: 12px !important;
+  }
+
+  
+.BlogDetailSocialMedia {
+  margin-top: 8% !important;
+}
+.BlogDetailSocialMedia img {
+  height: 15% !important;
+  width: 9% !important;
+}
+.BlogDetailDonateCreatedDate {
+  font-size: 12px !important;
+}
+
+
+}

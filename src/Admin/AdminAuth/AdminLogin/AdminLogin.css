@@ -1,0 +1,360 @@
+.AdminLoginHeading {
+    font-size: 45px !important;
+    line-height: 55px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    color: #252525 !important;
+    font-family: "DM Sans" !important;
+  }
+  .AdminLoginPara {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    color: #252525 !important;
+    font-family: "Poppins" !important;
+  }
+  .SignupImage img {
+    width: 50vw !important;
+    height: 100vh !important;
+  }
+  
+  .SignupImageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .ImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .LogoImage {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 15%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .MainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .SignupText {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  .TextCenterSignup {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 90vh;
+  }
+  
+  .AdminLoginFormFields {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    margin: 2% auto !important;
+    width: 35% !important;
+  }
+  
+  @media (max-width: 767px) {
+    .AdminLoginFormFields {
+      width: 90% !important;
+    }
+  }
+  
+  .AdminLoginFields {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    margin: 10px 0px !important;
+    text-align: center !important;
+    font-family: "Poppins" !important;
+  }
+  
+  .AdminLoginInputLabel {
+    display: flex !important;
+    flex-direction: row !important;
+    text-align: start !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 32px !important;
+    margin: 2px 0px !important;
+    font-family: "Poppins" !important;
+    color: #252525 !important;
+  }
+  
+  .AdminLoginInputFiled {
+    background-color: #f5faff;
+    width: 100% !important;
+    border-radius: 5px;
+    border-bottom: none !important;
+    padding: 6px 15px !important;
+    font-family: "Poppins" !important;
+  }
+  
+  .GreenColor {
+    color: #239f40;
+    text-decoration: underline;
+    font-size: 14px !important;
+    margin: auto 0px !important;
+  }
+  
+  .AdminLoginButton {
+    text-align: center !important;
+    justify-content: center !important;
+    margin-top: 5% !important;
+    width: 100% !important;
+  }
+  
+  .AdminLoginButton button {
+    color: #fff !important;
+    background-color: #239f40 !important;
+    padding: 9px 30px !important;
+    width: 100%;
+    border-radius: 30px !important;
+    font-family: "DM Sans" !important;
+    justify-content: center !important;
+  }
+  
+  .SignupDottedLine {
+    display: flex !important;
+    flex-direction: row !important;
+    margin: 3% 0px !important;
+    justify-content: space-between !important;
+  }
+  
+  .SignupDotted {
+    border-top: 1.3px dotted #a3aebe;
+    width: 44% !important;
+    margin: auto 0px !important;
+  }
+  
+  .OtherSignupLink {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+  
+  .AdminLoginButtonOther {
+    display: flex !important;
+    flex-direction: row !important;
+    border: 1.3px solid #a3aebe !important;
+    border-radius: 20px !important;
+    margin: 0px auto !important;
+    gap: 10% !important;
+    width: max-content !important;
+    padding: 2% 10% !important;
+  }
+  
+  .AdminLoginButtonOther img {
+    height: 80% !important;
+    width: auto !important;
+  }
+  
+  .DontHaveAcc {
+    font-size: 14px !important;
+    color: #252525 !important;
+    font-weight: 500 !important;
+    font-family: "Poppins" !important;
+    text-align: center !important;
+    margin-top: 4% !important;
+  }
+  
+  .CopyRightSingup {
+    padding-bottom: 3% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  .PrivacyCopyRight {
+    margin-top: 10px !important;
+    color: #a3aebe !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    font-family: "DM Sans" !important;
+  }
+  
+  /* check box  */
+  .CheckBoxCard {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2% !important;
+    margin-top: 1% !important;
+  }
+  
+  .CheckBoxFlex {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+  
+  /* otpInputStyles.css */
+  
+  .PasswordInputField .notFilled {
+    background-color: #f5faff !important;
+    border-radius: 10px !important;
+  }
+  .PasswordInputField .filled {
+    background-color: #f5faff !important;
+    border-radius: 10px !important;
+    border: 1px solid #a3aebe !important;
+  }
+  
+  /* Override MUI's outlined input styles to remove the border */
+  .PasswordInputField .MuiOutlinedInput-root fieldset {
+    border: none;
+  }
+  
+  /* password success image */
+  
+  /* Password success container */
+  .AdminLogin {
+    background-image: url("../../../Assets/Images/Auth/PasswordResetSuccessfully.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: 100vh !important ;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+  
+  /* Password success content */
+  .AdminLoginContent {
+    background-color: #fff; /* Adjust opacity as needed */
+    padding: 20px;
+    height: 85vh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+  }
+  
+  /* Text center signup */
+  .AdminLoginCenter {
+    text-align: center;
+  }
+  .AdminLoginCenter img {
+    width: 10%;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 3%;
+    overflow: hidden !important;
+  }
+  .AdminLoginButton {
+    text-align: center !important;
+    justify-content: center !important;
+    margin: 5% auto 0px auto !important;
+    width: 20%;
+  }
+  
+  .AdminLoginButton button {
+    color: #fff !important;
+    background-color: #239f40 !important;
+    padding: 9px 30px !important;
+    width: 100%;
+    border-radius: 30px !important;
+    font-family: "DM Sans" !important;
+    justify-content: center !important;
+  }
+  /* Add your other styles as needed */
+  
+  @media (max-width: 1200px) {
+    .AdminLoginContent {
+      height: 80vh !important;
+    }
+    .SignupText {
+      padding: 0% 4% 0% 4% !important;
+    }
+    .AdminLoginHeading {
+      font-size: 32px !important;
+      line-height: 40px !important;
+    }
+    .AdminLoginPara {
+      font-size: 13px !important;
+      line-height: 18px !important;
+    }
+    .AdminLoginFormFields {
+      width: 80% !important;
+    }
+  
+  }
+  @media (max-width: 780px) {
+    .SignupText {
+      padding: 2% 4% 0px 4% !important;
+    }
+    .AdminLoginHeading {
+      font-size: 32px !important;
+      line-height: 40px !important;
+    }
+    .AdminLoginFormFields {
+      width: 70% !important;
+    }
+    .PasswordSuccessContent {
+      height: 80vh !important;
+      width: 60vw !important;
+    }
+    .TextCenterSignup {
+      height: 100vh;
+    }
+  }
+  @media (max-width: 600px) {
+    .AdminLoginHeading {
+      font-size: 26px !important;
+      line-height: 34px !important;
+    }
+    .AdminLoginPara {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+    .SignupText {
+      padding: 2% 4% 0px 4% !important;
+    }
+    .AdminLoginFormFields {
+      width: 90% !important;
+    }
+    .AdminLoginButtonOther {
+      gap: 6% !important;
+      padding: 2% 8% !important;
+    }
+  
+    .AdminLoginButtonOther img {
+      height: 60% !important;
+      width: auto !important;
+    }
+    .SignupTextList {
+      font-size: 12px;
+    }
+    .DontHaveAcc {
+      font-size: 12px !important;
+    }
+    .AuthSubPara {
+      font-size: 12px !important;
+    }
+    .GreenColor {
+      font-size: 12px !important;
+    }
+    .AdminLoginInputLabel {
+      font-size: 12px !important;
+      line-height: 20px !important;
+    }
+    .PasswordSuccessContent {
+      height: 70vh !important;
+      width: 90vw !important;
+    }
+    
+  }
+  

@@ -1,0 +1,16 @@
+.PrivacyContentTopMar {
+  margin-top: 2% !important;
+}
+.PrivacyContactContentModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw !important;
+  height: 80vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}

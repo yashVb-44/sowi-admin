@@ -1,0 +1,293 @@
+import React, { useEffect, useState, useCallback } from 'react';
+import { Stack, Grid, TextField, Button } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import CloseIcon from '@mui/icons-material/Close';
+import { useDropzone } from 'react-dropzone';
+import EditIcon from '../../../Assets/AdminImages/EditIcon.png';
+import Loader from '../../../Common/Loader';
+import CloudImage from '../../../Assets/AdminImages/CloudImgae.png'
+import { updateTeam } from '../../../Lib/AboutContent';
+import { Alert } from '../../../Common/Alert';
+import { useContent } from '../../../Context/ContentContext';
+
+const EditTeam = ({ openEditTeam, handleCloseEditTeam }) => {
+    const { fetchTeam, editTeamMember } = useContent();
+    const [loader, setLoader] = useState(false);
+    const [fileData, setFileData] = useState(null);
+    const [filePreview, setFilePreview] = useState(null);
+
+    const [name, setName] = useState('');
+    const [designation, setDesignation] = useState('');
+    const [description, setDescription] = useState('');
+    const [nameFarsi, setNameFarsi] = useState('');
+    const [designationFarsi, setDesignationFarsi] = useState('');
+    const [descriptionFarsi, setDescriptionFarsi] = useState('');
+
+    const handleChange = (e, setter) => {
+        setter(e.target.value);
+    };
+
+    const handleResetUpload = () => {
+        setFileData(null);
+        setFilePreview(null);
+    };
+
+    const onDrop = useCallback((acceptedFiles) => {
+        const selectedFile = acceptedFiles[0];
+        if (selectedFile && ['image/jpeg', 'image/png'].includes(selectedFile.type)) {
+            setFileData(selectedFile);
+            setFilePreview(URL.createObjectURL(selectedFile));
+        } else {
+            Alert('Error', 'Only JPG and PNG files are allowed.', 'error');
+        }
+    }, []);
+
+    const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
+        onDrop,
+        accept: 'image/jpeg, image/png',
+        maxSize: 10485760, // 10MB
+        noClick: true, // Disable the default click behavior
+    });
+
+
+    const handleUpdateTeam = async () => {
+        setLoader(true);
+        let response = await updateTeam(name, designation, description, fileData, nameFarsi, designationFarsi, descriptionFarsi, editTeamMember?._id);
+        try {
+            if (response.statusCode === 200) {
+                setTimeout(() => {
+                    setLoader(false);
+                    Alert('Success', response?.message, 'success');
+                    fetchTeam();
+                    handleCloseEditTeam();
+                }, 2000);
+            } else {
+                setLoader(false);
+                Alert('Info', response.message, 'info');
+                handleCloseEditTeam();
+            }
+        } catch (error) {
+            setLoader(false);
+            Alert('Info', response?.message, 'info');
+            handleCloseEditTeam();
+        }
+    };
+
+    useEffect(() => {
+        setName(editTeamMember?.en?.name || '');
+        setDesignation(editTeamMember?.en?.designation || '');
+        setDescription(editTeamMember?.en?.description || '');
+        setFilePreview(editTeamMember?.image || null);
+        setNameFarsi(editTeamMember?.fa?.name || '');
+        setDesignationFarsi(editTeamMember?.fa?.designation || '');
+        setDescriptionFarsi(editTeamMember?.fa?.description || '');
+    }, [editTeamMember]);
+
+    return (
+        <div>
+            <Modal
+                open={openEditTeam}
+                onClose={handleCloseEditTeam}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className='AboutContentModal'>
+                    <Stack className='AboutContentDetail'>
+                        <Typography id="modal-modal-title" variant="h6" component="h2" className='AboutContentHeading'>
+                            Team Edit
+                        </Typography>
+                        <Stack>
+                            <CloseIcon onClick={handleCloseEditTeam} className='AboutContentCloseIcon' />
+                        </Stack>
+                    </Stack>
+
+                    <Stack className='BorderLine'></Stack>
+                    <Stack>
+                        <Typography id="modal-modal-title" variant="h6" component="h2" className='AboutContentHeadingTwo'>
+                            Edit Team Member
+                        </Typography>
+                    </Stack>
+                    <Grid container spacing={6}>
+                        <Grid item xs={12} md={4} lg={4}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                Name
+                            </Typography>
+                            <TextField
+                                id="standard-required"
+                                placeholder='Enter name'
+                                variant="standard"
+                                className='AboutContentInputFiled'
+                                InputProps={{ disableUnderline: true }}
+                                value={name}
+                                onChange={(e) => handleChange(e, setName)}
+                                autoComplete='off'
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={8} lg={8}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                Designation
+                            </Typography>
+                            <TextField
+                                id="standard-required"
+                                placeholder='Enter designation'
+                                variant="standard"
+                                className='AboutContentInputFiled'
+                                InputProps={{ disableUnderline: true }}
+                                value={designation}
+                                onChange={(e) => handleChange(e, setDesignation)}
+                                autoComplete='off'
+                            />
+                        </Grid>
+                    </Grid>
+                    <Grid container spacing={6}>
+                        <Grid item xs={12} md={12} lg={12}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                Description
+                            </Typography>
+                            <TextField
+                                id="standard-required"
+                                placeholder='Enter description'
+                                variant="standard"
+                                className='AboutContentInputFiled'
+                                InputProps={{ disableUnderline: true }}
+                                value={description}
+                                onChange={(e) => handleChange(e, setDescription)}
+                                autoComplete='off'
+                            />
+                        </Grid>
+                    </Grid>
+
+                    <Stack className='BorderBottom'></Stack>
+                    <Grid container spacing={6}>
+                        <Grid item xs={12} md={4} lg={4}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                نام
+                            </Typography>
+                            <TextField
+                                id="standard-required"
+                                placeholder='نام را وارد کنید'
+                                variant="standard"
+                                className='AboutContentInputFiled'
+                                InputProps={{ disableUnderline: true }}
+                                value={nameFarsi}
+                                onChange={(e) => handleChange(e, setNameFarsi)}
+                                autoComplete='off'
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={8} lg={8}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                تعیین
+                            </Typography>
+                            <TextField
+                                id="standard-required"
+                                placeholder='نام گذاری را وارد کنید'
+                                variant="standard"
+                                className='AboutContentInputFiled'
+                                InputProps={{ disableUnderline: true }}
+                                value={designationFarsi}
+                                onChange={(e) => handleChange(e, setDesignationFarsi)}
+                                autoComplete='off'
+                            />
+                        </Grid>
+                    </Grid>
+                    <Grid container spacing={6}>
+                        <Grid item xs={12} md={12} lg={12}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                شرح
+                            </Typography>
+                            <TextField
+                                id="standard-required"
+                                placeholder='توضیحات را وارد کنید'
+                                variant="standard"
+                                className='AboutContentInputFiled'
+                                InputProps={{ disableUnderline: true }}
+                                value={descriptionFarsi}
+                                onChange={(e) => handleChange(e, setDescriptionFarsi)}
+                                autoComplete='off'
+                            />
+                        </Grid>
+                    </Grid>
+                    <Grid container>
+                        <Grid xs={12} md={12} lg={12}>
+                            <Typography variant="body2" color="text.secondary" className='AboutContentHeadingThree'>
+                                Upload Image
+                            </Typography>
+                            {!filePreview && (
+                                <Stack {...getRootProps()} className='FileUpload'>
+                                    <input {...getInputProps()} />
+                                    <Stack className='FileUploadField'>
+                                        <img src={CloudImage} alt='Cloud Image' />
+                                        {isDragActive ? (
+                                            <Typography variant="body2" color="text.secondary" className='FileUploadHeading'>
+                                                Drop the files here ...
+                                            </Typography>
+                                        ) : (
+                                            <>
+                                                <Typography variant="body2" color="text.secondary" className='FileUploadHeading'>
+                                                    Select a file or drag and drop here
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" className='FileUploadPara'>
+                                                    JPG or PNG file size no more than 10MB
+                                                </Typography>
+                                                <Stack className='FileUploadDottedLine'>
+                                                    <Stack className='FileUploadDotted'></Stack>
+                                                    <Typography>or</Typography>
+                                                    <Stack className='FileUploadDotted'></Stack>
+                                                </Stack>
+                                                <Button
+                                                    variant="contained"
+                                                    className='FileUploadButton'
+                                                    onClick={open} // Use the open method from useDropzone
+                                                >
+                                                    Browse file
+                                                </Button>
+                                            </>
+                                        )}
+                                    </Stack>
+                                </Stack>
+                            )}
+                            {filePreview && (
+                                <Stack className='PreviewUpload'>
+                                    <Box className='PreviewUploadImageContainer'>
+                                        <img src={filePreview} className='PreviewUploadImage' alt="Preview" />
+                                        <img src={EditIcon} alt='Edit Icon' onClick={() => handleResetUpload()} className='EditIconAddProject' />
+                                    </Box>
+                                </Stack>
+                            )}
+                        </Grid>
+                    </Grid>
+
+                    <Stack className='AboutContentFieldCreateBlog'>
+                        <Stack className='AboutContentButtonFormSubmit'>
+                            <Button
+                                component="label"
+                                role={undefined}
+                                variant="contained"
+                                tabIndex={-1}
+                                className='AboutContentFormCancelButton'
+                                onClick={handleCloseEditTeam}
+                            >
+                                Cancel
+                            </Button>
+                            <Button
+                                component="label"
+                                role={undefined}
+                                variant="contained"
+                                tabIndex={-1}
+                                className='AboutContentFormCreateButton'
+                                onClick={handleUpdateTeam}
+                            >
+                                Save
+                            </Button>
+                        </Stack>
+                    </Stack>
+                </Box>
+            </Modal>
+            <Loader loader={loader} setLoader={setLoader} />
+        </div>
+    );
+};
+
+export default EditTeam;

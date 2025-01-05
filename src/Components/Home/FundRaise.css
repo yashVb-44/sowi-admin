@@ -1,0 +1,79 @@
+.FundRaise {
+  padding: 8% 10% !important;
+}
+.FundRaiseBg {
+  background-color: #e6eaf8 !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+.FundRaiseText {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: 40px !important;
+  font-family: "DM Sans" !important;
+}
+.FundRaisePara {
+  margin-top: 15px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 28px !important;
+  font-family: "Poppins" !important;
+}
+.LeftLeafFund {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: end !important;
+  justify-content: end !important;
+}
+.LeftImageFund {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: start !important;
+  align-items: start !important;
+}
+.HeartFund {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: end !important;
+  margin-left: 80% !important;
+}
+.LeftLeafFund {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: end !important;
+  align-items: start !important;
+}
+.RightImage {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: end !important;
+  align-items: end !important;
+}
+
+
+
+@media (max-width: 780px) {
+  .LeftLeafFund{
+    display: none !important;
+  }
+  .RightImage{
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .LeftLeafFund{
+    display: none !important;
+  }
+  .RightImage{
+    display: none !important;
+  }
+  .FundRaiseText {
+    font-size: 22px !important;
+    line-height: 30px !important;
+  }
+  .FundRaisePara {
+    font-size: 12px !important;
+    line-height: 20px !important;    
+  }
+}

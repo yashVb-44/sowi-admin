@@ -1,0 +1,21 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  text-align: justify !important;
+}
+
+body {
+  font-family: "DM Sans", sans-serif !important;
+  font-style: normal;
+}
+.siteContentBorderBottom{
+  border-bottom: 1px solid #F1F4F3;
+  padding-top: 1%;
+}
+.BorderBottom{
+  border-bottom: 2px solid #F1F4F3;
+  padding: 1% 0px;
+}
+.css-1j0qgw8-MuiAutocomplete-root .MuiOutlinedInput-root{
+  padding: 0px !important;
+}

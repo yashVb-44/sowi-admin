@@ -1,0 +1,548 @@
+.Capital {
+  text-transform: capitalize;
+}
+.AboutBg {
+  background-color: #f5faff !important;
+}
+.AboutTextPara {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.AboutText {
+  padding: 6% 0% !important;
+}
+.HeadingTwo {
+  font-size: 45px !important;
+  font-weight: 700 !important;
+  line-height: 55px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.HeadingThree {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.AboutCircleHeading {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.AboutSubHeading {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  margin: 8px 0px;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.AboutHeadingOne {
+  font-size: 50px !important;
+  font-weight: 600 !important;
+  line-height: 60px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.About {
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  line-height: 28px !important;
+  color: #239f40 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  margin-bottom: 1% !important;
+}
+.AboutPara {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  text-align: center !important;
+  color: #252525 !important;
+  margin: 15px 5% !important;
+}
+
+.AboutSubParaTwo {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 22px !important;
+  margin: 2% 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  text-align: justify !important;
+}
+.AboutSubPara {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 22px !important;
+  margin: 2% 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+  text-align: center !important;
+}
+.AboutImage {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.AboutImage img {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 80% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 550px !important;
+  border-radius: 10px;
+}
+
+/* About Mission  */
+.AboutMission {
+  background-color: #e6eaf8 !important;
+}
+.AboutRightLeaf {
+  text-align: end !important;
+  height: 50% !important;
+}
+.AboutRightLeaf img {
+  height: 70% !important;
+  width: 70% !important;
+}
+.AboutLeftLeaf {
+  display: flex !important ;
+  flex-direction: column !important;
+  justify-content: end !important;
+}
+.AboutLeftLeaf img {
+  height: auto !important;
+  width: 70% !important;
+}
+
+/* About Fund  */
+.AboutFund {
+  background-color: #fff !important;
+  padding: 4% 10% !important;
+}
+
+/* donate button  */
+.DonateButtonAbout {
+  display: flex !important;
+  justify-content: center !important;
+  border: none !important;
+  margin-top: 3% !important;
+  font-family: "DM Sans" !important;
+}
+.DonateButtonAbout button {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  padding: 10px 30px !important;
+  border-radius: 30px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: "DM Sans" !important;
+  font-weight: 600 !important;
+}
+
+/* team  */
+
+.AboutTeam img {
+  height: 130px !important;
+  width: 130px !important;
+  border-radius: 10px !important;
+}
+.AboutTeamHeading {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.AboutTeamSubHeading {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 32px !important;
+  font-family: "DM Sans" !important;
+  color: #239f40 !important;
+}
+.AboutTeamPara {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 17px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+
+/* About how it works */
+.AboutWork {
+  background-color: #f2fbfe !important;
+  padding: 4% 10% !important;
+}
+
+.AboutWorkSubHeading {
+  font-size: 16px !important;
+  color: #da0000 !important;
+  font-weight: 500 !important;
+  font-family: "DM Sans";
+}
+
+.AboutWorkText {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: auto 0px !important;
+}
+
+.AboutWorkImage img {
+  width: 80% !important;
+  height: auto !important;
+}
+
+.section-timeline .container {
+  max-width: 1100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  min-height: 1000px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.section-timeline .timeline {
+  list-style: none;
+  position: relative;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.section-timeline .timeline li {
+  height: 251px;
+  width: 30px;
+  position: absolute;
+}
+
+.section-timeline .timeline li:first-child {
+  border-style: solid;
+  border-width: 4px 4px 4px 0;
+  border-color: #239f40; /* Green border for the first item */
+}
+.section-timeline .timeline li:nth-child(2) {
+  border-style: solid;
+  border-width: 4px 4px 4px 0;
+  border-color: #239f40; /* Green border for the first item */
+}
+.section-timeline .timeline li:nth-child(n + 3) {
+  border-style: solid;
+  border-width: 4px 4px 4px 0;
+  border-color: #e6eaf8; /* Red border for the remaining items */
+}
+
+.section-timeline .timeline li:nth-child(odd) {
+  border-style: solid;
+  border-width: 4px 4px 4px 0;
+  /* border-color: #239F40; Border color for odd items */
+  left: -41px;
+  transform: translateX(0%);
+  border-radius: 0 30px 30px 0;
+}
+
+.section-timeline .timeline li:nth-child(even) {
+  border-style: solid;
+  border-width: 4px 0 4px 4px;
+  /* border-color: #C70039; Border color for even items */
+  left: -44px;
+  transform: translateX(-50%);
+  border-radius: 30px 0 0 30px;
+}
+
+/* Remove the curve for the first item */
+.section-timeline .timeline li:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-width: 0px 4px 4px 0;
+}
+
+/* Style li */
+.section-timeline .timeline li:nth-child(2) {
+  top: 250px;
+}
+
+.section-timeline .timeline li:nth-child(3) {
+  top: 501px;
+}
+
+.section-timeline .timeline li:nth-child(4) {
+  top: 753px;
+}
+
+/* Style content */
+.section-timeline .timeline .content {
+  position: absolute;
+  min-width: 400px;
+  border-radius: 0px;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-40%);
+  max-height: 320px;
+}
+
+.section-timeline .timeline .content-img {
+  position: absolute;
+  border-radius: 0px;
+  overflow: hidden;
+  top: 5%;
+  transform: translateX(-40%);
+}
+
+.section-timeline .timeline .content-img img {
+  width: 400px;
+  height: 230px;
+}
+
+.section-timeline .timeline li:nth-child(odd) .content {
+  left: calc(200% + 80px);
+}
+
+.section-timeline .timeline li:nth-child(even) .content {
+  right: calc(100% + 80px);
+}
+
+.section-timeline .timeline li:nth-child(even) .content-img {
+  left: calc(100% + 290px);
+}
+
+.section-timeline .timeline li:nth-child(odd) .content-img {
+  right: calc(100% + -70px);
+}
+
+.ShowJourney {
+  display: none !important;
+}
+.DotGreenFlex {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.DotGreen {
+  width: 8px;
+  height: 8px;
+  background: #239f40;
+  border-radius: 50px;
+  margin: auto 0px;
+}
+
+@media (max-width: 1200px) {
+  .AboutHeadingOne {
+    font-size: 40px !important;
+    line-height: 50px !important;
+  }
+  .About {
+    font-size: 22px !important;
+    line-height: 24px !important;
+  }
+  .AboutPara {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+
+  .HeadingThree {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+  .AboutSubPara {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  .AboutLeftLeaf {
+    display: flex !important ;
+    flex-direction: column !important;
+    justify-content: end !important;
+  }
+  .AboutLeftLeaf img {
+    height: auto !important;
+    width: 130% !important;
+  }
+
+  .AboutRightLeaf {
+    text-align: end !important;
+    height: 8ch !important;
+  }
+  .AboutRightLeaf img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .AboutCircleHeading {
+    font-size: 22px !important;
+    line-height: 28px !important;
+    left: 15% !important;
+  }
+  .CircleImage {
+    width: 60% !important;
+  }
+
+  .section-timeline .timeline li:nth-child(odd) .content {
+    left: calc(100% + 60px);
+  }
+
+  .section-timeline .timeline li:nth-child(even) .content {
+    right: calc(-100% + 50px);
+  }
+
+  .section-timeline .timeline li:nth-child(even) .content-img {
+    left: calc(-50% + 260px);
+  }
+
+  .section-timeline .timeline li:nth-child(odd) .content-img {
+    right: calc(-200% + 0px);
+  }
+  .AboutSubPara {
+    width: 90%;
+  }
+  .AboutImage img {
+    width: 90% !important;
+    height: 450px !important;
+  }
+}
+@media (max-width: 780px) {
+  .section-timeline {
+    display: none;
+  }
+  .ShowJourney {
+    display: block !important;
+  }
+  .AboutText {
+    padding: 4% 0% !important;
+  }
+  .AboutHeadingOne {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+  .About {
+    font-size: 18px !important;
+    line-height: 20px !important;
+  }
+  .AboutPara {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  .HeadingThree {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+  .AboutSubPara {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  .AboutMission {
+    padding: 4% 10% !important;
+  }
+  .AboutLeftLeaf {
+    display: none !important ;
+  }
+  .AboutRightLeaf {
+    display: none !important;
+  }
+
+  .AboutCircleHeading {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    left: 15% !important;
+  }
+  .CircleImage {
+    width: 48% !important;
+  }
+  .AboutWorkImage img {
+    width: 50% !important;
+  }
+  .AboutImage img {
+    width: 90% !important;
+    height: 400px !important;
+  }
+}
+@media (max-width: 600px) {
+  .AboutText {
+    padding: 4% 4% !important;
+  }
+  .AboutWorkImage img {
+    width: 80% !important;
+  }
+  .AboutHeadingOne {
+    font-size: 22px !important;
+    line-height: 28px !important;
+  }
+  .About {
+    font-size: 12px !important;
+    line-height: 17px !important;
+  }
+  .AboutPara {
+    font-size: 10px !important;
+    line-height: 14px !important;
+  }
+  .HeadingThree {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+  .AboutSubPara {
+    font-size: 10px !important;
+    line-height: 16px !important;
+  }
+  .AboutCircleHeading {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    left: 10% !important;
+  }
+  .CircleImage {
+    width: 38% !important;
+  }
+  .AboutFundImage {
+    height: 35% !important;
+  }
+  .AboutTeam {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: end !important;
+  }
+  .AboutTeam img {
+    height: 100px !important;
+    width: 100px !important;
+    margin: 10px 0px !important;
+  }
+  .AboutTeamHeading {
+    font-size: 17px !important;
+    line-height: 20px !important;
+  }
+  .AboutTeamSubHeading {
+    font-size: 12px !important;
+    line-height: 24px !important;
+  }
+  .AboutTeamPara {
+    font-size: 10px !important;
+    line-height: 14px !important;
+  }
+  .DonateButtonAbout{
+    margin-top: 12% !important;
+  }
+  .DonateButtonAbout button {
+    padding: 5px 20px !important;
+    border-radius: 30px !important;
+    font-size: 10px !important;
+  }
+  .AboutImage img {
+    width: 90% !important;
+    height: auto !important;
+  }
+}

@@ -1,0 +1,213 @@
+.Capital {
+  text-transform: capitalize;
+}
+.ProjectListBg {
+  background-color: #f5faff !important;
+}
+.ProjectListText {
+  padding: 6% 6% !important;
+}
+.ProjectListHeadingOne {
+  font-size: 50px !important;
+  font-weight: 600 !important;
+  line-height: 60px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.HeadingTwo {
+  font-size: 45px !important;
+  font-weight: 700 !important;
+  line-height: 55px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.HeadingListThree {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+}
+.SubHeading {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 26px !important;
+  margin: 8px 0px !important;
+  color: #252525 !important;
+  font-family: "DM Sans" !important;
+}
+.ProjectList {
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  line-height: 28px !important;
+  color: #239f40 !important;
+  margin-bottom: 0px !important;
+  font-family: "DM Sans" !important;
+  text-align: center !important;
+  margin-bottom: 1% !important;
+}
+.ProjectListPara {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  text-align: center !important;
+  color: #252525 !important;
+  margin: 15px 5% !important;
+}
+.ParaListTwo {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.CategoriesListTwo {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.SubPara {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  margin: auto 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+
+.LeftLeaf {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: start !important;
+  align-items: start !important;
+}
+.LeftLeaf img {
+  width: auto !important;
+  height: 200px !important;
+}
+.ProjectRightLeaf {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: end !important;
+  align-items: end !important;
+  text-align: end !important;
+}
+.ProjectRightLeaf img {
+  width: auto !important;
+  height: 200px !important;
+}
+
+/* ProjectListDetail */
+
+.ProjectListDetail {
+  padding: 4% 10% !important;
+}
+
+.search {
+  background-color: #f5faff !important;
+  border-radius: 10px !important;
+  border: none !important;
+  width: 100% !important;
+  padding: 5px 10px !important;
+}
+.Categories {
+  margin-top: 3% !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+.CategoriesList {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 3% !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  font-family: "DM Sans" !important;
+}
+
+.ProjectListImage {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: start !important;
+  margin-top: 0.2% !important;
+}
+
+.ProjectCard {
+  border: none !important;
+  box-shadow: none !important;
+  margin-right: 20px !important;
+  margin-top: 6% !important;
+}
+
+.ProjectListButton {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  margin-top: 4% !important;
+}
+.ProjectListButton button {
+  border-radius: 20px !important;
+  color: #fff !important;
+  background-color: #239f40 !important;
+  padding: 7px 20px !important;
+}
+
+@media (max-width: 1200px) {
+
+  
+}
+@media (max-width: 780px) {
+  .LeftLeaf {
+    display: none !important;
+  }
+  .ProjectRightLeaf {
+    display: none !important;
+  }
+  .ProjectList {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .ProjectListHeadingOne {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+  .ProjectListPara {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    margin: 10px 3% !important;
+  }
+  .HeadingListThree {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .ParaListTwo {
+    font-size: 12px !important;
+    line-height: 19px !important;
+    margin: 10px 0px !important;
+  }
+  .search {
+    padding: 4px 7px !important;
+    font-size: 12px !important;
+  }
+  .Categories {
+    margin-top: 5% !important;
+  }
+  .CategoriesList {
+    gap: 5% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    margin-top: 6% !important;
+  }
+  .CategoriesListTwo {
+    font-size: 12px !important;
+    line-height: 19px !important;
+    margin: 2px 0px !important;
+  }
+}

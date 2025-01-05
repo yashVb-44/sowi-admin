@@ -1,0 +1,307 @@
+.AddProjectModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw !important;
+  height: 80vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}
+.AddProjectDetail {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.AddProjectCloseIcon {
+  font-size: 19px !important;
+  cursor: pointer;
+}
+.AddProjectHeading {
+  font-size: 22px !important;
+  font-family: "DM Sans" !important;
+  font-weight: 700 !important;
+  color: #252525;
+}
+.AddProjectHeadingTwo {
+  font-family: "DM Sans" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 23.44px;
+}
+.BorderLine {
+  border-bottom: 2px dotted #a3aebe;
+  margin: 10px 0px !important;
+}
+
+/* form fields  */
+
+.AddProjectFields {
+  /* width: 100% !important; */
+  /* display: flex !important; */
+  /* justify-content: center !important; */
+  /* flex-direction: row !important; */
+  /* flex-wrap: wrap !important; */
+  margin: 10px 0px !important;
+  /* text-align: center !important; */
+  font-family: "Poppins" !important;
+}
+
+.AddProjectInputLabel {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: start !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  margin: 2px 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+
+.AddProjectInputFiled {
+  background-color: #f5faff;
+  width: 100% !important;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+}
+
+/* /// radio button  */
+.AddProjectRadio {
+  display: flex !important;
+  flex-direction: row !important;
+}
+.AddProjectRadioLabel {
+  font-size: 14px !important;
+  font-family: "DM Sans" !important;
+}
+
+/* // file upload  */
+
+.FileUpload {
+  border: 2px dotted #239f40 !important;
+  height: 50%;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  padding: 4% 0px;
+}
+.FileUploadField {
+  justify-content: center;
+  margin: 0px auto;
+}
+.FileUploadField img {
+  height: 70%;
+  width: 50px;
+  margin: 10px auto;
+}
+.FileUploadHeading {
+  font-size: 20px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+.FileUploadPara {
+  font-size: 16px !important;
+  color: #a3aebe !important;
+  font-family: "Poppins" !important;
+}
+
+.FileUploadDottedLine {
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 3% 0px !important;
+  gap: 10px;
+  justify-content: center !important;
+}
+
+.FileUploadDotted {
+  border-top: 1.3px dotted #a3aebe;
+  width: 24% !important;
+  margin: auto 0px !important;
+}
+.FileUploadButton {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #239f40 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+/* // submit button  */
+.FormSubmitFieldAddProject {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+}
+.AddProjectButtonFormSubmit {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 5% !important;
+}
+.FormCancelButtonAddProject {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.FormSubmitButtonAddProject {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #fff !important;
+  padding: 6px 50px !important;
+  background-color: #239f40 !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+.PreviewUpload {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  border: 2px dotted #239f40;
+  border-radius: 10px;
+  position: relative;
+}
+
+.PreviewUploadImageContainer {
+  position: relative;
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+
+.PreviewUploadImage {
+  width: auto !important;
+  height: 300px !important;
+  border-radius: 10px;
+}
+
+.EditIconAddProject {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.FormSubmitFieldAddProject {
+  /* margin-top: 20px; */
+}
+.AddProjectBtn{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+  height: max-content !important;
+}
+
+.AddPaymentButton{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: end !important;
+  align-items: end !important;
+  margin-bottom: 10px !important;
+
+}
+.AddPaymentUploadButton {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+
+
+@media (max-width: 780px) {
+  .css-honmcm-MuiGrid-root > .MuiGrid-item {
+    padding-top: 0px !important;
+  }
+  .AddProjectHeadingTwo {
+    font-size: 16px !important;
+    line-height: 20px;
+    height: 12%;
+  }
+  .AddProjectInputFiled {
+    width: 90%;
+  }
+  .AddProjectRadio {
+    margin-bottom: 15%;
+  }
+  .FileUpload {
+    padding: 8% 0px;
+  }
+  .PreviewUploadImage {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .FileUpload {
+    border: 2px dotted #239f40 !important;
+    height: 70% !important;
+    border-radius: 10px;
+    width: 100% !important;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 4% 0px;
+  }
+  .FileUploadHeading {
+    font-size: 16px !important;
+  }
+}
+
+.AddProjectInputFiledTwo {
+  background-color: #f5faff;
+  width: 100% !important;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: "Poppins" !important;
+  /* height: 43px !important; */
+}
+/* 
+.AddProjectInputFiledTwo {
+  background-color: #f5faff;
+  width: 100% !important;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 0px !important;
+  font-family: "Poppins" !important;
+  height: 43px !important;
+} */
+

@@ -1,0 +1,337 @@
+.HomeContentMang {
+  background-color: #f5faff;
+  padding: 2%;
+  min-height: 80vh;
+}
+.HomeContentMangText {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap;
+}
+.HomeContentSite {
+  background-color: #fff !important;
+  margin-top: 2% !important;
+  padding: 2% !important;
+  width: auto !important;
+  height: 100% !important;
+}
+.HomeContentHeading {
+  font-weight: 600 !important;
+  font-size: 28px !important;
+  font-family: "DM Sans" !important;
+  margin: auto 0px !important;
+}
+.HomeContentHeadingTwo {
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  font-family: "DM Sans" !important;
+  margin: auto 0px !important;
+}
+.HomeContentHeadingThree {
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  font-family: "Poppins" !important;
+  margin-top: 1.2% !important;
+}
+.HomeContentPara {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  font-family: "Poppins" !important;
+  margin: auto 0px !important;
+  margin-top: 0.5% !important;
+}
+.HomeContentTopMar {
+  margin-top: 3% !important;
+}
+
+.HomeContentSupportIcon img {
+  width: 100px;
+  height: 100px;
+  margin-top: 5px;
+}
+
+/* // submit button  */
+.HomeContentFieldCreateBlog {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+}
+.HomeContentButtonFormSubmit {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 5% !important;
+  margin-top: 3% !important;
+}
+.HomeContentFormCancelButton {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.HomeContentFormCreateButton {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #fff !important;
+  padding: 6px 50px !important;
+  background-color: #239f40 !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.HomeContentInputFiled {
+  background-color: #f5faff;
+  width: 97.2% !important;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+  margin-top: 1% !important;
+}
+
+.HomeContentGridMarginLeft {
+  margin-left: 2% !important;
+}
+
+.HomeContentEditBtn {
+  display: flex !important;
+  flex-direction: row !important;
+  /* justify-content: center !important; */
+  border-radius: 10px;
+  position: relative;
+}
+.HomeContentEditIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border: 1.3px solid #252525;
+  border-radius: 5px;
+}
+
+/* // modal  */
+
+.HomeContentModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw !important;
+  height: 80vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}
+.HomeContentDetail {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.HomeContentCloseIcon {
+  font-size: 19px !important;
+  cursor: pointer;
+}
+
+.HomeContentFileUploadButton {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #239f40 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: 100px !important;
+  height: 100px !important;
+  margin: 10px auto 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+.CloudImageHomeContent {
+  display: flex !important;
+  flex-direction: row !important;
+  margin: auto 0px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.HomeContentPreviewUploadImageContainer {
+  position: relative;
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+
+.HomeContentPreviewUploadImage {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 10px;
+}
+.EditIconHomeContent {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  background-color: #fff;
+  border-radius: 6px !important;
+  padding: 4px !important;
+  height: 16px !important;
+  width: 16px !important;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  .css-15eztp4-MuiGrid-root > .MuiGrid-item {
+    padding-top: 0px !important;
+  }
+  .HomeContentMarginImage {
+    margin-top: 10% !important;
+  }
+  .HomeContentInputFiled {
+    width: 100% !important;
+  }
+  .HomeContentGridMarginLeft {
+    margin-left: 0% !important;
+  }
+}
+@media (max-width: 600px) {
+  .css-15eztp4-MuiGrid-root > .MuiGrid-item {
+    padding-top: 0px !important;
+  }
+  .HomeContentMarginImage {
+    margin-top: 20% !important;
+  }
+  .HomeContentInputFiled {
+    width: 100% !important;
+  }
+}
+
+.AddProjectButton {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  font-family: "DM Sans" !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  font-size: 16px !important;
+  padding: 6px 24px !important;
+  margin: auto 0px !important;
+}
+
+/* project managemnt  */
+.CategoryTabel {
+  margin-top: 1%;
+}
+/* CategoryMang Tabel  */
+
+.css-u06erh-MuiPaper-root {
+  box-shadow: none !important;
+}
+.CategoryMangTabelCellHeader {
+  display: flex !important;
+  flex-direction: row !important;
+}
+.CategoryMangTabelCellText {
+  font-family: "DM Sans" !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 28px !important;
+  color: #020223 !important;
+  margin: auto 0px !important;
+}
+.CategoryMangTabelHeader {
+  background-color: #f5faff !important;
+  font-family: "DM Sans" !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 23px !important;
+  color: #020223 !important;
+}
+.CategoryMangFilterDropDown {
+  width: max-content !important;
+  border: none !important;
+  border-radius: 30px !important;
+  border: 2px solid #e6eaf8 !important;
+  font-size: 14px !important;
+  font-family: "DM Sans" !important;
+  font-weight: 500 !important;
+  color: #020223 !important;
+  margin: auto 0px !important;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 30px 10px 16px;
+}
+
+.CategoryMangTabelCellRight {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+  gap: 10px;
+}
+.CategoryMangTabelCellRightText {
+  font-size: 16px;
+  margin: auto 0px !important;
+  font-family: "DM Sans" !important;
+}
+
+.CategoryMangTabelCellRow {
+  font-size: 14px !important;
+  line-height: 24px !important;
+  font-family: "Poppins" !important;
+  color: #414141 !important;
+  font-weight: 400 !important;
+}
+
+.TabelViewIcon img {
+  height: 20px;
+  width: auto;
+}
+.TabelEditIcon img {
+  height: 16px;
+  width: auto;
+}
+
+.TabelDelIcon img {
+  height: 25px;
+  width: auto;
+}
+
+@media (max-width: 1200px) {
+  .BlogMangHeading {
+    font-weight: 600 !important;
+    font-size: 24px !important;
+  }
+  .AddProjectButton {
+    font-size: 14px !important;
+    padding: 5px 22px !important;
+  }
+}
+@media (max-width: 780px) {
+  .ProjectMangMarginTop {
+    margin-top: 1% !important;
+  }
+  .css-zow5z4-MuiGrid-root > .MuiGrid-item {
+    padding-top: 0px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .BlogMangHeading {
+    font-size: 22px !important;
+  }
+}

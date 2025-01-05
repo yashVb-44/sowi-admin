@@ -1,0 +1,34 @@
+.ContactContentTopMar {
+  margin-top: 3% !important;
+  border-top: 1px solid #f1f4f3;
+}
+.ContactContentText {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap;
+}
+.ContactContentAddButton {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  font-family: "DM Sans" !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  font-size: 14px !important;
+  padding: 5px 22px !important;
+  margin: auto 0px !important;
+}
+
+.EditContactContentModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw !important;
+  height: 50vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}

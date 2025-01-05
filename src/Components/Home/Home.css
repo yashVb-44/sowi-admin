@@ -1,0 +1,222 @@
+.HomeBannerImg {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  width: 100% !important;
+  height: 900px !important;
+  z-index: -1 !important;
+  box-shadow: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.Header {
+  padding-top: 3% !important;
+  display: flex !important;
+  justify-content: center !important;
+  color: #252525 !important;
+}
+.HomeText {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 6% !important;
+}
+.HomeText p {
+  color: #239f40;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 28px;
+  font-family: "DM Sans" !important;
+  margin-bottom: 10px;
+}
+.HomeText h1 {
+  text-align: center !important;
+  color: #252525;
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 65px;
+  letter-spacing: 0.5px;
+  width: 60%;
+  font-family: "DM Sans" !important;
+}
+.HomeDesc {
+  margin-top: 15px !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 28px !important;
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
+  width: 60% !important;
+  color: #252525 !important;
+  font-family: "Poppins" !important;
+}
+.HomeText button {
+  margin-top: 2% !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+  border: none !important;
+  background: #ffff !important;
+  color: #239f40 !important;
+  font-weight: 700 !important;
+}
+
+.Mission {
+  background-color: #ffff !important;
+  box-shadow: 5px 5px 10px #d6d6d6 !important;
+  border-radius: 20px !important;
+  margin: 4% 4% 0px 4% !important;
+  padding: 5% 10% !important;
+}
+
+.Mission h1 {
+  font-size: 32px !important;
+  line-height: 41px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
+}
+.Mission p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  text-align: center !important;
+  font-family: "Poppins" !important;
+  margin: 1% 5% 0px 5% !important;
+}
+.MissionCard {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.MissionCardTwo {
+  margin-top: 20px !important;
+  box-shadow: none !important;
+  padding: 20px !important;
+  text-align: center !important;
+}
+.MissionCardTwo:hover {
+  background-color: #ffff;
+}
+.MissionCardImg {
+  height: 90px !important;
+  width: 90px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 0px auto !important;
+}
+.MissionTextBody {
+  margin-top: 5px !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  color: #252525 !important;
+}
+.MissionTextBodyTwo {
+  margin-top: 5px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #252525 !important;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .HomeText p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .HomeText h1 {
+    font-size: 36px;
+    line-height: 45px;
+    width: 75%;
+  }
+  .HomeDesc {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    width: 75% !important;
+  }
+  .HomeBannerImg {
+    width: 100% !important;
+    height: 650px !important;
+  }
+  .Mission {
+    margin: 11% 2% 0px 2% !important;
+    padding: 4% 7% !important;
+  }
+
+  .Mission h1 {
+    font-size: 24px !important;
+    line-height: 30px !important;
+  }
+  .Mission p {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+  }
+  /* .MissionCardImg {
+    height: 70px !important;
+  } */
+  .MissionTextBody {
+    font-size: 24px !important;
+  }
+  .MissionTextBodyTwo {
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 780px) {
+  .MissionCardTwo {
+    margin-top: 10px !important;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .HomeBannerImg {
+    background-image: none !important;
+    background-color: #f5faff !important;
+  }
+  .HomeText p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .HomeText h1 {
+    font-size: 20px;
+    line-height: 25px;
+    width: 90%;
+  }
+  .HomeDesc {
+    font-size: 11px !important;
+    line-height: 18px !important;
+    width: 90% !important;
+  }
+  .Mission {
+    margin: 10% 3% 0px 3% !important;
+    padding: 4% 4% !important;
+  }
+  .MissionCardTwo {
+    margin-top: 10px !important;
+    padding: 0px !important;
+  }
+  .Mission h1 {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  .Mission p {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    line-height: 14px !important;
+    margin: 15px 0px !important;
+  }
+  /* .MissionCardImg {
+    height: 70px !important;
+  } */
+  .MissionTextBody {
+    font-size: 16px !important;
+  }
+  .MissionTextBodyTwo {
+    font-size: 14px !important;
+  }
+  .css-irj6s1-MuiCardContent-root{
+    padding: 0px !important;
+  }
+}
