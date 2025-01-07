@@ -10,6 +10,7 @@ import AboutContent from '../Admin/SiteContent/AboutContent/AboutContent';
 import ContactContent from '../Admin/SiteContent/ContactContent/ContactContent';
 import Terms from '../Admin/SiteContent/Terms/Terms';
 import Privacy from '../Admin/SiteContent/Privacy/Privacy';
+import ShopServiceManagement from '../Admin/ShopServiceManagement/ShopServiceManagement';
 
 const AdminRoutes = () => {
     return (
@@ -17,6 +18,7 @@ const AdminRoutes = () => {
             <Route path='/' element={<AdminLayout />}>
                 <Route index element={<Dashboard />} />
                 <Route path='user' element={<UserManagement />} />
+                <Route path='shop-service' element={<ShopServiceManagement />} />
                 {/* <Route path='category' element={<CategoryManagement />} /> */}
                 <Route path='blog' element={<BlogManagement />} />
                 <Route path='site-content' element={<HomeContent />} />

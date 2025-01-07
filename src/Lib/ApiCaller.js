@@ -35,6 +35,16 @@ export const getApiCaller = async (endPoint, header) => {
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };
+export const deleteApiCaller = async (endPoint, header) => {
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  try {
+    let url = baseUrl + endPoint;
+    const response = await axios.delete(url, header);
+    return response.data;
+  } catch (error) {
+    // Alert('Info', `Unable to process your request, Please try later`, 'info');
+  }
+};
 export const getUrlCaller = async (endPoint) => {
   try {
     const response = await axios.get(endPoint);
@@ -117,7 +127,7 @@ export const formatNumber = (number) => {
   for (let i = integerPart.length - 1; i >= 0; i--) {
     result = integerPart[i] + result;
     counter++;
-    
+
     // Add comma after the first group of 3 digits
     if (counter === 3 && i > 0) {
       result = ',' + result;

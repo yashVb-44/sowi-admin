@@ -4,7 +4,7 @@ import { Stack, Grid, TextField, Select, MenuItem, Button } from '@mui/material'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import './CreateUser.css';
+// import './CreateShopService.css';
 import { AttachMoney } from '@mui/icons-material';
 import CloseIcon from '@mui/icons-material/Close';
 import CloudImage from '../../Assets/AdminImages/CloudImgae.png';
@@ -14,12 +14,12 @@ import { useDropzone } from 'react-dropzone';
 import EditIcon from '../../Assets/AdminImages/EditIcon.png';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
 import { Alert } from '../../Common/Alert';
-import { getAllUser, updateUser } from '../../Lib/UsersApi';
+import { getAllShopService, updateShopService } from '../../Lib/ShopServicesApi';
 import { useAdminSection } from '../../Context/AdminSectionContext';
 
-const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
+const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) => {
     const { editData } = useAddProject();
-    const { userData, setUserData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useAdminSection()
+    const { shopServiceData, setShopServiceData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useAdminSection()
 
     const [file, setFile] = useState(null);
     const [filePreview, setFilePreview] = useState(null);
@@ -106,19 +106,19 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
         setter(e.target.value);
     };
 
-    const handleCancelUser = () => {
-        handleCloseUserEdit();
+    const handleCancelShopService = () => {
+        handleCloseShopServiceEdit();
     };
 
-    const fetchUser = async () => {
-        let response = await getAllUser({ page, search: searchQuery, limit: rowsPerPage });
-        setUserData(response?.users || []);
+    const fetchShopService = async () => {
+        let response = await getAllShopService({ page, search: searchQuery, limit: rowsPerPage });
+        setShopServiceData(response?.shopServices || []);
     };
 
-    const handleUpdateUser = async () => {
+    const handleUpdateShopService = async () => {
         setLoader(true);
         try {
-            let response = await updateUser({
+            let response = await updateShopService({
                 name,
                 email,
                 mobileNo,
@@ -132,24 +132,24 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                 role,
                 file,
                 dateOfBirth,
-                userId: editData?._id
+                shopServiceId: editData?._id
             });
 
             if (response.type === "success") {
                 setLoader(false);
-                fetchUser();
+                fetchShopService();
                 setTimeout(() => {
-                    handleCloseUserEdit();
-                    Alert('Success', 'User Updated successfully', 'success');
+                    handleCloseShopServiceEdit();
+                    Alert('Success', 'ShopService Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseUserEdit();
+                handleCloseShopServiceEdit();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseUserEdit();
+            handleCloseShopServiceEdit();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
@@ -157,24 +157,24 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     return (
         <div>
             <Modal
-                open={openUserEdit}
-                onClose={handleCloseUserEdit}
+                open={openShopServiceEdit}
+                onClose={handleCloseShopServiceEdit}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
                 <Box className="CreateCommonModal">
                     <Stack className="CreateCommonDetail">
                         <Typography id="modal-modal-name" variant="h6" component="h2" className="CreateCommonHeading">
-                            Edit User
+                            Edit ShopService
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseUserEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleCloseShopServiceEdit()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
 
                     <Typography id="modal-modal-name" variant="h6" component="h2" sx={{ marginTop: '3%' }} className="CreateCommonHeadingTwo">
-                        User Details
+                        ShopService Details
                     </Typography>
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
@@ -302,7 +302,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                             >
                                 <MenuItem value="Admin">Admin</MenuItem>
                                 <MenuItem value="Vendor">Vendor</MenuItem>
-                                <MenuItem value="User">User</MenuItem>
+                                <MenuItem value="ShopService">ShopService</MenuItem>
                             </Select>
                         </Grid>
                     </Grid> */}
@@ -392,18 +392,18 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                         </Typography>
                         <Box
                             {...getRootProps()}
-                            className={`CreateUserDropzone ${isDragActive ? "active" : ""}`}
+                            className={`CreateCommonDropzone ${isDragActive ? "active" : ""}`}
                         >
                             {filePreview ? (
                                 <img
                                     src={filePreview}
                                     alt="Profile Preview"
-                                    className="CreateUserImagePreview"
+                                    className="CreateCommonImagePreview"
                                     onError={(e) => e.target.src = SowiImage}
 
                                 />
                             ) : (
-                                <img src={NoImage} alt="Default Image" className="CreateUserImagePreview" />
+                                <img src={NoImage} alt="Default Image" className="CreateCommonImagePreview" />
                             )}
 
                             {/* <input {...getInputProps()} /> */}
@@ -420,10 +420,10 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                                 borderRadius: '4px',
                                 padding: '6px 20px',
                             }}
-                            onClick={handleUpdateUser}
+                            onClick={handleUpdateShopService}
                             disabled={loader}
                         >
-                            {loader ? 'Updating...' : 'Update User'}
+                            {loader ? 'Updating...' : 'Update ShopService'}
                         </Button>
                     </Box>
                 </Box>
@@ -432,4 +432,4 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     );
 };
 
-export default EditUser;
+export default EditShopService;

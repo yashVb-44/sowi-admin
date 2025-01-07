@@ -5,7 +5,7 @@ let headers = {
     Authorization: adminToken
 }
 
-export const addUser = async (paymentMethod, amount, projectId, txnId, userName, userEmail, checkBox, coin, coinVal,) => {
+export const addShopService = async (paymentMethod, amount, projectId, txnId, shopServiceName, shopServiceEmail, checkBox, coin, coinVal,) => {
 
     let body = {
         paymentMethod: paymentMethod,
@@ -14,8 +14,8 @@ export const addUser = async (paymentMethod, amount, projectId, txnId, userName,
         transectionId: txnId,
         coin: coin,
         coinValue: coinVal,
-        name: userName,
-        email: userEmail,
+        name: shopServiceName,
+        email: shopServiceEmail,
         checkBox: checkBox
     }
 
@@ -23,7 +23,7 @@ export const addUser = async (paymentMethod, amount, projectId, txnId, userName,
     return response;
 }
 
-export const updateUser = async ({
+export const updateShopService = async ({
     name,
     email,
     mobileNo,
@@ -37,7 +37,7 @@ export const updateUser = async ({
     role,
     file,
     dateOfBirth,
-    userId,
+    shopServiceId,
 }) => {
     const formData = new FormData();
 
@@ -60,12 +60,12 @@ export const updateUser = async ({
         formData.append('file', file);
     }
 
-    const response = await putApiCaller(`user/profile/${userId}`, formData, { headers });
+    const response = await putApiCaller(`shopService/profile/${shopServiceId}`, formData, { headers });
     return response;
 };
 
 
-export const getAllUser = async ({ search = '', page = 1, limit = 10 }) => {
+export const getAllShopService = async ({ search = '', page = 1, limit = 10 }) => {
     page = page + 1
     try {
         const params = new URLSearchParams({
@@ -74,21 +74,21 @@ export const getAllUser = async ({ search = '', page = 1, limit = 10 }) => {
             limit: limit.toString(),
         });
 
-        const response = await getApiCaller(`user/list/forAdmin?${params}`, { headers });
+        const response = await getApiCaller(`shopService/list/forAdmin?${params}`, { headers });
         return response;
     } catch (error) {
-        console.error('Error fetching user data:', error);
-        return { users: [], totalPages: 0, currentPage: 0, totalUsers: 0 };
+        console.error('Error fetching shopService data:', error);
+        return { shopServices: [], totalPages: 0, currentPage: 0, totalShopServices: 0 };
     }
 };
 
-export const deleteUser = async (id) => {
+export const deleteShopService = async (id) => {
 
     try {
-        const response = await deleteApiCaller(`user/byAdmin/${id}`, { headers });
+        const response = await deleteApiCaller(`shopService/byAdmin/${id}`, { headers });
         return response;
     } catch (error) {
-        console.error('Error delet user :', error);
+        console.error('Error delet shopService :', error);
         return error;
     }
 };

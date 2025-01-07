@@ -16,7 +16,7 @@ import EditIcon from '../../Assets/AdminImages/EditIcon.png';
 import DeleteIcon from '../../Assets/AdminImages/DeleteIcon.png';
 import SowiImage from '../../Assets/AdminImages/sowi-img.png';
 import NoImage from '../../Assets/AdminImages/no-image-available.png';
-import { deleteUser, getAllUser } from '../../Lib/UsersApi'; // Ensure this function accepts pagination
+import { deleteShopService, getAllShopService } from '../../Lib/ShopServicesApi'; // Ensure this function accepts pagination
 import { extractDate } from '../../Lib/ApiCaller';
 import { makeStyles } from '@mui/styles';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
@@ -30,15 +30,11 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 const columns = [
-    { id: 'profileImage', label: 'Profile Image', minWidth: 80, align: 'center' },
-    { id: 'name', label: 'User Name', minWidth: 80 },
-    { id: 'mobileNo', label: 'Mobile Number', minWidth: 150, align: 'left' },
-    { id: 'gender', label: 'Gender', minWidth: 150, align: 'left' },
-    { id: 'createdAt', label: 'Joining Date', minWidth: 115, align: 'left' },
-    { id: 'isActive', label: 'Active', minWidth: 50, align: 'center' },
-    { id: 'isBlocked', label: 'Blocked', minWidth: 50, align: 'center' },
-    { id: 'isVerified', label: 'Verified', minWidth: 50, align: 'center' },
-    { id: 'action', label: 'Action', minWidth: 150, align: 'left' },
+    { id: 'name', label: 'Name', minWidth: 180 },
+    { id: 'serviceTypeName', label: 'Vehicle Type', minWidth: 150 },
+    { id: 'createdByModel', label: 'Created By', minWidth: 120, align: 'center' },
+    { id: 'isShow', label: 'Show', minWidth: 50, align: 'center' },
+    { id: 'action', label: 'Action', minWidth: 150, align: 'center' },
 ];
 
 const useStyles = makeStyles({
@@ -84,10 +80,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const UserManagementTabel = ({ handleOpenUserEdit }) => {
+const ShopServiceManagementTabel = ({ handleOpenShopServiceEdit }) => {
 
     const classes = useStyles();
-    const { userData, setUserData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useAdminSection()
+    const { shopServiceData, setShopServiceData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useAdminSection()
     const [totalData, setTotalData] = useState(0);
     const { setEditData } = useAddProject();
 
@@ -103,25 +99,25 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             setPage(0)
-            fetchAllUser();
+            fetchAllShopService();
         }
     };
 
     const handleClearSearch = () => {
         setSearchQuery('');
         setPage(0);
-        fetchAllUser('');
+        fetchAllShopService('');
     };
 
-    const fetchAllUser = async (query = searchQuery) => {
-        const response = await getAllUser({ search: query, page, limit: rowsPerPage });
-        setUserData(response?.users || []);
-        setTotalData(response?.totalUsers || 0);
+    const fetchAllShopService = async (query = searchQuery) => {
+        const response = await getAllShopService({ search: query, page, limit: rowsPerPage });
+        setShopServiceData(response?.services || []);
+        setTotalData(response?.totalServices || 0);
     };
 
     const handleEdit = (row) => {
         setEditData(row);
-        handleOpenUserEdit(row);
+        handleOpenShopServiceEdit(row);
     };
 
     const handleDelete = async (row) => {
@@ -134,10 +130,10 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
             cancelButtonText: 'No',
         }).then(async (result) => {
             if (result.isConfirmed) {
-                let response = await deleteUser(row?._id);
+                let response = await deleteShopService(row?._id);
                 if (response?.type === "success") {
-                    fetchAllUser()
-                    Alert('Success', 'Your selected user was deleted successfully.', 'success');
+                    fetchAllShopService()
+                    Alert('Success', 'Your selected shopService was deleted successfully.', 'success');
                 }
             }
         })
@@ -145,7 +141,7 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
     };
 
     useEffect(() => {
-        fetchAllUser();
+        fetchAllShopService();
     }, [page, rowsPerPage]); // Fetch when page or rowsPerPage changes
 
     return (
@@ -155,10 +151,10 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
                     {/* Table Head */}
                     <TableHead>
                         <TableRow>
-                            <TableCell align="end" colSpan={12}>
+                            <TableCell align="end" colSpan={4}>
                                 <Stack direction="row" alignItems="center" spacing={1}>
                                     <Typography className='DashboardTabelCellText'>
-                                        User List
+                                        Shop-Service List
                                     </Typography>
                                     <Search className='UpperNavbarSearch'>
                                         <SearchIconWrapper>
@@ -193,75 +189,8 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
                         </TableRow>
                     </TableHead>
                     {/* Table Body */}
-                    {/* <TableBody>
-                        {userData.map((row) => {
-                            const date = extractDate(row.createdAt);
-                            const isDeleted = row.isDeleted;
-
-                            return (
-                                <TableRow
-                                    hover
-                                    role="checkbox"
-                                    tabIndex={-1}
-                                    key={row._id}
-                                    style={{
-                                        backgroundColor: isDeleted ? '#f8d7da' : 'inherit', // Light red for deleted users
-                                    }}
-                                >
-                                    <TableCell className="DashboardTabelCell">{row.name}</TableCell>
-                                    <TableCell className="DashboardTabelCell">{row.mobileNo}</TableCell>
-                                    <TableCell className="DashboardTabelCell">{row.gender}</TableCell>
-                                    <TableCell className="DashboardTabelCell">{date}</TableCell>
-                                    <TableCell
-                                        className={`DashboardTabelCell ${row.isActive ? 'status-active' : 'status-inactive'}`}
-                                    >
-                                        {row.isActive ? (
-                                            <CheckCircleIcon className="status-icon-active" />
-                                        ) : (
-                                            <CancelIcon className="status-icon-inactive" />
-                                        )}
-                                    </TableCell>
-                                    <TableCell
-                                        className={`DashboardTabelCell ${row.isBlocked ? 'status-blocked' : 'status-unblocked'}`}
-                                    >
-                                        {row.isBlocked ? (
-                                            <BlockIcon className="status-icon-blocked" />
-                                        ) : (
-                                            <CheckCircleIcon className="status-icon-unblocked" />
-                                        )}
-                                    </TableCell>
-                                    <TableCell
-                                        className={`DashboardTabelCell ${row.isVerified ? 'status-verified' : 'status-unverified'}`}
-                                    >
-                                        {row.isVerified ? (
-                                            <VerifiedUserIcon className="status-icon-verified" />
-                                        ) : (
-                                            <HighlightOffIcon className="status-icon-unverified" />
-                                        )}
-                                    </TableCell>
-                                    <TableCell align="left" className="DashboardTabelCellRow">
-                                        <Stack direction="row" alignItems="center" spacing={2}>
-                                            <Box className="TabelEditIcon" onClick={() => handleEdit(row)}>
-                                                <img src={EditIcon} alt="EditIcon" />
-                                            </Box>
-                                            <Box
-                                                className="TabelDelIcon"
-                                                onClick={() => !isDeleted && handleDelete(row)} // Only call handleDelete if not deleted
-                                                style={{
-                                                    opacity: isDeleted ? 0.5 : 1,
-                                                    pointerEvents: isDeleted ? 'none' : 'auto',
-                                                }}
-                                            >
-                                                <img src={DeleteIcon} alt="DeleteIcon" />
-                                            </Box>
-                                        </Stack>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody> */}
                     <TableBody>
-                        {userData.map((row) => {
+                        {shopServiceData.map((row) => {
                             const date = extractDate(row.createdAt);
                             const isDeleted = row.isDeleted;
 
@@ -272,43 +201,16 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
                                     tabIndex={-1}
                                     key={row._id}
                                     style={{
-                                        backgroundColor: isDeleted ? '#f8d7da' : 'inherit', // Light red for deleted users
+                                        backgroundColor: isDeleted ? '#f8d7da' : 'inherit', // Light red for deleted shopServices
                                     }}
                                 >
-                                    {/* Profile Image Column */}
-                                    <TableCell className="DashboardTabelCell" align="center">
-                                        {row.profileImage ? (
-                                            <img src={row.profileImage} alt="Profile" onError={(e) => e.target.src = SowiImage} className="profile-image" />
-                                        ) : (
-                                            <img src={NoImage} alt="Profile" className="profile-image" />
-                                        )}
-                                    </TableCell>
                                     <TableCell className="DashboardTabelCell">{row.name}</TableCell>
-                                    <TableCell className="DashboardTabelCell">{row.mobileNo}</TableCell>
-                                    <TableCell className="DashboardTabelCell">{row.gender}</TableCell>
-                                    <TableCell className="DashboardTabelCell">{date}</TableCell>
+                                    <TableCell className="DashboardTabelCell">{row.serviceTypeName}</TableCell>
+                                    <TableCell className="DashboardTabelCell">{row.createdByModel}</TableCell>
                                     <TableCell
-                                        className={`DashboardTabelCell ${row.isActive ? 'status-active' : 'status-inactive'}`}
+                                        className={`DashboardTabelCell ${row.isShow ? 'status-verified' : 'status-unverified'}`}
                                     >
-                                        {row.isActive ? (
-                                            <CheckCircleIcon className="status-icon-active" />
-                                        ) : (
-                                            <CancelIcon className="status-icon-inactive" />
-                                        )}
-                                    </TableCell>
-                                    <TableCell
-                                        className={`DashboardTabelCell ${row.isBlocked ? 'status-blocked' : 'status-unblocked'}`}
-                                    >
-                                        {row.isBlocked ? (
-                                            <BlockIcon className="status-icon-blocked" />
-                                        ) : (
-                                            <CheckCircleIcon className="status-icon-unblocked" />
-                                        )}
-                                    </TableCell>
-                                    <TableCell
-                                        className={`DashboardTabelCell ${row.isVerified ? 'status-verified' : 'status-unverified'}`}
-                                    >
-                                        {row.isVerified ? (
+                                        {row.isShow ? (
                                             <VerifiedUserIcon className="status-icon-verified" />
                                         ) : (
                                             <HighlightOffIcon className="status-icon-unverified" />
@@ -319,7 +221,7 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
                                             <Box className="TabelEditIcon" onClick={() => handleEdit(row)}>
                                                 <img src={EditIcon} alt="EditIcon" />
                                             </Box>
-                                            <Box
+                                            {/* <Box
                                                 className="TabelDelIcon"
                                                 onClick={() => !isDeleted && handleDelete(row)} // Only call handleDelete if not deleted
                                                 style={{
@@ -328,7 +230,7 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
                                                 }}
                                             >
                                                 <img src={DeleteIcon} alt="DeleteIcon" />
-                                            </Box>
+                                            </Box> */}
                                         </Stack>
                                     </TableCell>
                                 </TableRow>
@@ -351,4 +253,4 @@ const UserManagementTabel = ({ handleOpenUserEdit }) => {
     );
 };
 
-export default UserManagementTabel;
+export default ShopServiceManagementTabel;

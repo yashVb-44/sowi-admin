@@ -1,0 +1,659 @@
+/* For status Active */
+.status-active {
+  color: #28a745;
+  /* Green for Active */
+}
+
+.status-inactive {
+  color: #dc3545;
+  /* Red for Inactive */
+}
+
+.status-icon-active {
+  color: #28a745;
+}
+
+.status-icon-inactive {
+  color: #dc3545;
+}
+
+/* For status Blocked */
+.status-blocked {
+  color: #dc3545;
+  /* Red for Blocked */
+}
+
+.status-unblocked {
+  color: #28a745;
+  /* Green for Unblocked */
+}
+
+.status-icon-blocked {
+  color: #dc3545;
+}
+
+.status-icon-unblocked {
+  color: #28a745;
+}
+
+/* For status Verified */
+.status-verified {
+  color: #28a745;
+  /* Green for Verified */
+}
+
+.status-unverified {
+  color: #6c757d;
+  /* Gray for Unverified */
+}
+
+.status-icon-verified {
+  color: #28a745;
+}
+
+.status-icon-unverified {
+  color: #6c757d;
+}
+
+/* For deleted rows */
+.deleted-row {
+  background-color: #f8d7da;
+  /* Light red background for deleted rows */
+  opacity: 0.6;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.CreateCommonModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw !important;
+  height: 80vh !important;
+  overflow-y: scroll !important;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.CreateCommonDetail {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+
+.CreateCommonCloseIcon {
+  font-size: 19px !important;
+  cursor: pointer;
+}
+
+.CreateCommonHeading {
+  font-size: 22px !important;
+  font-family: "DM Sans" !important;
+  font-weight: 700 !important;
+  color: #252525;
+}
+
+.CreateCommonHeadingTwo {
+  font-family: "DM Sans" !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 23.44px;
+}
+
+.BorderLine {
+  border-bottom: 2px dotted #a3aebe;
+  margin: 10px 0px !important;
+}
+
+/* form fields  */
+
+.CreateCommonFields {
+  /* width: 100% !important; */
+  /* display: flex !important; */
+  /* justify-content: center !important; */
+  /* flex-direction: row !important; */
+  /* flex-wrap: wrap !important; */
+  margin: 10px 0px !important;
+  /* text-align: center !important; */
+  font-family: "Poppins" !important;
+}
+
+.CreateCommonInputLabel {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: start !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  margin: 2px 0px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+
+.CreateCommonInputFiled {
+  background-color: #f5faff;
+  width: 100% !important;
+  border-radius: 5px;
+  border-bottom: none !important;
+  padding: 6px 15px !important;
+  font-family: "Poppins" !important;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 2px 3px;
+  margin-top: 1%;
+  color: #A3AEBE !important;
+  line-height: 28px !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  font-family: 'Poppins' !important;
+  padding: 3px;
+  font-size: 14px !important;
+  height: 200px;
+}
+
+/* /// radio button  */
+.CreateCommonRadio {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.CreateCommonRadioLabel {
+  font-size: 14px !important;
+  font-family: "DM Sans" !important;
+}
+
+/* // file upload  */
+
+.FileUpload {
+  border: 2px dotted #239f40 !important;
+  height: 50%;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  padding: 4% 0px;
+}
+
+.FileUploadField {
+  justify-content: center;
+  margin: 0px auto;
+}
+
+.FileUploadField img {
+  height: 70%;
+  width: 50px;
+  margin: 10px auto;
+}
+
+.FileUploadHeading {
+  font-size: 20px !important;
+  font-family: "Poppins" !important;
+  color: #252525 !important;
+}
+
+.FileUploadPara {
+  font-size: 16px !important;
+  color: #a3aebe !important;
+  font-family: "Poppins" !important;
+}
+
+.FileUploadDottedLine {
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 3% 0px !important;
+  gap: 10px;
+  justify-content: center !important;
+}
+
+.FileUploadDotted {
+  border-top: 1.3px dotted #a3aebe;
+  width: 24% !important;
+  margin: auto 0px !important;
+}
+
+.FileUploadButton {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #239f40 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+/* // submit button  */
+.FormSubmitFieldCreateCommon {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+}
+
+.CreateCommonButtonFormSubmit {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 5% !important;
+  margin-top: 3% !important;
+}
+
+.FormCancelButtonCreateCommon {
+  border-radius: 20px !important;
+  border: 2px solid #252525 !important;
+  color: #252525 !important;
+  padding: 6px 40px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+.FormSubmitButtonCreateCommon {
+  border-radius: 20px !important;
+  border: 2px solid #239f40 !important;
+  color: #fff !important;
+  padding: 6px 50px !important;
+  background-color: #239f40 !important;
+  box-shadow: none !important;
+  width: max-content !important;
+  margin: 0px auto !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-family: "DM Sans" !important;
+}
+
+
+.PreviewUpload {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  border: 2px dotted #239f40;
+  border-radius: 10px;
+  position: relative;
+}
+
+.PreviewUploadImageContainer {
+  position: relative;
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+
+.PreviewUploadImage {
+  width: auto !important;
+  height: 300px !important;
+  border-radius: 10px;
+}
+
+.EditIconCreateCommon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.FormSubmitFieldCreateCommon {
+  margin-top: 20px;
+}
+
+@media (max-width: 780px) {
+  .css-honmcm-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+  }
+
+  .CreateCommonHeadingTwo {
+    font-size: 16px !important;
+    line-height: 20px;
+    height: 12%;
+  }
+
+  .CreateCommonInputFiled {
+    width: 90%;
+  }
+
+  .CreateCommonRadio {
+    margin-bottom: 15%;
+  }
+
+  .FileUpload {
+    padding: 8% 0px;
+  }
+
+  .PreviewUploadImage {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .FileUpload {
+    border: 2px dotted #239f40 !important;
+    height: 70% !important;
+    border-radius: 10px;
+    width: 100% !important;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 4% 0px;
+  }
+
+  .FileUploadHeading {
+    font-size: 16px !important;
+  }
+
+  .CreateCommonHeadingTwo {
+    margin-top: 20px !important;
+  }
+}
+
+
+.Common {
+  background-color: #f5faff;
+  padding: 2%;
+  min-height: 80vh;
+}
+
+.CommonText {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap;
+}
+
+.CommonHeading {
+  font-weight: 600 !important;
+  font-size: 28px !important;
+  font-family: "DM Sans" !important;
+  margin: auto 0px !important;
+}
+
+.AddProjectButton {
+  background-color: #239f40 !important;
+  color: #fff !important;
+  font-family: "DM Sans" !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  font-size: 16px !important;
+  padding: 6px 24px !important;
+  margin: auto 0px !important;
+}
+
+/* project managemnt  */
+.ProjectMangText {
+  display: flex !important;
+  flex-direction: row !important;
+  background-color: #fff;
+  gap: 20px !important;
+  padding: 6% 4% !important;
+  border-radius: 6px;
+  margin: 7% 0px;
+}
+
+.ProjectMangTextImage {
+  max-height: min-content !important;
+  max-width: min-content !important;
+  padding: 12px !important;
+  border-radius: 100% !important;
+  margin: auto 0px;
+}
+
+.ProjectMangTextImage img {
+  height: 25px;
+  width: auto;
+}
+
+.ProjectMangTextDetail {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: auto 0px !important;
+}
+
+.ProjectMangTextTitle {
+  font-size: 14px !important;
+  font-family: "DM Sans" !important;
+  font-weight: 500 !important;
+}
+
+.ProjectMangTextNumber {
+  font-family: "DM Sans" !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 40px !important;
+}
+
+/* Common Tabel  */
+.CommonTabel {
+  margin-top: 2%;
+}
+
+.css-u06erh-MuiPaper-root {
+  box-shadow: none !important;
+}
+
+.CommonTabelCellHeader {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.CommonTabelCellText {
+  font-family: "DM Sans" !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 28px !important;
+  color: #020223 !important;
+  margin: auto 0px !important;
+}
+
+.CommonTabelHeader {
+  background-color: #f5faff !important;
+  font-family: "DM Sans" !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 23px !important;
+  color: #020223 !important;
+}
+
+.CommonFilterDropDown {
+  width: max-content !important;
+  border: none !important;
+  border-radius: 30px !important;
+  border: 2px solid #e6eaf8 !important;
+  font-size: 14px !important;
+  font-family: "DM Sans" !important;
+  font-weight: 500 !important;
+  color: #020223 !important;
+  margin: auto 0px !important;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 30px 10px 16px;
+}
+
+.CommonTabelCellRight {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: end !important;
+  gap: 10px;
+}
+
+.CommonTabelCellRightText {
+  font-size: 16px;
+  margin: auto 0px !important;
+  font-family: "DM Sans" !important;
+}
+
+.CommonTabelCellRow {
+  font-size: 14px !important;
+  line-height: 24px !important;
+  font-family: "Poppins" !important;
+  color: #414141 !important;
+  font-weight: 400 !important;
+}
+
+.TabelViewIcon img {
+  height: 20px;
+  width: auto;
+}
+
+.TabelEditIcon img {
+  height: 16px;
+  width: auto;
+}
+
+.TabelDelIcon img {
+  height: 25px;
+  width: auto;
+}
+
+@media (max-width: 1200px) {
+  .CommonHeading {
+    font-weight: 600 !important;
+    font-size: 24px !important;
+  }
+
+  .AddProjectButton {
+    font-size: 14px !important;
+    padding: 5px 22px !important;
+  }
+
+  /* project managemnt  */
+  .ProjectMangText {
+    gap: 12px !important;
+    padding: 4% 3% !important;
+    margin: 6% 0px;
+  }
+
+  .ProjectMangTextImage {
+    padding: 8px !important;
+  }
+
+  .ProjectMangTextImage img {
+    height: 20px;
+  }
+
+  .ProjectMangTextTitle {
+    font-size: 12px !important;
+  }
+
+  .ProjectMangTextNumber {
+    font-size: 18px !important;
+    line-height: 35px !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .ProjectMangMarginTop {
+    margin-top: 1% !important;
+  }
+
+  .css-zow5z4-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+  }
+
+  .ProjectMangText {
+    margin: 3% 0px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .CommonHeading {
+    font-size: 22px !important;
+  }
+}
+
+
+/* For status Active */
+.status-active {
+  color: #28a745;
+  /* Green for Active */
+}
+
+.status-inactive {
+  color: #dc3545;
+  /* Red for Inactive */
+}
+
+.status-icon-active {
+  color: #28a745;
+}
+
+.status-icon-inactive {
+  color: #dc3545;
+}
+
+/* For status Blocked */
+.status-blocked {
+  color: #dc3545;
+  /* Red for Blocked */
+}
+
+.status-unblocked {
+  color: #28a745;
+  /* Green for Unblocked */
+}
+
+.status-icon-blocked {
+  color: #dc3545;
+}
+
+.status-icon-unblocked {
+  color: #28a745;
+}
+
+/* For status Verified */
+.status-verified {
+  color: #28a745;
+  /* Green for Verified */
+}
+
+.status-unverified {
+  color: #6c757d;
+  /* Gray for Unverified */
+}
+
+.status-icon-verified {
+  color: #28a745;
+}
+
+.status-icon-unverified {
+  color: #6c757d;
+}
+
+/* For deleted rows */
+.deleted-row {
+  background-color: #f8d7da;
+  /* Light red background for deleted rows */
+  opacity: 0.6;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

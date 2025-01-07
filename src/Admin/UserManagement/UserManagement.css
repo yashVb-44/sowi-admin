@@ -187,3 +187,66 @@
 }
 
 
+/* For status Active */
+.status-active {
+  color: #28a745; /* Green for Active */
+}
+
+.status-inactive {
+  color: #dc3545; /* Red for Inactive */
+}
+
+.status-icon-active {
+  color: #28a745;
+}
+
+.status-icon-inactive {
+  color: #dc3545;
+}
+
+/* For status Blocked */
+.status-blocked {
+  color: #dc3545; /* Red for Blocked */
+}
+
+.status-unblocked {
+  color: #28a745; /* Green for Unblocked */
+}
+
+.status-icon-blocked {
+  color: #dc3545;
+}
+
+.status-icon-unblocked {
+  color: #28a745;
+}
+
+/* For status Verified */
+.status-verified {
+  color: #28a745; /* Green for Verified */
+}
+
+.status-unverified {
+  color: #6c757d; /* Gray for Unverified */
+}
+
+.status-icon-verified {
+  color: #28a745;
+}
+
+.status-icon-unverified {
+  color: #6c757d;
+}
+
+/* For deleted rows */
+.deleted-row {
+  background-color: #f8d7da; /* Light red background for deleted rows */
+  opacity: 0.6;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
