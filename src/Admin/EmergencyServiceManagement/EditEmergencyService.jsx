@@ -3,17 +3,17 @@ import { Stack, Grid, TextField, Select, MenuItem, Button } from '@mui/material'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-// import './CreateShopService.css';
+// import './CreateEmergencyService.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
 import { Alert } from '../../Common/Alert';
-import { getAllShopService, updateShopService } from '../../Lib/ShopServicesApi';
-import { useShopServiceSection } from '../../Context/ShopServiceDetails';
+import { getAllEmergencyService, updateEmergencyService } from '../../Lib/EmergencyServicesApi';
+import { useEmergencyServiceSection } from '../../Context/EmergencyServiceDetails';
 
 
-const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) => {
+const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencyServiceEdit }) => {
     const { editData } = useAddProject();
-    const { setShopServiceData, page, rowsPerPage, searchQuery } = useShopServiceSection()
+    const { setEmergencyServiceData, page, rowsPerPage, searchQuery } = useEmergencyServiceSection()
 
     const [loader, setLoader] = useState(false);
 
@@ -48,41 +48,41 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
         setter(e.target.value);
     };
 
-    const handleCancelShopService = () => {
-        handleCloseShopServiceEdit();
+    const handleCancelEmergencyService = () => {
+        handleCloseEmergencyServiceEdit();
     };
 
-    const fetchShopService = async () => {
-        let response = await getAllShopService({ page, search: searchQuery, limit: rowsPerPage });
-        setShopServiceData(response?.services || []);
+    const fetchEmergencyService = async () => {
+        let response = await getAllEmergencyService({ page, search: searchQuery, limit: rowsPerPage });
+        setEmergencyServiceData(response?.services || []);
     };
 
-    const handleUpdateShopService = async () => {
+    const handleUpdateEmergencyService = async () => {
         setLoader(true);
         try {
-            let response = await updateShopService({
+            let response = await updateEmergencyService({
                 name,
                 isShow,
                 serviceType,
                 // isDeleted,
-                shopServiceId: editData?._id
+                emergencyServiceId: editData?._id
             });
 
             if (response.type === "success") {
                 setLoader(false);
-                fetchShopService();
+                fetchEmergencyService();
                 setTimeout(() => {
-                    handleCloseShopServiceEdit();
-                    Alert('Success', 'ShopService Updated successfully', 'success');
+                    handleCloseEmergencyServiceEdit();
+                    Alert('Success', 'EmergencyService Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseShopServiceEdit();
+                handleCloseEmergencyServiceEdit();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseShopServiceEdit();
+            handleCloseEmergencyServiceEdit();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
@@ -90,24 +90,24 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
     return (
         <div>
             <Modal
-                open={openShopServiceEdit}
-                onClose={handleCloseShopServiceEdit}
+                open={openEmergencyServiceEdit}
+                onClose={handleCloseEmergencyServiceEdit}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
                 <Box className="CreateCommonModal">
                     <Stack className="CreateCommonDetail">
                         <Typography id="modal-modal-name" variant="h6" component="h2" className="CreateCommonHeading">
-                            Edit ShopService
+                            Edit EmergencyService
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseShopServiceEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleCloseEmergencyServiceEdit()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
 
                     <Typography id="modal-modal-name" variant="h6" component="h2" sx={{ marginTop: '3%' }} className="CreateCommonHeadingTwo">
-                        ShopService Details
+                        EmergencyService Details
                     </Typography>
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
@@ -205,10 +205,10 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
                                 borderRadius: '4px',
                                 padding: '6px 20px',
                             }}
-                            onClick={handleUpdateShopService}
+                            onClick={handleUpdateEmergencyService}
                             disabled={loader}
                         >
-                            {loader ? 'Updating...' : 'Update ShopService'}
+                            {loader ? 'Updating...' : 'Update EmergencyService'}
                         </Button>
                     </Box>
                 </Box>
@@ -217,4 +217,4 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
     );
 };
 
-export default EditShopService;
+export default EditEmergencyService;

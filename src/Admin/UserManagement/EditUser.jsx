@@ -15,11 +15,11 @@ import EditIcon from '../../Assets/AdminImages/EditIcon.png';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
 import { Alert } from '../../Common/Alert';
 import { getAllUser, updateUser } from '../../Lib/UsersApi';
-import { useAdminSection } from '../../Context/AdminSectionContext';
+import { useUserSection } from '../../Context/UserDetailsContext';
 
 const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     const { editData } = useAddProject();
-    const { userData, setUserData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useAdminSection()
+    const { setUserData, page, rowsPerPage, searchQuery } = useUserSection()
 
     const [file, setFile] = useState(null);
     const [filePreview, setFilePreview] = useState(null);

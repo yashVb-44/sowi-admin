@@ -13,14 +13,9 @@ export const AdminSectionProvider = ({ children }) => {
     const [blogData, setBlogData] = useState()
     const [category, setCategory] = useState()
     const [projectData, setProjectData] = useState([])
-    const [userData, setUserData] = useState([])
-    const [shopServiceData, setShopServiceData] = useState([])
-    const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
-    const [searchQuery, setSearchQuery] = useState('');
 
     return (
-        <AdminSectionContext.Provider value={{ blogData, setBlogData, category, setCategory, projectData, setProjectData, setUserData, userData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery, shopServiceData, setShopServiceData }}>
+        <AdminSectionContext.Provider value={{ blogData, setBlogData, category, setCategory, projectData, setProjectData }}>
             {children}
         </AdminSectionContext.Provider>
     );

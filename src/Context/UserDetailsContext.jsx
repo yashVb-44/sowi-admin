@@ -1,39 +1,23 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { getAllUser } from '../Lib/UsersApi';
+import React, { createContext, useContext, useState } from 'react';
 
 // Create a context
-const UserDetailContext = createContext();
+const UserSectionContext = createContext();
 
 // Create a custom hook to access the context
-export const useUserDetail = () => {
-    return useContext(UserDetailContext);
+export const useUserSection = () => {
+    return useContext(UserSectionContext);
 };
 
 // Create a provider component
 export const UserDetailProvider = ({ children }) => {
-    // Define your state and functions here
-
-    const [userListData, setUserListData] = useState()
-    const [latestUserData, setLatestUserData] = useState()
-    const [userData, setUserData] = useState(null)
-
-    const fetchUser = async () => {
-        let response = await getAllUser();
-        // const enUsers = response.users.map(cat => cat.en);
-        // const faUsers = response.users.map(cat => cat.fa);
-        // {
-        //     selectedLanguage === 'EN' ?
-        //         setUserData(enUsers)
-        //         :
-        //         setUserData(faUsers)
-        // }
-        setUserData(response?.users || [])
-    };
-
+    const [userData, setUserData] = useState([])
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [searchQuery, setSearchQuery] = useState('');
 
     return (
-        <UserDetailContext.Provider value={{ userListData, setUserListData, latestUserData, setLatestUserData, userData, setUserData, fetchUser }}>
+        <UserSectionContext.Provider value={{ setUserData, userData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery }}>
             {children}
-        </UserDetailContext.Provider>
+        </UserSectionContext.Provider>
     );
 };

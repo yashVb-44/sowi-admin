@@ -18,6 +18,9 @@ import { AddBlogProvider } from "./AdminContext/AddBlogContext";
 import { AddTeamProvider } from "./AdminContext/AddTeamContext";
 import { AddContactProvider } from "./AdminContext/AddContactContext";
 import { UserDetailProvider } from "./Context/UserDetailsContext";
+import { ShopServiceDetailProvider } from "./Context/ShopServiceDetails";
+import { EmergencyServiceDetailProvider } from "./Context/EmergencyServiceDetails";
+import { CategoryDetailProvider } from "./Context/CategoryDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,30 +29,36 @@ root.render(
       <PaymentProvider>
         <BlogDetailProvider>
           <UserDetailProvider>
-            <AddProjectProvider>
-              <FundraiseProvider>
-                <AuthProvider>
-                  <LanguageProvider>
-                    <WordOfSupportProvider>
-                      <AdminSectionProvider>
-                        <ContentProvider>
-                          <AddCategoryProvider>
-                            <AddBlogProvider>
-                              <AddTeamProvider>
-                                <AddContactProvider>
-                                  <App />
-                                </AddContactProvider>
-                              </AddTeamProvider>
-                            </AddBlogProvider>
-                          </AddCategoryProvider>
-                        </ContentProvider>
-                      </AdminSectionProvider>
-                    </WordOfSupportProvider>
-                  </LanguageProvider>
-                </AuthProvider>
-              </FundraiseProvider>
-            </AddProjectProvider>
-          </UserDetailProvider>
+            <ShopServiceDetailProvider>
+              <EmergencyServiceDetailProvider>
+                <CategoryDetailProvider>
+                  <AddProjectProvider>
+                    <FundraiseProvider>
+                      <AuthProvider>
+                        <LanguageProvider>
+                          <WordOfSupportProvider>
+                            <AdminSectionProvider>
+                              <ContentProvider>
+                                <AddCategoryProvider>
+                                  <AddBlogProvider>
+                                    <AddTeamProvider>
+                                      <AddContactProvider>
+                                        <App />
+                                      </AddContactProvider>
+                                    </AddTeamProvider>
+                                  </AddBlogProvider>
+                                </AddCategoryProvider>
+                              </ContentProvider>
+                            </AdminSectionProvider>
+                          </WordOfSupportProvider>
+                        </LanguageProvider>
+                      </AuthProvider>
+                    </FundraiseProvider>
+                  </AddProjectProvider>
+                </CategoryDetailProvider>
+              </EmergencyServiceDetailProvider>
+            </ShopServiceDetailProvider>
+          </UserDetailProvider >
         </BlogDetailProvider>
       </PaymentProvider>
     </ProjectListProvider>

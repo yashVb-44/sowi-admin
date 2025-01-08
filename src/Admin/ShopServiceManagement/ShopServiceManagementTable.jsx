@@ -22,12 +22,12 @@ import { makeStyles } from '@mui/styles';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
 import { Alert } from '../../Common/Alert';
 import Swal from 'sweetalert2';
-import { useAdminSection } from '../../Context/AdminSectionContext';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import BlockIcon from '@mui/icons-material/Block';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { useShopServiceSection } from '../../Context/ShopServiceDetails';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 180 },
@@ -83,7 +83,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const ShopServiceManagementTabel = ({ handleOpenShopServiceEdit }) => {
 
     const classes = useStyles();
-    const { shopServiceData, setShopServiceData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useAdminSection()
+    const { shopServiceData, setShopServiceData, page, setPage, rowsPerPage, setRowsPerPage, searchQuery, setSearchQuery } = useShopServiceSection()
     const [totalData, setTotalData] = useState(0);
     const { setEditData } = useAddProject();
 

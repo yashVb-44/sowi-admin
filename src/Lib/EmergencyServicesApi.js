@@ -5,7 +5,7 @@ let headers = {
     Authorization: adminToken
 }
 
-export const addShopService = async ({
+export const addEmergencyService = async ({
     name,
     serviceType,
 }) => {
@@ -15,19 +15,19 @@ export const addShopService = async ({
             serviceType
         }
 
-        const response = await postApiCaller(`shopService/create`, formData, { headers });
+        const response = await postApiCaller(`emergencyService/create`, formData, { headers });
         return response;
     } catch (error) {
         return error
     }
 };
 
-export const updateShopService = async ({
+export const updateEmergencyService = async ({
     name,
     isShow,
     serviceType,
     // isDeleted,
-    shopServiceId
+    emergencyServiceId
 }) => {
     try {
         const formData = {
@@ -37,7 +37,7 @@ export const updateShopService = async ({
             // isDeleted,
         }
 
-        const response = await putApiCaller(`shopService/update/${shopServiceId}`, formData, { headers });
+        const response = await putApiCaller(`emergencyService/update/${emergencyServiceId}`, formData, { headers });
         return response;
     } catch (error) {
         return
@@ -45,7 +45,7 @@ export const updateShopService = async ({
 };
 
 
-export const getAllShopService = async ({ search = '', page = 1, limit = 10 }) => {
+export const getAllEmergencyService = async ({ search = '', page = 1, limit = 10 }) => {
     page = page + 1
     try {
         const params = new URLSearchParams({
@@ -54,21 +54,21 @@ export const getAllShopService = async ({ search = '', page = 1, limit = 10 }) =
             limit: limit.toString(),
         });
 
-        const response = await getApiCaller(`shopService/list/forAdmin?${params}`, { headers });
+        const response = await getApiCaller(`emergencyService/list/forAdmin?${params}`, { headers });
         return response;
     } catch (error) {
-        console.error('Error fetching shopService data:', error);
-        return { shopServices: [], totalPages: 0, currentPage: 0, totalShopServices: 0 };
+        console.error('Error fetching emergencyService data:', error);
+        return { emergencyServices: [], totalPages: 0, currentPage: 0, totalEmergencyServices: 0 };
     }
 };
 
-export const deleteShopService = async (id) => {
+export const deleteEmergencyService = async (id) => {
 
     try {
-        const response = await deleteApiCaller(`shopService/byAdmin/${id}`, { headers });
+        const response = await deleteApiCaller(`emergencyService/byAdmin/${id}`, { headers });
         return response;
     } catch (error) {
-        console.error('Error delet shopService :', error);
+        console.error('Error delet emergencyService :', error);
         return error;
     }
 };
