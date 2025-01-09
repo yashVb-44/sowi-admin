@@ -75,14 +75,6 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     const [dateOfBirth, setDateOfBirth] = useState('');
     const [errors, setErrors] = useState({
         name: '',
-        email: '',
-        mobileNo: '',
-        country: '',
-        language: '',
-        gender: '',
-        role: '',
-        dateOfBirth: '',
-        file: '',
     });
 
     useEffect(() => {
@@ -104,6 +96,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
 
     const handleChange = (e, setter) => {
         setter(e.target.value);
+        setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: '' })); // Clear error for the field
     };
 
     const handleCancelUser = () => {
@@ -115,7 +108,15 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
         setUserData(response?.users || []);
     };
 
+    const validateFields = () => {
+        const newErrors = {};
+        if (!name.trim()) newErrors.name = 'Name is required';
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0; // Return true if no errors
+    };
+
     const handleUpdateUser = async () => {
+        if (!validateFields()) return; // Exit if validation fails
         setLoader(true);
         try {
             let response = await updateUser({
@@ -183,6 +184,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                             </Typography>
                             <TextField
                                 id="standard-required"
+                                name='name'
                                 placeholder="Enter name"
                                 variant="standard"
                                 className="CreateCommonInputFiled"

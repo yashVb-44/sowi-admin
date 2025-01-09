@@ -24,16 +24,7 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
     const [isDeleted, setIsDeleted] = useState(false);
     const [serviceType, setServiceType] = useState('');
     const [errors, setErrors] = useState({
-
         name: '',
-        createBy: '',
-        mobileNo: '',
-        country: '',
-        language: '',
-        serviceType: '',
-        role: '',
-        dateOfBirth: '',
-        file: '',
     });
 
     useEffect(() => {
@@ -46,6 +37,7 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
 
     const handleChange = (e, setter) => {
         setter(e.target.value);
+        setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: '' })); // Clear error for the field
     };
 
     const handleCancelShopService = () => {
@@ -57,7 +49,15 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
         setShopServiceData(response?.services || []);
     };
 
+    const validateFields = () => {
+        const newErrors = {};
+        if (!name.trim()) newErrors.name = 'Name is required';
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0; // Return true if no errors
+    };
+
     const handleUpdateShopService = async () => {
+        if (!validateFields()) return; // Exit if validation fails
         setLoader(true);
         try {
             let response = await updateShopService({
@@ -116,6 +116,7 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
                             </Typography>
                             <TextField
                                 id="standard-required"
+                                name='name'
                                 placeholder="Enter name"
                                 variant="standard"
                                 className="CreateCommonInputFiled"

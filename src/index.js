@@ -21,6 +21,8 @@ import { UserDetailProvider } from "./Context/UserDetailsContext";
 import { ShopServiceDetailProvider } from "./Context/ShopServiceDetails";
 import { EmergencyServiceDetailProvider } from "./Context/EmergencyServiceDetails";
 import { CategoryDetailProvider } from "./Context/CategoryDetails";
+import { ExpenseCategoryDetailProvider } from "./Context/ExpenseCategoryDetails";
+import { CompanyDetailProvider } from "./Context/CompanyDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -32,29 +34,33 @@ root.render(
             <ShopServiceDetailProvider>
               <EmergencyServiceDetailProvider>
                 <CategoryDetailProvider>
-                  <AddProjectProvider>
-                    <FundraiseProvider>
-                      <AuthProvider>
-                        <LanguageProvider>
-                          <WordOfSupportProvider>
-                            <AdminSectionProvider>
-                              <ContentProvider>
-                                <AddCategoryProvider>
-                                  <AddBlogProvider>
-                                    <AddTeamProvider>
-                                      <AddContactProvider>
-                                        <App />
-                                      </AddContactProvider>
-                                    </AddTeamProvider>
-                                  </AddBlogProvider>
-                                </AddCategoryProvider>
-                              </ContentProvider>
-                            </AdminSectionProvider>
-                          </WordOfSupportProvider>
-                        </LanguageProvider>
-                      </AuthProvider>
-                    </FundraiseProvider>
-                  </AddProjectProvider>
+                  <ExpenseCategoryDetailProvider>
+                    <CompanyDetailProvider>
+                      <AddProjectProvider>
+                        <FundraiseProvider>
+                          <AuthProvider>
+                            <LanguageProvider>
+                              <WordOfSupportProvider>
+                                <AdminSectionProvider>
+                                  <ContentProvider>
+                                    <AddCategoryProvider>
+                                      <AddBlogProvider>
+                                        <AddTeamProvider>
+                                          <AddContactProvider>
+                                            <App />
+                                          </AddContactProvider>
+                                        </AddTeamProvider>
+                                      </AddBlogProvider>
+                                    </AddCategoryProvider>
+                                  </ContentProvider>
+                                </AdminSectionProvider>
+                              </WordOfSupportProvider>
+                            </LanguageProvider>
+                          </AuthProvider>
+                        </FundraiseProvider>
+                      </AddProjectProvider>
+                    </CompanyDetailProvider>
+                  </ExpenseCategoryDetailProvider>
                 </CategoryDetailProvider>
               </EmergencyServiceDetailProvider>
             </ShopServiceDetailProvider>

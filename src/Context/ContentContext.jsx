@@ -66,50 +66,50 @@ export const ContentProvider = ({ children }) => {
 
   const fetchHomeContent = async () => {
     let response = await getHomeContent()
-    const enData = response?.data[0]?.en;
-    const faData = response?.data[0]?.fa;
+    const enData = response?.data?.[0]?.en;
+    const faData = response?.data?.[0]?.fa;
     if (selectedLanguage === 'EN') {
       setHomeContent(enData);
     } else {
       setHomeContent(faData);
     }
-    setHomeContentAdmin(response?.data[0])
-    setEditHomeContent(response?.data[0])
+    setHomeContentAdmin(response?.data?.[0])
+    setEditHomeContent(response?.data?.[0])
   }
   const fetchSupportContent = async () => {
     let response = await getSupportContent()
     if (selectedLanguage === 'EN') {
-      setSupportContent(response?.data[0]?.en)
+      setSupportContent(response?.data?.[0]?.en)
     } else {
-      setSupportContent(response?.data[0]?.fa)
+      setSupportContent(response?.data?.[0]?.fa)
     }
-    setSupportContentEn(response?.data[0]?.en)
-    setSupportContentFa(response?.data[0]?.fa)
-    setEditSupportContent(response?.data[0])
+    setSupportContentEn(response?.data?.[0]?.en)
+    setSupportContentFa(response?.data?.[0]?.fa)
+    setEditSupportContent(response?.data?.[0])
   }
 
   const fetchMissionContent = async () => {
     let response = await getMissionContent()
     if (selectedLanguage === 'EN') {
-      setMissionContent(response?.data[0]?.en)
+      setMissionContent(response?.data?.[0]?.en)
     } else {
-      setMissionContent(response?.data[0]?.fa)
+      setMissionContent(response?.data?.[0]?.fa)
     }
-    setMissionContentEn(response?.data[0]?.en)
-    setMissionContentFa(response?.data[0]?.fa)
-    setEditMissionContent(response?.data[0])
+    setMissionContentEn(response?.data?.[0]?.en)
+    setMissionContentFa(response?.data?.[0]?.fa)
+    setEditMissionContent(response?.data?.[0])
   }
 
   const fetchAboutContent = async () => {
     let response = await getAboutContent()
     try {
       if (selectedLanguage === 'EN') {
-        setAboutContent(response?.data[0]?.en)
+        setAboutContent(response?.data?.[0]?.en)
       } else {
-        setAboutContent(response?.data[0]?.fa)
+        setAboutContent(response?.data?.[0]?.fa)
       }
-      setAboutContentAdmin(response?.data[0])
-      setEditAboutContent(response?.data[0])
+      setAboutContentAdmin(response?.data?.[0])
+      setEditAboutContent(response?.data?.[0])
     } catch (error) {
 
     }
@@ -118,13 +118,13 @@ export const ContentProvider = ({ children }) => {
     let response = await getAboutJourney()
     try {
       if (selectedLanguage === 'EN') {
-        setAboutJourney(response?.data[0]?.en)
+        setAboutJourney(response?.data?.[0]?.en)
       } else {
-        setAboutJourney(response?.data[0]?.fa)
+        setAboutJourney(response?.data?.[0]?.fa)
       }
-      setAboutJourneyEn(response?.data[0]?.en)
-      setAboutJourneyFa(response?.data[0]?.fa)
-      setEditJourneyContent(response?.data[0])
+      setAboutJourneyEn(response?.data?.[0]?.en)
+      setAboutJourneyFa(response?.data?.[0]?.fa)
+      setEditJourneyContent(response?.data?.[0])
     } catch (error) {
 
     }
@@ -160,12 +160,12 @@ export const ContentProvider = ({ children }) => {
     let response = await getTermsPrivacy()
     try {
       if (selectedLanguage === 'EN') {
-        setTermPrivacyData(response?.data[0].en)
+        setTermPrivacyData(response?.data?.[0].en)
       } else {
-        setTermPrivacyData(response?.data[0].fa)
+        setTermPrivacyData(response?.data?.[0].fa)
       }
-      setEditTermPrivacyData(response?.data[0])
-      setTermPrivacyDataAdmin(response?.data[0])
+      setEditTermPrivacyData(response?.data?.[0])
+      setTermPrivacyDataAdmin(response?.data?.[0])
     } catch (error) {
     }
   }

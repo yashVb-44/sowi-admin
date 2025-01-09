@@ -22,6 +22,7 @@ export const putApiCaller = async (endPoint, data, header) => {
     const response = await axios.put(url, data, header);
     return response.data;
   } catch (error) {
+    return error.response.data
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };
@@ -32,6 +33,7 @@ export const getApiCaller = async (endPoint, header) => {
     const response = await axios.get(url, header);
     return response.data;
   } catch (error) {
+    return error.response.data
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };
@@ -42,6 +44,7 @@ export const deleteApiCaller = async (endPoint, header) => {
     const response = await axios.delete(url, header);
     return response.data;
   } catch (error) {
+    return error.response.data
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };

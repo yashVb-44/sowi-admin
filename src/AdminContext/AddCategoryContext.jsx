@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-import { useProjectList } from '../Context/ProjectListContext';
 
 // Create a context
 const AddCategoryContext = createContext();

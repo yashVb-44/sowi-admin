@@ -12,6 +12,8 @@ import Privacy from '../Admin/SiteContent/Privacy/Privacy';
 import ShopServiceManagement from '../Admin/ShopServiceManagement/ShopServiceManagement';
 import EmergencyServiceManagement from '../Admin/EmergencyServiceManagement/EmergencyServiceManagement';
 import CategoryManagement from '../Admin/CategoryManagement/CategoryManagement';
+import ExpenseCategoryManagement from '../Admin/ExpenseCategoryManagement/ExpenseCategoryManagement';
+import CompanyManagement from '../Admin/CompanyManagement/CompanyManagement';
 
 const AdminRoutes = () => {
     return (
@@ -22,6 +24,8 @@ const AdminRoutes = () => {
                 <Route path='shop-service' element={<ShopServiceManagement />} />
                 <Route path='emergency-service' element={<EmergencyServiceManagement />} />
                 <Route path='category' element={<CategoryManagement />} />
+                <Route path='company' element={<CompanyManagement />} />
+                <Route path='expense-category' element={<ExpenseCategoryManagement />} />
                 <Route path='blog' element={<BlogManagement />} />
                 <Route path='site-content' element={<HomeContent />} />
                 <Route path='site-content/about' element={<AboutContent />} />

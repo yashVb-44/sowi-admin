@@ -3,36 +3,34 @@ import { Stack, Grid, TextField, Select, MenuItem, Button } from '@mui/material'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-// import './CreateEmergencyService.css';
+// import './CreateExpenseCategory.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
 import { Alert } from '../../Common/Alert';
-import { getAllEmergencyService, updateEmergencyService } from '../../Lib/EmergencyServicesApi';
-import { useEmergencyServiceSection } from '../../Context/EmergencyServiceDetails';
+import { getAllExpenseCategory, updateExpenseCategory } from '../../Lib/ExpenseCategorysApi';
+import { useExpenseCategorySection } from '../../Context/ExpenseCategoryDetails';
 
 
-const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencyServiceEdit }) => {
+const EditExpenseCategory = ({ openExpenseCategoryEdit, handleCloseExpenseCategoryEdit }) => {
     const { editData } = useAddProject();
-    const { setEmergencyServiceData, page, rowsPerPage, searchQuery } = useEmergencyServiceSection()
+    const { setExpenseCategoryData, page, rowsPerPage, searchQuery } = useExpenseCategorySection()
 
     const [loader, setLoader] = useState(false);
 
     // Fields from the response
     const [name, setName] = useState('');
     const [createBy, setCreateBy] = useState('');
-    const [isShow, setIsShow] = useState(true);
+    const [isActive, setIsActive] = useState(true);
     const [isDeleted, setIsDeleted] = useState(false);
-    const [serviceType, setServiceType] = useState('');
     const [errors, setErrors] = useState({
         name: '',
     });
 
     useEffect(() => {
         setName(editData?.name);
-        setCreateBy(editData?.createdByModel);
-        setIsShow(editData?.isShow);
+        setCreateBy(editData?.createdBy);
+        setIsActive(editData?.isActive);
         setIsDeleted(editData?.isDeleted);
-        setServiceType(editData?.serviceType);
     }, [editData]);
 
     const handleChange = (e, setter) => {
@@ -40,13 +38,13 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
         setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: '' })); // Clear error for the field
     };
 
-    const handleCancelEmergencyService = () => {
-        handleCloseEmergencyServiceEdit();
+    const handleCancelExpenseCategory = () => {
+        handleCloseExpenseCategoryEdit();
     };
 
-    const fetchEmergencyService = async () => {
-        let response = await getAllEmergencyService({ page, search: searchQuery, limit: rowsPerPage });
-        setEmergencyServiceData(response?.services || []);
+    const fetchExpenseCategory = async () => {
+        let response = await getAllExpenseCategory({ page, search: searchQuery, limit: rowsPerPage });
+        setExpenseCategoryData(response?.categories || []);
     };
 
     const validateFields = () => {
@@ -56,33 +54,32 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
         return Object.keys(newErrors).length === 0; // Return true if no errors
     };
 
-    const handleUpdateEmergencyService = async () => {
+    const handleUpdateExpenseCategory = async () => {
         if (!validateFields()) return; // Exit if validation fails
         setLoader(true);
         try {
-            let response = await updateEmergencyService({
+            let response = await updateExpenseCategory({
                 name,
-                isShow,
-                serviceType,
-                // isDeleted,
-                emergencyServiceId: editData?._id
+                isActive,
+                isDeleted,
+                expenseCategoryId: editData?._id
             });
 
             if (response.type === "success") {
                 setLoader(false);
-                fetchEmergencyService();
+                fetchExpenseCategory();
                 setTimeout(() => {
-                    handleCloseEmergencyServiceEdit();
-                    Alert('Success', 'EmergencyService Updated successfully', 'success');
+                    handleCloseExpenseCategoryEdit();
+                    Alert('Success', 'Expense Category Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseEmergencyServiceEdit();
+                handleCloseExpenseCategoryEdit();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseEmergencyServiceEdit();
+            handleCloseExpenseCategoryEdit();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
@@ -90,24 +87,24 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
     return (
         <div>
             <Modal
-                open={openEmergencyServiceEdit}
-                onClose={handleCloseEmergencyServiceEdit}
+                open={openExpenseCategoryEdit}
+                onClose={handleCloseExpenseCategoryEdit}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
                 <Box className="CreateCommonModal">
                     <Stack className="CreateCommonDetail">
                         <Typography id="modal-modal-name" variant="h6" component="h2" className="CreateCommonHeading">
-                            Edit EmergencyService
+                            Edit ExpenseCategory
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseEmergencyServiceEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleCloseExpenseCategoryEdit()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
 
                     <Typography id="modal-modal-name" variant="h6" component="h2" sx={{ marginTop: '3%' }} className="CreateCommonHeadingTwo">
-                        Emergency Service Details
+                        Expense Category Details
                     </Typography>
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
@@ -151,28 +148,11 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Service Type
+                                Is Active
                             </Typography>
                             <Select
-                                value={serviceType}
-                                onChange={(e) => handleChange(e, setServiceType)}
-                                className="CreateCommonInputFiled"
-                                error={!!errors.serviceType}
-                                displayEmpty
-                            >
-                                <MenuItem value="1">2 wheeler</MenuItem>
-                                <MenuItem value="2">3 wheeler</MenuItem>
-                                <MenuItem value="3">4 wheeler</MenuItem>
-                                <MenuItem value="4">Heavy Vehicle</MenuItem>
-                            </Select>
-                        </Grid>
-                        <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
-                            <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Is Show
-                            </Typography>
-                            <Select
-                                value={isShow ? 'Yes' : 'No'}
-                                onChange={(e) => setIsShow(e.target.value === 'Yes')}
+                                value={isActive ? 'Yes' : 'No'}
+                                onChange={(e) => setIsActive(e.target.value === 'Yes')}
                                 className="CreateCommonInputFiled"
                             >
                                 <MenuItem value="Yes">Yes</MenuItem>
@@ -182,7 +162,7 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                     </Grid>
 
 
-                    {/* <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
+                    <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
                                 Is Deleted
@@ -196,7 +176,7 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                                 <MenuItem value="No">No</MenuItem>
                             </Select>
                         </Grid>
-                    </Grid> */}
+                    </Grid>
                     <Box sx={{ marginTop: '25px', display: 'flex', justifyContent: 'flex-end' }}>
                         <Button
                             variant="contained"
@@ -206,10 +186,10 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                                 borderRadius: '4px',
                                 padding: '6px 20px',
                             }}
-                            onClick={handleUpdateEmergencyService}
+                            onClick={handleUpdateExpenseCategory}
                             disabled={loader}
                         >
-                            {loader ? 'Updating...' : 'Update EmergencyService'}
+                            {loader ? 'Updating...' : 'Update Expense Category'}
                         </Button>
                     </Box>
                 </Box>
@@ -218,4 +198,4 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
     );
 };
 
-export default EditEmergencyService;
+export default EditExpenseCategory;
