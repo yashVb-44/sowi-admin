@@ -23,6 +23,10 @@ import { EmergencyServiceDetailProvider } from "./Context/EmergencyServiceDetail
 import { CategoryDetailProvider } from "./Context/CategoryDetails";
 import { ExpenseCategoryDetailProvider } from "./Context/ExpenseCategoryDetails";
 import { CompanyDetailProvider } from "./Context/CompanyDetails";
+import { SupportDetailProvider } from "./Context/SupportDetails";
+import { VendorDetailProvider } from "./Context/VendorDetailsContext";
+import { BannerDetailProvider } from "./Context/BannerDetails";
+import { VideoLibraryDetailProvider } from "./Context/VideoLibraryDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,39 +35,47 @@ root.render(
       <PaymentProvider>
         <BlogDetailProvider>
           <UserDetailProvider>
-            <ShopServiceDetailProvider>
-              <EmergencyServiceDetailProvider>
-                <CategoryDetailProvider>
-                  <ExpenseCategoryDetailProvider>
-                    <CompanyDetailProvider>
-                      <AddProjectProvider>
-                        <FundraiseProvider>
-                          <AuthProvider>
-                            <LanguageProvider>
-                              <WordOfSupportProvider>
-                                <AdminSectionProvider>
-                                  <ContentProvider>
-                                    <AddCategoryProvider>
-                                      <AddBlogProvider>
-                                        <AddTeamProvider>
-                                          <AddContactProvider>
-                                            <App />
-                                          </AddContactProvider>
-                                        </AddTeamProvider>
-                                      </AddBlogProvider>
-                                    </AddCategoryProvider>
-                                  </ContentProvider>
-                                </AdminSectionProvider>
-                              </WordOfSupportProvider>
-                            </LanguageProvider>
-                          </AuthProvider>
-                        </FundraiseProvider>
-                      </AddProjectProvider>
-                    </CompanyDetailProvider>
-                  </ExpenseCategoryDetailProvider>
-                </CategoryDetailProvider>
-              </EmergencyServiceDetailProvider>
-            </ShopServiceDetailProvider>
+            <VendorDetailProvider>
+              <ShopServiceDetailProvider>
+                <EmergencyServiceDetailProvider>
+                  <CategoryDetailProvider>
+                    <ExpenseCategoryDetailProvider>
+                      <CompanyDetailProvider>
+                        <SupportDetailProvider>
+                          <BannerDetailProvider>
+                            <VideoLibraryDetailProvider>
+                              <AddProjectProvider>
+                                <FundraiseProvider>
+                                  <AuthProvider>
+                                    <LanguageProvider>
+                                      <WordOfSupportProvider>
+                                        <AdminSectionProvider>
+                                          <ContentProvider>
+                                            <AddCategoryProvider>
+                                              <AddBlogProvider>
+                                                <AddTeamProvider>
+                                                  <AddContactProvider>
+                                                    <App />
+                                                  </AddContactProvider>
+                                                </AddTeamProvider>
+                                              </AddBlogProvider>
+                                            </AddCategoryProvider>
+                                          </ContentProvider>
+                                        </AdminSectionProvider>
+                                      </WordOfSupportProvider>
+                                    </LanguageProvider>
+                                  </AuthProvider>
+                                </FundraiseProvider>
+                              </AddProjectProvider>
+                            </VideoLibraryDetailProvider>
+                          </BannerDetailProvider>
+                        </SupportDetailProvider>
+                      </CompanyDetailProvider>
+                    </ExpenseCategoryDetailProvider>
+                  </CategoryDetailProvider>
+                </EmergencyServiceDetailProvider>
+              </ShopServiceDetailProvider>
+            </VendorDetailProvider>
           </UserDetailProvider >
         </BlogDetailProvider>
       </PaymentProvider>

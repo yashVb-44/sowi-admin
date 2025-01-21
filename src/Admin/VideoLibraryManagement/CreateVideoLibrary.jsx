@@ -5,19 +5,19 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import { Alert } from '../../Common/Alert';
-import { addCompany, getAllCompany } from '../../Lib/CompanyApi';
-import { useCompanySection } from '../../Context/CompanyDetails';
+import { addVideoLibrary, getAllVideoLibrary } from '../../Lib/VideoLibrarysApi';
+import { useVideoLibrarySection } from '../../Context/VideoLibraryDetails';
 
-const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
-    const { setCompanyData, page, rowsPerPage, searchQuery } = useCompanySection();
+const CreateVideoLibrary = ({ openVideoLibraryCreate, handleCloseVideoLibraryCreate }) => {
+    const { setVideoLibraryData, page, rowsPerPage, searchQuery } = useVideoLibrarySection();
 
     const [loader, setLoader] = useState(false);
-    const [name, setName] = useState('');
-    const [serviceType, setServiceType] = useState('1');
-    const [companyName, setCompanyName] = useState('');
+    const [title, setTitle] = useState('');
+    const [link, setLink] = useState('');
+    const [text, setText] = useState('')
     const [errors, setErrors] = useState({
-        name: '',
-        serviceType: '',
+        title: '',
+        link: ''
     });
 
     const handleChange = (e, setter) => {
@@ -27,41 +27,37 @@ const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
 
     const validateFields = () => {
         const newErrors = {};
-        if (!name.trim()) newErrors.name = 'Name is required';
-        if (!companyName.trim()) newErrors.companyName = 'Company Name is required';
+        if (!title.trim()) newErrors.title = 'Title is required';
+        if (!link?.trim()) newErrors.link = 'Link is required';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0; // Return true if no errors
     };
 
-    const fetchCompany = async () => {
-        let response = await getAllCompany({ page, search: searchQuery, limit: rowsPerPage });
-        setCompanyData(response?.companies || []);
+    const fetchVideoLibrary = async () => {
+        let response = await getAllVideoLibrary({ page, search: searchQuery, limit: rowsPerPage });
+        setVideoLibraryData(response?.videos || []);
     };
 
-    const handleCreateCompany = async () => {
+    const handleCreateVideoLibrary = async () => {
         if (!validateFields()) return; // Exit if validation fails
         setLoader(true);
         try {
-            let response = await addCompany({
-                name,
-                serviceType,
-                companyName
+            let response = await addVideoLibrary({
+                title,
+                text,
+                link
             });
 
             if (response.type === 'success') {
                 setLoader(false);
-                fetchCompany();
+                fetchVideoLibrary();
                 setTimeout(() => {
                     handleModelClose();
-                    setName("")
-                    setCompanyName("")
-                    Alert('Success', 'Company Created successfully', 'success');
+                    Alert('Success', 'Video Library Created successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
                 handleModelClose();
-                setName("")
-                setCompanyName("")
                 Alert('Warning', response.message, 'warning');
             }
         } catch (error) {
@@ -72,20 +68,21 @@ const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
     };
 
     const resetForm = () => {
-        setName('');
-        setCompanyName('')
+        setTitle('');
+        setLink('')
+        setText('')
         setErrors({});
     }
 
     const handleModelClose = () => {
-        handleCloseCompanyCreate()
+        handleCloseVideoLibraryCreate()
         resetForm()
     }
 
     return (
         <div>
             <Modal
-                open={openCompanyCreate}
+                open={openVideoLibraryCreate}
                 onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
@@ -93,7 +90,7 @@ const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
                 <Box className="CreateCommonModal">
                     <Stack className="CreateCommonDetail">
                         <Typography id="modal-modal-name" variant="h6" component="h2" className="CreateCommonHeading">
-                            Create Company
+                            Add Video-Library
                         </Typography>
                         <Stack>
                             <CloseIcon onClick={handleModelClose} className="CreateCommonCloseIcon" />
@@ -102,66 +99,84 @@ const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
                     <Stack className="BorderLine"></Stack>
 
                     <Typography id="modal-modal-name" variant="h6" component="h2" sx={{ marginTop: '3%' }} className="CreateCommonHeadingTwo">
-                        Company Details
+                        Video Library Details
                     </Typography>
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Name
+                                Title
                             </Typography>
                             <TextField
-                                id="name"
-                                name="name"
-                                placeholder="Enter name"
+                                id="title"
+                                name="title"
+                                placeholder="Enter title"
                                 variant="standard"
                                 className="CreateCommonInputFiled"
                                 InputProps={{ disableUnderline: true }}
-                                value={name}
-                                onChange={(e) => handleChange(e, setName)}
+                                value={title}
+                                onChange={(e) => handleChange(e, setTitle)}
                                 autoComplete="off"
-                                error={!!errors.name}
-                                helperText={errors.name}
+                                error={!!errors.title}
+                                helperText={errors.title}
                             />
                         </Grid>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Company Name
+                                Link
                             </Typography>
                             <TextField
-                                id="companyName"
-                                name="companyName"
-                                placeholder="Enter Company Name"
+                                name='link'
+                                id="standard-required"
+                                placeholder="Enter link"
                                 variant="standard"
                                 className="CreateCommonInputFiled"
                                 InputProps={{ disableUnderline: true }}
-                                value={companyName}
-                                onChange={(e) => handleChange(e, setCompanyName)}
+                                value={link}
+                                onChange={(e) => handleChange(e, setLink)}
                                 autoComplete="off"
-                                error={!!errors.companyName}
-                                helperText={errors.companyName}
+                                error={!!errors.link}
+                                helperText={errors.link}
                             />
                         </Grid>
                     </Grid>
 
-                    <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
-                        <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
+                    <Grid container spacing={12} sx={{ paddingRight: '30px' }}>
+                        <Grid item xs={12} md={12} lg={12} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Vehicle Type
+                                Text
                             </Typography>
-                            <Select
-                                value={serviceType}
-                                onChange={(e) => handleChange(e, setServiceType)}
+                            <TextField
+                                name='text'
+                                id="standard-required"
+                                placeholder="Enter text"
+                                variant="standard"
                                 className="CreateCommonInputFiled"
-                                error={!!errors.serviceType}
-                                displayEmpty
-                            >
-                                <MenuItem value="1">2 wheeler</MenuItem>
-                                <MenuItem value="2">3 wheeler</MenuItem>
-                                <MenuItem value="3">4 wheeler</MenuItem>
-                                <MenuItem value="4">Heavy Vehicle</MenuItem>
-                            </Select>
+                                InputProps={{ disableUnderline: true }}
+                                value={text}
+                                onChange={(e) => handleChange(e, setText)}
+                                autoComplete="off"
+                                error={!!errors.text}
+                                helperText={errors.text}
+                            />
                         </Grid>
                     </Grid>
+
+                    {
+                        <Box sx={{ marginTop: '20px', textAlign: 'center' }}>
+                            <Typography variant="h6" color="text.secondary">
+                                Video Preview
+                            </Typography>
+                            <iframe
+                                width="100%"
+                                height="315"
+                                src={`https://www.youtube.com/embed/${link}`}
+                                title="Video preview"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </Box>
+                    }
 
                     <Box sx={{ marginTop: '25px', display: 'flex', justifyContent: 'flex-end' }}>
                         <Button
@@ -172,10 +187,10 @@ const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
                                 borderRadius: '4px',
                                 padding: '6px 20px',
                             }}
-                            onClick={handleCreateCompany}
+                            onClick={handleCreateVideoLibrary}
                             disabled={loader}
                         >
-                            {loader ? 'Creating...' : 'Create Company'}
+                            {loader ? 'Adding...' : 'Add Video-Library'}
                         </Button>
                     </Box>
                 </Box>
@@ -184,4 +199,4 @@ const CreateCompany = ({ openCompanyCreate, handleCloseCompanyCreate }) => {
     );
 };
 
-export default CreateCompany;
+export default CreateVideoLibrary;

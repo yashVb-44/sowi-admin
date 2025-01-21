@@ -657,3 +657,23 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+.status-icon-pending {
+  color: orange;
+}
+.status-icon-approved {
+  color: green;
+}
+.status-icon-rejected {
+  color: red;
+}
+.status-icon-ongoing {
+  color: blue;
+}
+.status-icon-completed {
+  color: darkgreen;
+}
+.status-text {
+  font-weight: bold;
+  font-size: 0.875rem;
+}

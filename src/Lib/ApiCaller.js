@@ -8,9 +8,9 @@ export const postApiCaller = async (endPoint, data, header) => {
   try {
     const url = baseUrl + endPoint;
     const response = await axios.post(url, data, header);
-    return response.data;
+    return response?.data;
   } catch (error) {
-    return error.response.data
+    return error?.response?.data
     // Alert('Info', `${error.message}`, 'info');
   }
 };
@@ -20,9 +20,9 @@ export const putApiCaller = async (endPoint, data, header) => {
   try {
     let url = baseUrl + endPoint;
     const response = await axios.put(url, data, header);
-    return response.data;
+    return response?.data;
   } catch (error) {
-    return error.response.data
+    return error?.response?.data
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };
@@ -31,9 +31,9 @@ export const getApiCaller = async (endPoint, header) => {
   try {
     let url = baseUrl + endPoint;
     const response = await axios.get(url, header);
-    return response.data;
+    return response?.data;
   } catch (error) {
-    return error.response.data
+    return error?.response?.data
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };
@@ -42,16 +42,16 @@ export const deleteApiCaller = async (endPoint, header) => {
   try {
     let url = baseUrl + endPoint;
     const response = await axios.delete(url, header);
-    return response.data;
+    return response?.data;
   } catch (error) {
-    return error.response.data
+    return error?.response?.data
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
 };
 export const getUrlCaller = async (endPoint) => {
   try {
     const response = await axios.get(endPoint);
-    return response.data;
+    return response?.data;
   } catch (error) {
     // Alert('Info', `Unable to process your request, Please try later`, 'info');
   }
@@ -96,7 +96,7 @@ export const fetchTranslations = async (text, selectedLanguage) => {
         },
       }
     );
-    let translatedText = response.data.data.translations[0].translatedText;
+    let translatedText = response?.data.data.translations[0].translatedText;
     return translatedText;
   } catch (error) {
     console.error("Error fetching translations:", error);

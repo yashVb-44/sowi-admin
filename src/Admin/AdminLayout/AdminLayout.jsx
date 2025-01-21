@@ -24,7 +24,7 @@ const AdminLayout = () => {
                         <SideNavbar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                     </Grid>
                 )}
-                <Grid item xs={isXs ? 12 : isSidebarOpen ? 9 : 12} md={ isSidebarOpen ? 9 : 12} lg={isSidebarOpen ? 10 : 12}>
+                <Grid item xs={isXs ? 12 : isSidebarOpen ? 9 : 12} md={isSidebarOpen ? 9 : 12} lg={isSidebarOpen ? 10 : 12}>
                     <UpperNavbar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                     <Outlet />
                     <Footer />

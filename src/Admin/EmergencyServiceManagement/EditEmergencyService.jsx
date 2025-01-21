@@ -12,7 +12,7 @@ import { useEmergencyServiceSection } from '../../Context/EmergencyServiceDetail
 
 
 const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencyServiceEdit }) => {
-    const { editData } = useAddProject();
+    const { editData, setEditData } = useAddProject();
     const { setEmergencyServiceData, page, rowsPerPage, searchQuery } = useEmergencyServiceSection()
 
     const [loader, setLoader] = useState(false);
@@ -28,11 +28,11 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
     });
 
     useEffect(() => {
-        setName(editData?.name);
-        setCreateBy(editData?.createdByModel);
+        setName(editData?.name || '');
+        setCreateBy(editData?.createdByModel || '');
         setIsShow(editData?.isShow);
         setIsDeleted(editData?.isDeleted);
-        setServiceType(editData?.serviceType);
+        setServiceType(editData?.serviceType || '');
     }, [editData]);
 
     const handleChange = (e, setter) => {
@@ -72,26 +72,38 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                 setLoader(false);
                 fetchEmergencyService();
                 setTimeout(() => {
-                    handleCloseEmergencyServiceEdit();
+                    handleModelClose();
                     Alert('Success', 'EmergencyService Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseEmergencyServiceEdit();
+                handleModelClose();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseEmergencyServiceEdit();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setIsDeleted(false);
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseEmergencyServiceEdit()
+        setEditData()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openEmergencyServiceEdit}
-                onClose={handleCloseEmergencyServiceEdit}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -101,7 +113,7 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                             Edit EmergencyService
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseEmergencyServiceEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleModelClose()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
@@ -151,7 +163,7 @@ const EditEmergencyService = ({ openEmergencyServiceEdit, handleCloseEmergencySe
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Service Type
+                                Vehicle Type
                             </Typography>
                             <Select
                                 value={serviceType}

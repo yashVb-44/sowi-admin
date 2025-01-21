@@ -26,25 +26,25 @@ const Dashboard = () => {
 
     const dashboardJson = [
         {
-            title: 'Total Project',
+            title: 'Total User',
             number: count?.projectCount,
             icon: ProjectIcon,
             color: '#FFFAEB'
         },
         {
-            title: 'In Progress',
+            title: 'Total Vendor',
             number: count?.inProgress,
             icon: ProgressIcon,
             color: '#EFFDF3'
         },
         {
-            title: 'Complete',
+            title: 'Total Sale',
             number: count?.completed,
             icon: CompleteIcon,
             color: '#F7F2FF'
         },
         {
-            title: 'Total Donations',
+            title: 'Total Revenue',
             number: count?.totalDonation,
             icon: DonateIcon,
             color: '#FEF0EF'
@@ -69,9 +69,9 @@ const Dashboard = () => {
             <Grid item xs={12} md={12} lg={12}>
                 <Stack className='DashboardText'>
                     <Typography gutterBottom variant="h5" component="div" className='DashboardHeading'>
-                        Project Management
+                        DashBoard
                     </Typography>
-                    <Button onClick={handleOpen} variant="outlined" className='AddProjectButton' sx={{ textTransform: 'none' }} startIcon={<AddIcon />} >Add Project</Button>
+                    {/* <Button onClick={handleOpen} variant="outlined" className='AddProjectButton' sx={{ textTransform: 'none' }} startIcon={<AddIcon />} >Add Project</Button> */}
                 </Stack>
             </Grid>
             <Grid container spacing={3} className='ProjectMangMarginTop'>

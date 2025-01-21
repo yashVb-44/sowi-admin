@@ -46,28 +46,38 @@ const CreateExpenseCategory = ({ openExpenseCategoryCreate, handleCloseExpenseCa
                 setLoader(false);
                 fetchExpenseCategory();
                 setTimeout(() => {
-                    handleCloseExpenseCategoryCreate();
+                    handleModelClose();
                     setName("")
                     Alert('Success', 'ExpenseCategory Created successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseExpenseCategoryCreate();
+                handleModelClose();
                 setName("")
                 Alert('Warning', response.message, 'warning');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseExpenseCategoryCreate();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseExpenseCategoryCreate()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openExpenseCategoryCreate}
-                onClose={handleCloseExpenseCategoryCreate}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -77,7 +87,7 @@ const CreateExpenseCategory = ({ openExpenseCategoryCreate, handleCloseExpenseCa
                             Create ExpenseCategory
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={handleCloseExpenseCategoryCreate} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={handleModelClose} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>

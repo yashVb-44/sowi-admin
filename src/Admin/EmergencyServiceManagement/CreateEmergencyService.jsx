@@ -27,7 +27,7 @@ const CreateEmergencyService = ({ openEmergencyServiceCreate, handleCloseEmergen
     const validateFields = () => {
         const newErrors = {};
         if (!name.trim()) newErrors.name = 'Name is required';
-        if (!serviceType) newErrors.serviceType = 'Service Type is required';
+        if (!serviceType) newErrors.serviceType = 'Vehicle Type is required';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0; // Return true if no errors
     };
@@ -50,28 +50,38 @@ const CreateEmergencyService = ({ openEmergencyServiceCreate, handleCloseEmergen
                 setLoader(false);
                 fetchEmergencyService();
                 setTimeout(() => {
-                    handleCloseEmergencyServiceCreate();
+                    handleModelClose();
                     setName("")
                     Alert('Success', 'EmergencyService Created successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseEmergencyServiceCreate();
+                handleModelClose();
                 setName("")
                 Alert('Warning', response.message, 'warning');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseEmergencyServiceCreate();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseEmergencyServiceCreate()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openEmergencyServiceCreate}
-                onClose={handleCloseEmergencyServiceCreate}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -81,7 +91,7 @@ const CreateEmergencyService = ({ openEmergencyServiceCreate, handleCloseEmergen
                             Create EmergencyService
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={handleCloseEmergencyServiceCreate} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={handleModelClose} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
@@ -110,7 +120,7 @@ const CreateEmergencyService = ({ openEmergencyServiceCreate, handleCloseEmergen
                         </Grid>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Service Type
+                                Vehicle Type
                             </Typography>
                             <Select
                                 id="serviceType"

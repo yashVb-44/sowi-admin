@@ -4,7 +4,6 @@ import { Stack, Grid, TextField, Select, MenuItem, Button } from '@mui/material'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import './CreateUser.css';
 import { AttachMoney } from '@mui/icons-material';
 import CloseIcon from '@mui/icons-material/Close';
 import CloudImage from '../../Assets/AdminImages/CloudImgae.png';
@@ -14,12 +13,12 @@ import { useDropzone } from 'react-dropzone';
 import EditIcon from '../../Assets/AdminImages/EditIcon.png';
 import { useAddProject } from '../../AdminContext/AddProjectContext';
 import { Alert } from '../../Common/Alert';
-import { getAllUser, updateUser } from '../../Lib/UsersApi';
-import { useUserSection } from '../../Context/UserDetailsContext';
+import { getAllVendor, updateVendor } from '../../Lib/VendorApi';
+import { useVendorSection } from '../../Context/VendorDetailsContext';
 
-const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
+const EditVendor = ({ openVendorEdit, handleCloseVendorEdit }) => {
     const { editData, setEditData } = useAddProject();
-    const { setUserData, page, rowsPerPage, searchQuery } = useUserSection()
+    const { setVendorData, page, rowsPerPage, searchQuery } = useVendorSection()
 
     const [file, setFile] = useState(null);
     const [filePreview, setFilePreview] = useState(null);
@@ -73,12 +72,13 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     const [gender, setGender] = useState('');
     const [role, setRole] = useState('');
     const [dateOfBirth, setDateOfBirth] = useState('');
+    const [serviceType, setServiceType] = useState('');
     const [errors, setErrors] = useState({
         name: '',
     });
 
     useEffect(() => {
-        setName(editData?.name || '');
+        setName(editData?.name || "");
         setEmail(editData?.email);
         setMobileNo(editData?.mobileNo);
         setIsBlocked(editData?.isBlocked);
@@ -88,10 +88,11 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
         setCountry(editData?.country);
         setLanguage(editData?.language);
         setGender(editData?.gender || '');
-        setRole(editData?.role);
+        setRole(editData?.role || '');
         // setDateOfBirth(changeDateFormat(editData?.dateOfBirth));
         setDateOfBirth(editData?.dateOfBirth);
         setFilePreview(editData?.profileImage);
+        setServiceType(editData?.serviceType || '')
     }, [editData]);
 
     const handleChange = (e, setter) => {
@@ -99,13 +100,13 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
         setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: '' })); // Clear error for the field
     };
 
-    const handleCancelUser = () => {
-        handleCloseUserEdit();
+    const handleCancelVendor = () => {
+        handleCloseVendorEdit();
     };
 
-    const fetchUser = async () => {
-        let response = await getAllUser({ page, search: searchQuery, limit: rowsPerPage });
-        setUserData(response?.users || []);
+    const fetchVendor = async () => {
+        let response = await getAllVendor({ page, search: searchQuery, limit: rowsPerPage });
+        setVendorData(response?.vendors || []);
     };
 
     const validateFields = () => {
@@ -115,11 +116,11 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
         return Object.keys(newErrors).length === 0; // Return true if no errors
     };
 
-    const handleUpdateUser = async () => {
+    const handleUpdateVendor = async () => {
         if (!validateFields()) return; // Exit if validation fails
         setLoader(true);
         try {
-            let response = await updateUser({
+            let response = await updateVendor({
                 name,
                 email,
                 mobileNo,
@@ -133,15 +134,16 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                 role,
                 file,
                 dateOfBirth,
-                userId: editData?._id
+                serviceType,
+                vendorId: editData?._id
             });
 
             if (response.type === "success") {
                 setLoader(false);
-                fetchUser();
+                fetchVendor();
                 setTimeout(() => {
                     handleModelClose();
-                    Alert('Success', 'User Updated successfully', 'success');
+                    Alert('Success', 'Vendor Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
@@ -166,7 +168,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     }
 
     const handleModelClose = () => {
-        handleCloseUserEdit()
+        handleCloseVendorEdit()
         setEditData()
         resetForm()
     }
@@ -175,7 +177,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     return (
         <div>
             <Modal
-                open={openUserEdit}
+                open={openVendorEdit}
                 onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
@@ -183,7 +185,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                 <Box className="CreateCommonModal">
                     <Stack className="CreateCommonDetail">
                         <Typography id="modal-modal-name" variant="h6" component="h2" className="CreateCommonHeading">
-                            Edit User
+                            Edit Vendor
                         </Typography>
                         <Stack>
                             <CloseIcon onClick={() => handleModelClose()} className="CreateCommonCloseIcon" />
@@ -192,7 +194,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                     <Stack className="BorderLine"></Stack>
 
                     <Typography id="modal-modal-name" variant="h6" component="h2" sx={{ marginTop: '3%' }} className="CreateCommonHeadingTwo">
-                        User Details
+                        Vendor Details
                     </Typography>
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
@@ -321,7 +323,7 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                             >
                                 <MenuItem value="Admin">Admin</MenuItem>
                                 <MenuItem value="Vendor">Vendor</MenuItem>
-                                <MenuItem value="User">User</MenuItem>
+                                <MenuItem value="Vendor">Vendor</MenuItem>
                             </Select>
                         </Grid>
                     </Grid> */}
@@ -341,6 +343,23 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                                 <MenuItem value="Male">Male</MenuItem>
                                 <MenuItem value="Female">Female</MenuItem>
                                 <MenuItem value="Other">Other</MenuItem>
+                            </Select>
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
+                            <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
+                                Vehicle Type
+                            </Typography>
+                            <Select
+                                value={serviceType}
+                                onChange={(e) => handleChange(e, setServiceType)}
+                                className="CreateCommonInputFiled"
+                                error={!!errors.serviceType}
+                                displayEmpty
+                            >
+                                <MenuItem value="1">2 wheeler</MenuItem>
+                                <MenuItem value="2">3 wheeler</MenuItem>
+                                <MenuItem value="3">4 wheeler</MenuItem>
+                                <MenuItem value="4">Heavy Vehicle</MenuItem>
                             </Select>
                         </Grid>
                     </Grid>
@@ -411,18 +430,18 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                         </Typography>
                         <Box
                             {...getRootProps()}
-                            className={`CreateUserDropzone ${isDragActive ? "active" : ""}`}
+                            className={`CreateVendorDropzone ${isDragActive ? "active" : ""}`}
                         >
                             {filePreview ? (
                                 <img
                                     src={filePreview}
                                     alt="Profile Preview"
-                                    className="CreateUserImagePreview"
+                                    className="CreateVendorImagePreview"
                                     onError={(e) => e.target.src = SowiImage}
 
                                 />
                             ) : (
-                                <img src={NoImage} alt="Default Image" className="CreateUserImagePreview" />
+                                <img src={NoImage} alt="Default Image" className="CreateVendorImagePreview" />
                             )}
 
                             {/* <input {...getInputProps()} /> */}
@@ -439,10 +458,10 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
                                 borderRadius: '4px',
                                 padding: '6px 20px',
                             }}
-                            onClick={handleUpdateUser}
+                            onClick={handleUpdateVendor}
                             disabled={loader}
                         >
-                            {loader ? 'Updating...' : 'Update User'}
+                            {loader ? 'Updating...' : 'Update Vendor'}
                         </Button>
                     </Box>
                 </Box>
@@ -451,4 +470,4 @@ const EditUser = ({ openUserEdit, handleCloseUserEdit }) => {
     );
 };
 
-export default EditUser;
+export default EditVendor;

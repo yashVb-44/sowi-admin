@@ -27,7 +27,7 @@ const CreateShopService = ({ openShopServiceCreate, handleCloseShopServiceCreate
     const validateFields = () => {
         const newErrors = {};
         if (!name.trim()) newErrors.name = 'Name is required';
-        if (!serviceType) newErrors.serviceType = 'Service Type is required';
+        if (!serviceType) newErrors.serviceType = 'Vehicle Type is required';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0; // Return true if no errors
     };
@@ -50,28 +50,38 @@ const CreateShopService = ({ openShopServiceCreate, handleCloseShopServiceCreate
                 setLoader(false);
                 fetchShopService();
                 setTimeout(() => {
-                    handleCloseShopServiceCreate();
+                    handleModelClose();
                     setName("")
                     Alert('Success', 'ShopService Created successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseShopServiceCreate();
+                handleModelClose();
                 setName("")
                 Alert('Warning', response.message, 'warning');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseShopServiceCreate();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseShopServiceCreate()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openShopServiceCreate}
-                onClose={handleCloseShopServiceCreate}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -81,7 +91,7 @@ const CreateShopService = ({ openShopServiceCreate, handleCloseShopServiceCreate
                             Create ShopService
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={handleCloseShopServiceCreate} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={handleModelClose} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
@@ -110,7 +120,7 @@ const CreateShopService = ({ openShopServiceCreate, handleCloseShopServiceCreate
                         </Grid>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Service Type
+                                Vehicle Type
                             </Typography>
                             <Select
                                 id="serviceType"

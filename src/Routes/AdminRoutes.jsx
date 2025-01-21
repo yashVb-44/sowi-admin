@@ -14,6 +14,10 @@ import EmergencyServiceManagement from '../Admin/EmergencyServiceManagement/Emer
 import CategoryManagement from '../Admin/CategoryManagement/CategoryManagement';
 import ExpenseCategoryManagement from '../Admin/ExpenseCategoryManagement/ExpenseCategoryManagement';
 import CompanyManagement from '../Admin/CompanyManagement/CompanyManagement';
+import SupportManagement from '../Admin/SupportManagement/SupportManagement';
+import VendorManagement from '../Admin/VendorManagement/VendorManagement';
+import BannerManagement from '../Admin/BannerManagement/BannerManagement';
+import VideoLibraryManagement from '../Admin/VideoLibraryManagement/VideoLibraryManagement';
 
 const AdminRoutes = () => {
     return (
@@ -21,11 +25,15 @@ const AdminRoutes = () => {
             <Route path='/' element={<AdminLayout />}>
                 <Route index element={<Dashboard />} />
                 <Route path='user' element={<UserManagement />} />
+                <Route path='vendor' element={<VendorManagement />} />
                 <Route path='shop-service' element={<ShopServiceManagement />} />
                 <Route path='emergency-service' element={<EmergencyServiceManagement />} />
                 <Route path='category' element={<CategoryManagement />} />
                 <Route path='company' element={<CompanyManagement />} />
+                <Route path='support' element={<SupportManagement />} />
+                <Route path='banner' element={<BannerManagement />} />
                 <Route path='expense-category' element={<ExpenseCategoryManagement />} />
+                <Route path='video-library' element={<VideoLibraryManagement />} />
                 <Route path='blog' element={<BlogManagement />} />
                 <Route path='site-content' element={<HomeContent />} />
                 <Route path='site-content/about' element={<AboutContent />} />

@@ -201,7 +201,7 @@ const EditBlog = ({ openBlogEdit, handleCloseBlogEdit }) => {
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className='CreateBlogFields'>
                             <Typography variant="body2" color="text.secondary" className='CreateBlogInputLabel'>
-                            عنوان وبلاگ
+                                عنوان وبلاگ
                             </Typography>
                             <TextField
                                 id="standard-required"
@@ -218,7 +218,7 @@ const EditBlog = ({ openBlogEdit, handleCloseBlogEdit }) => {
                         </Grid>
                         <Grid item xs={12} md={6} lg={6} className='CreateBlogFields'>
                             <Typography variant="body2" color="text.secondary" className='CreateBlogInputLabel'>
-                            نام خالق
+                                نام خالق
                             </Typography>
                             <TextField
                                 id="standard-required"
@@ -277,7 +277,7 @@ const EditBlog = ({ openBlogEdit, handleCloseBlogEdit }) => {
                     <Grid container>
                         <Grid item xs={12} md={12} lg={12} sx={{ paddingRight: '30px' }} className='CreateBlogFields'>
                             <Typography variant="body2" color="text.secondary" className='CreateBlogInputLabel'>
-                            محتوا
+                                محتوا
                             </Typography>
                             <div style={{ width: '100%', height: 'auto' }}>
                                 <ReactQuill

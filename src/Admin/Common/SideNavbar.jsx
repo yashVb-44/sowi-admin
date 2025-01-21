@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../Assets/Images/logo.png';
+import SowiImage from '../../Assets/AdminImages/sowi-img.png';
 import ProjectIcon from '../../Assets/AdminImages/SideNavbar/ProjectIcon.png';
 import ProjectGreenIcon from '../../Assets/AdminImages/SideNavbar/ProjectGreenIcon.png';
 import UserIcon from '../../Assets/AdminImages/SideNavbar/BlogIcon.png';
@@ -28,7 +29,7 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
         {
             icon: ProjectIcon,
             iconGreen: ProjectGreenIcon,
-            name: 'Projects',
+            name: 'DashBoard',
             path: '/admin'
         },
         {
@@ -38,25 +39,67 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
             path: '/admin/user'
         },
         {
+            icon: UserIcon,
+            iconGreen: UserGreenIcon,
+            name: 'Vendor Management',
+            path: '/admin/vendor'
+        },
+        {
             icon: CategoryIcon,
             iconGreen: CategoryGreenIcon,
             name: 'Category Management',
             path: '/admin/category'
         },
         {
-            icon: BlogIcon,
-            iconGreen: BlogGreenIcon,
-            name: 'Blog Management',
-            path: '/admin/blog'
+            icon: CategoryIcon,
+            iconGreen: CategoryGreenIcon,
+            name: 'Expense-Category Management',
+            path: '/admin/expense-category'
         },
         {
-            icon: SiteIcon,
-            iconGreen: SiteIconGreen,
-            name: 'Site Content',
-            path: '/admin/site-content',
-            arrow: KeyboardArrowRightIcon,
-            arrowDown: KeyboardArrowDownIcon,
+            icon: CategoryIcon,
+            iconGreen: CategoryGreenIcon,
+            name: 'Company Management',
+            path: '/admin/company'
         },
+        {
+            icon: CategoryIcon,
+            iconGreen: CategoryGreenIcon,
+            name: 'Shop-Service Management',
+            path: '/admin/shop-service'
+        },
+        {
+            icon: CategoryIcon,
+            iconGreen: CategoryGreenIcon,
+            name: 'Emergency-Service Management',
+            path: '/admin/emergency-service'
+        },
+        {
+            icon: BlogIcon,
+            iconGreen: BlogGreenIcon,
+            name: 'Banner Management',
+            path: '/admin/banner'
+        },
+        {
+            icon: BlogIcon,
+            iconGreen: BlogGreenIcon,
+            name: 'Video-Library Management',
+            path: '/admin/video-library'
+        },
+        {
+            icon: BlogIcon,
+            iconGreen: BlogGreenIcon,
+            name: 'Support Management',
+            path: '/admin/support'
+        },
+        // {
+        //     icon: SiteIcon,
+        //     iconGreen: SiteIconGreen,
+        //     name: 'Site Content',
+        //     path: '/admin/site-content',
+        //     arrow: KeyboardArrowRightIcon,
+        //     arrowDown: KeyboardArrowDownIcon,
+        // },
     ];
 
     const siteContent = [
@@ -95,7 +138,7 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
                 <Box role="presentation">
                     <Stack className='container'>
                         <CloseIcon className='closeIcon' onClick={toggleSidebar} />
-                        <img src={logo} alt="Logo" className='SideNavbarLogo' />
+                        <img src={SowiImage} alt="Logo" className='SideNavbarLogo' />
                     </Stack>
                     <List>
                         {sidenavbarMenu.map((item, index) => (

@@ -12,7 +12,7 @@ import { useShopServiceSection } from '../../Context/ShopServiceDetails';
 
 
 const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) => {
-    const { editData } = useAddProject();
+    const { editData, setEditData } = useAddProject();
     const { setShopServiceData, page, rowsPerPage, searchQuery } = useShopServiceSection()
 
     const [loader, setLoader] = useState(false);
@@ -28,11 +28,11 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
     });
 
     useEffect(() => {
-        setName(editData?.name);
-        setCreateBy(editData?.createdByModel);
+        setName(editData?.name || '');
+        setCreateBy(editData?.createdByModel || '');
         setIsShow(editData?.isShow);
         setIsDeleted(editData?.isDeleted);
-        setServiceType(editData?.serviceType);
+        setServiceType(editData?.serviceType || '');
     }, [editData]);
 
     const handleChange = (e, setter) => {
@@ -72,26 +72,38 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
                 setLoader(false);
                 fetchShopService();
                 setTimeout(() => {
-                    handleCloseShopServiceEdit();
+                    handleModelClose();
                     Alert('Success', 'ShopService Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseShopServiceEdit();
+                handleModelClose();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseShopServiceEdit();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setIsDeleted(false);
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseShopServiceEdit()
+        setEditData()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openShopServiceEdit}
-                onClose={handleCloseShopServiceEdit}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -101,7 +113,7 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
                             Edit ShopService
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseShopServiceEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleModelClose()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
@@ -151,7 +163,7 @@ const EditShopService = ({ openShopServiceEdit, handleCloseShopServiceEdit }) =>
                     <Grid container spacing={6} sx={{ paddingRight: '30px' }}>
                         <Grid item xs={12} md={6} lg={6} className="CreateCommonFields">
                             <Typography variant="body2" color="text.secondary" className="CreateCommonInputLabel">
-                                Service Type
+                                Vehicle Type
                             </Typography>
                             <Select
                                 value={serviceType}

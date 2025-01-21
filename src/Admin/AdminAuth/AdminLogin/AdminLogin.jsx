@@ -3,7 +3,8 @@ import './AdminLogin.css';
 import { Grid, Stack, Typography, TextField, InputAdornment, IconButton, Button } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import logo from '../../../Assets/Images/logo.png'
+// import logo from '../../../Assets/Images/logo.png'
+import SowiImage from '../../../Assets/AdminImages/sowi-img.png';
 import { useNavigate } from 'react-router-dom';
 import { adminLogin } from '../../../Lib/AdminApi';
 import { Alert } from '../../../Common/Alert';
@@ -72,7 +73,7 @@ const AdminLogin = () => {
         <div className='AdminLogin'>
             <Stack className='AdminLoginContent'>
                 <Stack className='AdminLoginCenter'>
-                    <img src={logo} alt='Logo' />
+                    <img src={SowiImage} alt='Logo' />
                     <Typography gutterBottom variant="h5" component="div" style={{ textTransform: 'capitalize' }} className='AdminLoginHeading'>
                         Welcome back!
                     </Typography>

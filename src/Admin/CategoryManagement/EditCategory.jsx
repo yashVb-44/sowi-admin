@@ -12,7 +12,7 @@ import { useCategorySection } from '../../Context/CategoryDetails';
 
 
 const EditCategory = ({ openCategoryEdit, handleCloseCategoryEdit }) => {
-    const { editData } = useAddProject();
+    const { editData, setEditData } = useAddProject();
     const { setCategoryData, page, rowsPerPage, searchQuery } = useCategorySection()
 
     const [loader, setLoader] = useState(false);
@@ -23,26 +23,19 @@ const EditCategory = ({ openCategoryEdit, handleCloseCategoryEdit }) => {
     const [isActive, setIsActive] = useState(true);
     const [isDeleted, setIsDeleted] = useState(false);
     const [errors, setErrors] = useState({
-
         name: '',
-        createBy: '',
-        mobileNo: '',
-        country: '',
-        language: '',
-        role: '',
-        dateOfBirth: '',
-        file: '',
     });
 
     useEffect(() => {
-        setName(editData?.name);
-        setCreateBy(editData?.createdBy);
-        setIsActive(editData?.isActive);
-        setIsDeleted(editData?.isDeleted);
+        setName(editData?.name || '');
+        setCreateBy(editData?.createdBy || '');
+        setIsActive(editData?.isActive ?? true);
+        setIsDeleted(editData?.isDeleted ?? false);
     }, [editData]);
 
     const handleChange = (e, setter) => {
         setter(e.target.value);
+        setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: '' })); // Clear error for the field
     };
 
     const handleCancelCategory = () => {
@@ -54,7 +47,15 @@ const EditCategory = ({ openCategoryEdit, handleCloseCategoryEdit }) => {
         setCategoryData(response?.categories || []);
     };
 
+    const validateFields = () => {
+        const newErrors = {};
+        if (!name?.trim()) newErrors.name = 'Name is required';
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0; // Return true if no errors
+    };
+
     const handleUpdateCategory = async () => {
+        if (!validateFields()) return; // Exit if validation fails
         setLoader(true);
         try {
             let response = await updateCategory({
@@ -68,26 +69,39 @@ const EditCategory = ({ openCategoryEdit, handleCloseCategoryEdit }) => {
                 setLoader(false);
                 fetchCategory();
                 setTimeout(() => {
-                    handleCloseCategoryEdit();
+                    handleModelClose();
                     Alert('Success', 'Category Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseCategoryEdit();
+                handleModelClose();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseCategoryEdit();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setIsActive(true);
+        setIsDeleted(false);
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseCategoryEdit()
+        setEditData()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openCategoryEdit}
-                onClose={handleCloseCategoryEdit}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -97,7 +111,7 @@ const EditCategory = ({ openCategoryEdit, handleCloseCategoryEdit }) => {
                             Edit Category
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseCategoryEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleModelClose()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>

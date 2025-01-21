@@ -12,7 +12,7 @@ import { useExpenseCategorySection } from '../../Context/ExpenseCategoryDetails'
 
 
 const EditExpenseCategory = ({ openExpenseCategoryEdit, handleCloseExpenseCategoryEdit }) => {
-    const { editData } = useAddProject();
+    const { editData, setEditData } = useAddProject();
     const { setExpenseCategoryData, page, rowsPerPage, searchQuery } = useExpenseCategorySection()
 
     const [loader, setLoader] = useState(false);
@@ -27,8 +27,8 @@ const EditExpenseCategory = ({ openExpenseCategoryEdit, handleCloseExpenseCatego
     });
 
     useEffect(() => {
-        setName(editData?.name);
-        setCreateBy(editData?.createdBy);
+        setName(editData?.name || '');
+        setCreateBy(editData?.createdBy || '');
         setIsActive(editData?.isActive);
         setIsDeleted(editData?.isDeleted);
     }, [editData]);
@@ -69,26 +69,40 @@ const EditExpenseCategory = ({ openExpenseCategoryEdit, handleCloseExpenseCatego
                 setLoader(false);
                 fetchExpenseCategory();
                 setTimeout(() => {
-                    handleCloseExpenseCategoryEdit();
+                    handleModelClose();
                     Alert('Success', 'Expense Category Updated successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseExpenseCategoryEdit();
+                handleModelClose();
                 Alert('Info', 'Unable to process your request, Please try later!', 'info');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseExpenseCategoryEdit();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setIsActive(true);
+        setIsDeleted(false);
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseExpenseCategoryEdit()
+        setEditData()
+        resetForm()
+    }
+
 
     return (
         <div>
             <Modal
                 open={openExpenseCategoryEdit}
-                onClose={handleCloseExpenseCategoryEdit}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -98,7 +112,7 @@ const EditExpenseCategory = ({ openExpenseCategoryEdit, handleCloseExpenseCatego
                             Edit ExpenseCategory
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={() => handleCloseExpenseCategoryEdit()} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={() => handleModelClose()} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>

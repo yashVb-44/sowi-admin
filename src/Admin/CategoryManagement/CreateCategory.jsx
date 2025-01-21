@@ -46,28 +46,38 @@ const CreateCategory = ({ openCategoryCreate, handleCloseCategoryCreate }) => {
                 setLoader(false);
                 fetchCategory();
                 setTimeout(() => {
-                    handleCloseCategoryCreate();
+                    handleModelClose();
                     setName("")
                     Alert('Success', 'Category Created successfully', 'success');
                 }, 100);
             } else {
                 setLoader(false);
-                handleCloseCategoryCreate();
+                handleModelClose();
                 setName("")
                 Alert('Warning', response.message, 'warning');
             }
         } catch (error) {
             setLoader(false);
-            handleCloseCategoryCreate();
+            handleModelClose();
             Alert('Error', 'An error occurred. Please try again.', 'error');
         }
     };
+
+    const resetForm = () => {
+        setName('');
+        setErrors({});
+    }
+
+    const handleModelClose = () => {
+        handleCloseCategoryCreate()
+        resetForm()
+    }
 
     return (
         <div>
             <Modal
                 open={openCategoryCreate}
-                onClose={handleCloseCategoryCreate}
+                onClose={handleModelClose}
                 aria-labelledby="modal-modal-name"
                 aria-describedby="modal-modal-description"
             >
@@ -77,7 +87,7 @@ const CreateCategory = ({ openCategoryCreate, handleCloseCategoryCreate }) => {
                             Create Category
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={handleCloseCategoryCreate} className="CreateCommonCloseIcon" />
+                            <CloseIcon onClick={handleModelClose} className="CreateCommonCloseIcon" />
                         </Stack>
                     </Stack>
                     <Stack className="BorderLine"></Stack>
