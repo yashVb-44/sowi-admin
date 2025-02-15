@@ -75,44 +75,6 @@ const HomeContent = () => {
                     <Stack className='BorderBottom' sx={{ margin: '1% 0px' }}></Stack>
                     <Stack>
                         <Stack>
-                            <Stack className='HomeContentEditBtn'>
-                                <Typography className='HomeContentHeadingTwo'>بنر قهرمان</Typography>
-                                <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenHomeEdit()} className='HomeContentEditIcon' />
-                            </Stack>
-                            <Typography className='HomeContentHeadingThree'>عنوان فرعی 1</Typography>
-                            <TextField
-                                className='HomeContentInputFiled'
-                                value={homeContentAdmin?.fa?.heroBanner?.subTitle1}
-                                variant="standard"
-                                fullWidth
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-                            />
-                        </Stack>
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree'>عنوان</Typography>
-                            <TextField
-                                className='HomeContentInputFiled'
-                                value={homeContentAdmin?.fa?.heroBanner?.title}
-                                variant="standard"
-                                fullWidth
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-
-                            />
-                        </Stack>
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree'>عنوان فرعی 2</Typography>
-                            <TextField
-                                className='HomeContentInputFiled'
-                                value={homeContentAdmin?.fa?.heroBanner?.subTitle2}
-                                variant="standard"
-                                fullWidth
-                                multiline
-                                rows={4}
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-
-                            />
-                        </Stack>
-                        <Stack>
                             <Typography className='HomeContentHeadingThree'>Top Image</Typography>
 
                             <Stack className='PreviewUpload'>
@@ -186,8 +148,8 @@ const HomeContent = () => {
                             </Grid>
 
                             {['mission1', 'mission2', 'mission3', 'mission4'].map((missionKey, index) => {
-                                const dataEn = missionContentEn[missionKey];
-                                const dataFa = missionContentFa[missionKey];
+                                const dataEn = []
+                                const dataFa = []
 
                                 return (
                                     <Grid item container key={index} style={{ marginTop: '1%' }}>
@@ -506,125 +468,7 @@ const HomeContent = () => {
                     </Stack> */}
 
                     {/* Part 4 */}
-                    <Stack className='HomeContentTopMar'>
-                        <Stack className='HomeContentEditBtn'>
-                            <Typography className='HomeContentHeadingTwo'>Part 4: How you can support us</Typography>
-                            <img src={EditIcon} alt='Edit Icon' onClick={handleOpenHomeEdit} className='HomeContentEditIcon' />
-                        </Stack>
-                        <Stack className='HomeContentTopMar'>
-                            <Grid item xs={10} sx={12} md={10} lg={11}>
-                                <Stack className='HomeContentGridMarginLeft'>
-                                    <Typography className='HomeContentHeadingThree'>Heading</Typography>
-                                    <TextField
-                                        className='HomeContentInputFiled'
-                                        value={supportContentEn.heading}
-                                        variant="standard"
-                                        fullWidth
-                                        InputProps={{ disableUnderline: true, readOnly: true }}
-                                    />
-                                    <Typography className='HomeContentHeadingThree'>Sub Heading</Typography>
-                                    <TextField
-                                        className='HomeContentInputFiled'
-                                        value={supportContentEn.para}
-                                        variant="standard"
-                                        fullWidth
-                                        multiline
-                                        rows={4}
-                                        InputProps={{ disableUnderline: true, readOnly: true }}
-                                    />
-                                </Stack>
-                            </Grid>
-                            <Grid item xs={10} sx={12} md={10} lg={11}>
-                                <Stack className='HomeContentGridMarginLeft'>
-                                    <Typography className='HomeContentHeadingThree'>سرفصل</Typography>
-                                    <TextField
-                                        className='HomeContentInputFiled'
-                                        value={supportContentFa.heading}
-                                        variant="standard"
-                                        fullWidth
-                                        InputProps={{ disableUnderline: true, readOnly: true }}
-                                    />
-                                    <Typography className='HomeContentHeadingThree'>عنوان فرعی</Typography>
-                                    <TextField
-                                        className='HomeContentInputFiled'
-                                        value={supportContentFa.para}
-                                        variant="standard"
-                                        fullWidth
-                                        multiline
-                                        rows={4}
-                                        InputProps={{ disableUnderline: true, readOnly: true }}
-                                    />
-                                </Stack>
-                            </Grid>
-                            {Object.keys(supportContentEn).map((key, index) => {
-                                const dataEn = supportContentEn[key];
-                                const dataFa = supportContentFa[key];
-
-                                if (key.startsWith('support')) {
-                                    return (
-                                        <Grid item container key={index}>
-                                            <Grid item xs={12} sx={12} md={2} lg={1} className='HomeContentSupportIcon HomeContentMarginImage'>
-                                                <Typography className='HomeContentHeadingThree'>Icon</Typography>
-                                                <Box>
-                                                    <Stack>
-                                                        <Box className='HomeContentPreviewUploadImageContainer'>
-                                                            <img src={dataEn[`icon${index + 1}`]} className='HomeContentPreviewUploadImage' alt="Preview" />
-                                                            <img src={EditIcon} alt='Edit Icon' onClick={handleOpenHomeEdit} className='EditIconHomeContent' />
-                                                        </Box>
-                                                    </Stack>
-                                                </Box>
-                                            </Grid>
-                                            <Grid item xs={10} sx={12} md={10} lg={11}>
-                                                <Stack className='HomeContentGridMarginLeft'>
-                                                    <Typography className='HomeContentHeadingThree'>Title</Typography>
-                                                    <TextField
-                                                        className='HomeContentInputFiled'
-                                                        value={dataEn.title}
-                                                        variant="standard"
-                                                        fullWidth
-                                                        InputProps={{ disableUnderline: true, readOnly: true }}
-                                                    />
-                                                    <Typography className='HomeContentHeadingThree'>Description</Typography>
-                                                    <TextField
-                                                        className='HomeContentInputFiled'
-                                                        value={dataEn.description}
-                                                        variant="standard"
-                                                        fullWidth
-                                                        multiline
-                                                        rows={4}
-                                                        InputProps={{ disableUnderline: true, readOnly: true }}
-                                                    />
-                                                </Stack>
-                                                {dataFa && (
-                                                    <Stack className='HomeContentGridMarginLeft'>
-                                                        <Typography className='HomeContentHeadingThree'>عنوان</Typography>
-                                                        <TextField
-                                                            className='HomeContentInputFiled'
-                                                            value={dataFa.title}
-                                                            variant="standard"
-                                                            fullWidth
-                                                            InputProps={{ disableUnderline: true, readOnly: true }}
-                                                        />
-                                                        <Typography className='HomeContentHeadingThree'>شرح</Typography>
-                                                        <TextField
-                                                            className='HomeContentInputFiled'
-                                                            value={dataFa.description}
-                                                            variant="standard"
-                                                            fullWidth
-                                                            multiline
-                                                            rows={4}
-                                                            InputProps={{ disableUnderline: true, readOnly: true }}
-                                                        />
-                                                    </Stack>
-                                                )}
-                                            </Grid>
-                                        </Grid>
-                                    );
-                                }
-                                return null;
-                            })}
-                        </Stack>
-                    </Stack>
+                    
                 </Stack>
             </Grid>
             <HomeContentEdit openHomeEdit={openHomeEdit} handleCloseHomeEdit={handleCloseHomeEdit} />

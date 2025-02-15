@@ -7,11 +7,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import Loader from '../../../Common/Loader';
 import ReactQuill from 'react-quill';
 import { useContent } from '../../../Context/ContentContext';
+import { updateAboutContent, updateTermsPrivacyContent } from '../../../Lib/TermsPrivacyContentApi';
 import { Alert } from '../../../Common/Alert';
-import { updateTermsContent } from '../../../Lib/TermsPrivacyContentApi';
 
 
-const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
+const AboutEdit = ({ openAboutEdit, handleCloseAboutEdit }) => {
 
     const { settingContant, fetchSettingContent } = useContent()
 
@@ -20,48 +20,51 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
     const [title, setTitle] = useState()
     const [title2, setTitle2] = useState()
     const [content, setContent] = useState('')
-    const [invoiceContent, setInvoiceContent] = useState('')
     const [titleFarsi, setTitleFarsi] = useState()
     const [title2Farsi, setTitle2Farsi] = useState()
     const [contentFarsi, setContentFarsi] = useState('')
 
+    const handleChange = (e, setter) => {
+        setter(e.target.value)
+    }
     const handleContent = (value) => {
         setContent(value)
     }
-
-    const handleInoviceContent = (value) => {
-        setInvoiceContent(value)
+    const handleContentFarsi = (value) => {
+        setContentFarsi(value)
     }
-
 
     const handleEdit = async () => {
         setLoader(true)
-        let response = await updateTermsContent({ terms: content, invoiceTerms: invoiceContent })
-        console.log(response)
+        let response = await updateAboutContent({ about: content })
         try {
             if (response?.type === "success") {
                 setTimeout(() => {
                     setLoader(false)
                     Alert('Success', response?.message, 'success')
-                    handleCloseTermsEdit()
+                    handleCloseAboutEdit()
                     fetchSettingContent()
                 }, 2000);
             }
             else {
                 setLoader(false)
                 Alert('Info', response?.message, 'info')
-                handleCloseTermsEdit()
+                handleCloseAboutEdit()
             }
         } catch (error) {
             setLoader(false)
             Alert('Info', response?.message, 'info')
-            handleCloseTermsEdit()
+            handleCloseAboutEdit()
         }
     }
 
     useEffect(() => {
-        setContent(settingContant?.terms)
-        setInvoiceContent(settingContant?.invoiceTerms)
+        // setTitle(settingContant?.en?.about?.title)
+        // setTitle2(settingContant?.en?.about?.subTitle)
+        setContent(settingContant?.about)
+        // setTitleFarsi(settingContant?.fa?.about?.title)
+        // setTitle2Farsi(settingContant?.fa?.about?.subTitle)
+        // setContentFarsi(settingContant?.fa?.about?.content)
     }, [settingContant])
 
 
@@ -69,18 +72,18 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
     return (
         <div>
             <Modal
-                open={openTermsEdit}
-                onClose={handleCloseTermsEdit}
+                open={openAboutEdit}
+                onClose={handleCloseAboutEdit}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box className='TermsContactContentModal'>
+                <Box className='AboutContactContentModal'>
                     <Stack className='AboutContentDetail'>
                         <Typography id="modal-modal-title" variant="h6" component="h2" className='AboutContentHeading'>
-                            Edit Terms
+                            Edit About Policy
                         </Typography>
                         <Stack>
-                            <CloseIcon onClick={handleCloseTermsEdit} className='AboutContentCloseIcon' />
+                            <CloseIcon onClick={handleCloseAboutEdit} className='AboutContentCloseIcon' />
                         </Stack>
                     </Stack>
 
@@ -112,8 +115,8 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
                                 value={titleFarsi}
                                 onChange={(e) => handleChange(e, setTitleFarsi)}
                                 variant="standard"
-                                fullWidth
                                 placeholder='عنوان را وارد کنید'
+                                fullWidth
                                 InputProps={{ disableUnderline: true }}
                             />
                         </Stack>
@@ -132,21 +135,6 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
                                 InputProps={{ disableUnderline: true }}
                             />
                         </Stack>
-
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree'>عنوان فرعی 2</Typography>
-                            <TextField
-                                className='HomeContentInputFiled'
-                                value={title2Farsi}
-                                onChange={(e) => handleChange(e, setTitle2Farsi)}
-                                variant="standard"
-                                fullWidth
-                                multiline
-                                placeholder='عنوان فرعی 2 را وارد کنید'
-                                rows={4}
-                                InputProps={{ disableUnderline: true }}
-                            />
-                        </Stack>
                         <Stack className='BorderBottom'></Stack>
 
 
@@ -158,7 +146,7 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
                                     variant="contained"
                                     tabIndex={-1}
                                     className='AboutContentFormCancelButton'
-                                    onClick={handleCloseTermsEdit}
+                                    onClick={handleCloseAboutEdit}
                                 >
                                     Cancel
                                 </Button>
@@ -208,39 +196,6 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
                                 />
                             </div>
 
-                        </Grid>
-                    </Grid>
-                    <Grid container>
-                        <Grid item xs={12} md={12} lg={12} sx={{ paddingRight: '30px' }} className='CreateBlogFields'>
-                            <Typography variant="body2" color="text.secondary" className='CreateBlogInputLabel'>
-                                Content
-                            </Typography>
-                            <div style={{ width: '100%', height: 'auto' }}>
-                                <ReactQuill
-                                    placeholder="Enter content"
-                                    value={invoiceContent}
-                                    onChange={handleInoviceContent}
-                                    autoComplete='off'
-                                    modules={{
-                                        toolbar: [
-                                            ['bold', 'italic', 'underline', 'strike'],
-                                            [{ 'color': [] }, { 'background': [] }],
-                                            [{ 'align': [] }],
-                                            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                                            ['link', 'image'],
-                                            ['clean']
-                                        ],
-                                    }}
-                                    // formats={[
-                                    //     'bold', 'italic', 'underline', 'strike',
-                                    //     'color', 'background',
-                                    //     'align',
-                                    //     'list', 'bullet',
-                                    //     'link', 'image'
-                                    // ]}
-                                    className='CreateBlogInputFiled'
-                                />
-                            </div>
 
                         </Grid>
                     </Grid>
@@ -252,7 +207,7 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
                                 variant="contained"
                                 tabIndex={-1}
                                 className='AboutContentFormCancelButton'
-                                onClick={handleCloseTermsEdit}
+                                onClick={handleCloseAboutEdit}
                             >
                                 Cancel
                             </Button>
@@ -276,4 +231,9 @@ const TermsEdit = ({ openTermsEdit, handleCloseTermsEdit }) => {
     );
 };
 
-export default TermsEdit;
+export default AboutEdit;
+
+
+
+
+

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getAboutContent, getAboutJourney, getTeam } from '../Lib/AboutContent';
 import { getContactContent } from '../Lib/ContactContentApi';
 import { getTermsPrivacy } from '../Lib/TermsPrivacyContentApi';
-import { getHomeContent, getMissionContent, getSupportContent } from '../Lib/HomeContent';
+import { getHomeContent, getMissionContent, getSettingContent, getSubScriptionPlans, getSupportContent } from '../Lib/HomeContent';
 import { useLanguage } from './LanguageContext';
 
 // Create a context
@@ -16,18 +16,22 @@ export const useContent = () => {
 // Create a provider component
 export const ContentProvider = ({ children }) => {
   const { selectedLanguage } = useLanguage()
-  
+
+  // settings data
+  const [settingContant, setSettingContant] = useState({})
+  const [subscriptionPlans, setSubscriptionPlans] = useState([])
+
   // home
   const [homeContent, setHomeContent] = useState([]);
   const [homeContentAdmin, setHomeContentAdmin] = useState([]);
   const [editHomeContent, setEditHomeContent] = useState([]);
-  
+
   // support
   const [supportContent, setSupportContent] = useState([])
   const [supportContentEn, setSupportContentEn] = useState([])
   const [supportContentFa, setSupportContentFa] = useState([])
   const [editSupportContent, setEditSupportContent] = useState([]);
-  
+
   // misison
   const [missionContent, setMissionContent] = useState([])
   const [missionContentEn, setMissionContentEn] = useState([])
@@ -63,6 +67,16 @@ export const ContentProvider = ({ children }) => {
 
   // category by id data 
   const [categoryIdData, setCategoryIdData] = useState();
+
+  const fetchSettingContent = async () => {
+    let response = await getSettingContent()
+    setSettingContant(response?.setting)
+  }
+
+  const fetchSubscriptionPlans = async () => {
+    let response = await getSubScriptionPlans()
+    setSubscriptionPlans(response?.subscriptionPlan)
+  }
 
   const fetchHomeContent = async () => {
     let response = await getHomeContent()
@@ -186,10 +200,10 @@ export const ContentProvider = ({ children }) => {
     <ContentContext.Provider value={{
       homeContent, setHomeContent, homeContentAdmin, setHomeContentAdmin, editHomeContent, setEditHomeContent, editSupportContent, setEditSupportContent, supportContent, setSupportContent, supportContentEn, setSupportContentEn, supportContentFa, setSupportContentFa,
       aboutContent, setAboutContent, aboutContentAdmin, setAboutContentAdmin, aboutJourney, setAboutJourney, aboutJourneyEn, setAboutJourneyEn, aboutJourneyFa, setAboutJourneyFa, teamData, setTeamData, teamDataAdmin, setTeamDataAdmin, editAboutContent, setEditAboutContent, editJourneyContent, setEditJourneyContent, editteamData, setEditTeamData, editTeamMember, setEditTeamMember
-     , missionContent, setMissionContent, missionContentEn, setMissionContentEn, missionContentFa, setMissionContentFa, editMissionContent, setEditMissionContent
+      , missionContent, setMissionContent, missionContentEn, setMissionContentEn, missionContentFa, setMissionContentFa, editMissionContent, setEditMissionContent
       , categoryIdData, setCategoryIdData, termPrivacyDataAdmin, setTermPrivacyDataAdmin
       , contactData, setContactData, contactDataAdmin, setContactDataAdmin, editContactData, setEditContactData, termPrivacyData, setTermPrivacyData, editTermPrivacyData, setEditTermPrivacyData
-      , fetchAboutContent, fetchMissionContent, fetchAboutJourney, fetchTeam, fetchContactContent, fetchTermPrivacyContent, fetchHomeContent, fetchSupportContent
+      , fetchAboutContent, fetchMissionContent, fetchAboutJourney, fetchTeam, fetchContactContent, fetchTermPrivacyContent, fetchHomeContent, fetchSupportContent, fetchSettingContent, settingContant, fetchSubscriptionPlans, subscriptionPlans
     }}>
       {children}
     </ContentContext.Provider>

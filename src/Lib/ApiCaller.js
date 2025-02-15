@@ -104,15 +104,6 @@ export const fetchTranslations = async (text, selectedLanguage) => {
   }
 };
 
-export const dashboardInfo = async () => {
-  let headers = {
-    "Content-Type": "application/json",
-  };
-
-  let response = await getApiCaller("dashboard/count", { headers });
-  return response;
-};
-
 
 export const formatNumber = (number) => {
   if (isNaN(number) || number == null) {

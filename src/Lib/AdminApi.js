@@ -1,9 +1,10 @@
 import { getApiCaller, postApiCaller } from "./ApiCaller"
-let adminToken = sessionStorage.getItem('adminToken')
+let adminToken = localStorage.getItem('adminToken')
+let headers = {
+    'Content-Type': 'application/json',
+    Authorization: adminToken
+}
 export const userRegister = async (userName, email, password) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
 
     let body = {
         'username': userName,
@@ -17,9 +18,6 @@ export const userRegister = async (userName, email, password) => {
 }
 
 export const adminLogin = async (email, password) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
 
     let body = {
         'name': email,
@@ -31,9 +29,6 @@ export const adminLogin = async (email, password) => {
 }
 
 export const sendOtp = async (email) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
 
     let body = {
         'email': email,
@@ -44,9 +39,6 @@ export const sendOtp = async (email) => {
 }
 
 export const verifyOtp = async (email, otp) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
 
     let body = {
         'email': email,
@@ -59,9 +51,6 @@ export const verifyOtp = async (email, otp) => {
 
 
 export const updatePassword = async (email, newPassword, confirmPassword) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
 
     let body = {
         'email': email,
@@ -76,11 +65,6 @@ export const updatePassword = async (email, newPassword, confirmPassword) => {
 
 export const userInfo = async (adminToken) => {
 
-    let headers = {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${adminToken}`
-    }
-
 
     let response = await getApiCaller('user/getdetail', { headers })
     return response;
@@ -88,9 +72,7 @@ export const userInfo = async (adminToken) => {
 
 
 export const adminPasswordLink = async (email) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
+
     let body = {
         email: email
     }
@@ -99,9 +81,7 @@ export const adminPasswordLink = async (email) => {
 }
 
 export const adminUpdatePassword = async (email, newPassword, confirmPassword) => {
-    let headers = {
-        'Content-Type': 'application/json',
-    }
+
     let body = {
         email: email,
         newPassword: newPassword,
@@ -110,3 +90,9 @@ export const adminUpdatePassword = async (email, newPassword, confirmPassword) =
     let response = await postApiCaller('user/admin-password-update', body, { headers })
     return response;
 }
+
+export const dashboardInfo = async () => {
+
+    let response = await getApiCaller("homePage/dashboard/stats", { headers });
+    return response;
+};

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CircularProgress from '@mui/material/CircularProgress';
-import logo from '../Assets/Images/logo.png'
+import logo from '../Assets/AdminImages/sowi-img.png'
 
 const Loader = ({ loader, setLoader }) => {
 

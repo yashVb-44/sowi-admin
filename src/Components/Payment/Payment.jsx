@@ -15,10 +15,10 @@ import { FUNDING, PayPalButtons, PayPalScriptProvider } from '@paypal/react-payp
 // stripe imports 
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { dashboardInfo, postApiCaller } from '../../Lib/ApiCaller';
+import { postApiCaller } from '../../Lib/ApiCaller';
 import { cryptoPayment, cryptoPaymentRes, paymentRes, paypalRes, stripeRes } from '../../Lib/PaymentApi';
 import { useLocation, useParams } from 'react-router-dom';
-    
+
 import WordOfSupport from './WordOfSupport';
 import AsyncTextRenderer from '../../Context/AsyncTextRenderer';
 import { Alert } from '../../Common/Alert';
@@ -26,6 +26,7 @@ import { addUser } from '../../Lib/UsersApi';
 import { useWordOfSupport } from '../../Context/WordOfSupportContext';
 import CryptoPaymentModal from './CryptoPaymentModal';
 import { useLanguage } from '../../Context/LanguageContext';
+import { dashboardInfo } from '../../Lib/AdminApi';
 
 const Payment = () => {
     const { paymentAmount, setPaymentAmount, donationAmount, setDonationAmount, selectedPg, setSelectedPg, userName, setUserName, userEmail, setUserEmail } = usePayment();

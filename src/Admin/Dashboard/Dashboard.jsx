@@ -10,42 +10,46 @@ import DashboardTabel from './DashboardTabel';
 import AddProject from '../AddProject/AddProject';
 import ViewProject from '../ViewProject/ViewProject';
 import EditProject from '../EditProject/EditProject';
-import { dashboardInfo, formatNumber } from '../../Lib/ApiCaller';
+import { formatNumber } from '../../Lib/ApiCaller';
+import { dashboardInfo } from '../../Lib/AdminApi';
+import BannerManagementTabel from '../BannerManagement/BannerManagementTable';
+import UserManagementTabel from '../UserManagement/UserManagementTabel';
 
 const Dashboard = () => {
 
     const [count, setCount] = useState(null)
     const fetchDashboard = async () => {
         let response = await dashboardInfo()
-        setCount(response?.data)
+        setCount(response?.stats)
     }
 
     useEffect(() => {
+        console.log("workkk")
         fetchDashboard()
     }, [])
 
     const dashboardJson = [
         {
             title: 'Total User',
-            number: count?.projectCount,
+            number: count?.totalUsers,
             icon: ProjectIcon,
             color: '#FFFAEB'
         },
         {
             title: 'Total Vendor',
-            number: count?.inProgress,
+            number: count?.totalVendors,
             icon: ProgressIcon,
             color: '#EFFDF3'
         },
         {
             title: 'Total Sale',
-            number: count?.completed,
+            number: count?.totalTransactions,
             icon: CompleteIcon,
             color: '#F7F2FF'
         },
         {
             title: 'Total Revenue',
-            number: count?.totalDonation,
+            number: count?.totalAmountReceived,
             icon: DonateIcon,
             color: '#FEF0EF'
         },
@@ -93,10 +97,8 @@ const Dashboard = () => {
                     </Grid>
                 ))}
             </Grid>
-            {/* <DashboardTabel handleOpenView={handleOpenView} handleOpenEdit={handleOpenEdit} />
-            <AddProject openModal={openModal} handleClose={handleClose} />
-            <ViewProject openView={openView} handleCloseView={handleCloseView} handleOpenEdit={handleOpenEdit} />
-            <EditProject openEdit={openEdit} handleCloseEdit={handleCloseEdit} /> */}
+            {/* <UserManagementTabel />
+            <BannerManagementTabel /> */}
         </div>
     )
 }

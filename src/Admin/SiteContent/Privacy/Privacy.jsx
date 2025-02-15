@@ -7,7 +7,7 @@ import { useContent } from '../../../Context/ContentContext';
 
 const Privacy = () => {
 
-    const { termPrivacyDataAdmin, fetchTermPrivacyContent } = useContent()
+    const { settingContant, fetchSettingContent } = useContent()
 
     const [openPrivacyEdit, setOpenPrivacyEdit] = useState(false);
     const handleOpenPrivacyEdit = () => setOpenPrivacyEdit(true);
@@ -16,7 +16,7 @@ const Privacy = () => {
     }
 
     useEffect(() => {
-        fetchTermPrivacyContent()
+        fetchSettingContent()
     }, [])
 
     return (
@@ -29,64 +29,6 @@ const Privacy = () => {
                 </Stack>
 
                 <Stack className='HomeContentSite'>
-                    <Stack>
-                        <Stack>
-                            <Stack className='HomeContentEditBtn'>
-                                <Typography className='HomeContentHeadingTwo'>Hero Banner</Typography>
-                                <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenPrivacyEdit()} className='HomeContentEditIcon' />
-                            </Stack>
-                        </Stack>
-                        <Stack className='siteContentBorderBottom'></Stack>
-                        <Stack className='PrivacyContentTopMar'></Stack>
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree '>Title</Typography>
-                            <TextField
-                                className='HomeContentInputFiled '
-                                value={termPrivacyDataAdmin?.en?.privacy?.title}
-                                variant="standard"
-                                fullWidth
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-                            />
-                        </Stack>
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree '>عنوان</Typography>
-                            <TextField
-                                className='HomeContentInputFiled '
-                                value={termPrivacyDataAdmin?.fa?.privacy?.title}
-                                variant="standard"
-                                fullWidth
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-                            />
-                        </Stack>
-                        <Stack className='BorderBottom'></Stack>
-
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree'>Sub Title 2</Typography>
-                            <TextField
-                                className='HomeContentInputFiled'
-                                value={termPrivacyDataAdmin?.en?.privacy?.subTitle}
-                                variant="standard"
-                                fullWidth
-                                multiline
-                                rows={4}
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-                            />
-                        </Stack>
-                        <Stack>
-                            <Typography className='HomeContentHeadingThree'>عنوان فرعی 2</Typography>
-                            <TextField
-                                className='HomeContentInputFiled'
-                                value={termPrivacyDataAdmin?.fa?.privacy?.subTitle}
-                                variant="standard"
-                                fullWidth
-                                multiline
-                                rows={4}
-                                InputProps={{ disableUnderline: true, readOnly: true }}
-                            />
-                        </Stack>
-                        <Stack className='BorderBottom'></Stack>
-
-                    </Stack>
 
                     {/* Part 1 */}
                     <Stack className='PrivacyContentTopMar'>
@@ -96,21 +38,11 @@ const Privacy = () => {
                         </Stack>
                         <Stack className='siteContentBorderBottom'></Stack>
 
-                        <Stack style={{ marginTop: '1%', height:'500px', overflow:'scroll' }}>
+                        <Stack style={{ marginTop: '1%', height: '500px', overflow: 'scroll' }}>
 
                             <div
                                 className='HomeContentInputFiled'
-                                dangerouslySetInnerHTML={{ __html: termPrivacyDataAdmin?.en?.privacy?.content }}
-                            />
-                        </Stack>
-                        <Stack className='HomeContentEditBtn'>
-                            <Typography className='HomeContentHeadingThree'>محتوای سیاست حفظ حریم خصوصی</Typography>
-                        </Stack>
-                        <Stack  style={{ marginTop: '3%', height:'500px', overflow:'scroll' }}>
-
-                            <div
-                                className='HomeContentInputFiled'
-                                dangerouslySetInnerHTML={{ __html: termPrivacyDataAdmin?.fa?.privacy?.content }}
+                                dangerouslySetInnerHTML={{ __html: settingContant?.privacy }}
                             />
                         </Stack>
                     </Stack>

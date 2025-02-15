@@ -1,5 +1,11 @@
 import { getApiCaller, postApiCaller, putApiCaller } from "./ApiCaller";
 
+let adminToken = localStorage.getItem('adminToken')
+let headers = {
+  // 'Content-Type': 'application/json',
+  Authorization: adminToken
+}
+
 export const getTermsPrivacy = async () => {
   let headers = {
     "Content-Type": "application/json",
@@ -9,44 +15,48 @@ export const getTermsPrivacy = async () => {
   return response;
 };
 
-export const updatePrivacyContent = async (titlePriv, subTitlePriv, contentPriv, titleFarsi, title2Farsi, contentFarsi, id) => {
-  let adminToken = sessionStorage?.getItem("adminToken");
-
-  let headers = {
-    Authorization: `Bearer ${adminToken}`,
-  };
-
-  let body = {
-    titlePriv: titlePriv,
-    subTitlePriv: subTitlePriv,
-    contentPriv: contentPriv,
-    //farsi
-    titlePrivFarsi: titleFarsi,
-    subTitlePrivFarsi: title2Farsi,
-    contentPrivFarsi: contentFarsi,
-  };
-
-  let response = await putApiCaller(`privacyTerms/update/${id}`, body, { headers });
+export const updateSubscriptionPlan = async (id, updatedPlan) => {
+  let response = await putApiCaller(`subscription/plan/update/${id}`, updatedPlan, { headers });
   return response;
 };
 
-export const updateTermsContent = async (title, title2, content, titleFarsi, title2Farsi, contentFarsi, id) => {
-  let adminToken = sessionStorage?.getItem("adminToken");
-
-  let headers = {
-    Authorization: `Bearer ${adminToken}`,
-  };
+export const updateFAQContent = async ({ faqs }) => {
 
   let body = {
-    titleTerm: title,
-    subTitleTerm: title2,
-    contentTerm: content,
-    // farsi
-    titleTermFarsi: titleFarsi,
-    subTitleTermFarsi: title2Farsi,
-    contentTermFarsi: contentFarsi
+    faqs
   };
 
-  let response = await putApiCaller(`privacyTerms/update/${id}`, body, { headers });
+  let response = await putApiCaller(`settings/update`, body, { headers });
+  return response;
+};
+
+export const updateAboutContent = async ({ about }) => {
+
+  let body = {
+    about
+  };
+
+  let response = await putApiCaller(`settings/update`, body, { headers });
+  return response;
+};
+
+export const updatePrivacyContent = async ({ privacy }) => {
+
+  let body = {
+    privacy
+  };
+
+  let response = await putApiCaller(`settings/update`, body, { headers });
+  return response;
+};
+
+export const updateTermsContent = async ({ terms, invoiceTerms }) => {
+
+  let body = {
+    terms,
+    invoiceTerms
+  };
+
+  let response = await putApiCaller(`settings/update`, body, { headers });
   return response;
 };

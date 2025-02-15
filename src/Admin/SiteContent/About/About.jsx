@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Typography, Button, Stack, TextField, Box } from '@mui/material';
 import EditIcon from '../../../Assets/AdminImages/EditIcon.png'
-import './Terms.css'
-import TermsEdit from './TermsEdit';
+import './About.css'
+import AboutEdit from './AboutEdit';
 import { useContent } from '../../../Context/ContentContext';
 
-const Terms = () => {
+const About = () => {
 
     const { settingContant, fetchSettingContent } = useContent()
 
-    const [openTermsEdit, setOpenTermsEdit] = useState(false);
-    const handleOpenTermsEdit = () => setOpenTermsEdit(true);
-    const handleCloseTermsEdit = () => {
-        setOpenTermsEdit(false)
+    const [openAboutEdit, setOpenAboutEdit] = useState(false);
+    const handleOpenAboutEdit = () => setOpenAboutEdit(true);
+    const handleCloseAboutEdit = () => {
+        setOpenAboutEdit(false)
     }
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Terms = () => {
             <Grid item xs={12} md={12} lg={12}>
                 <Stack className='HomeContentMangText'>
                     <Typography gutterBottom variant="h5" component="div" className='HomeContentHeading'>
-                        Terms
+                        About Us
                     </Typography>
                 </Stack>
 
@@ -33,54 +33,55 @@ const Terms = () => {
                         <Stack>
                             <Stack className='HomeContentEditBtn'>
                                 <Typography className='HomeContentHeadingTwo'>Hero Banner</Typography>
-                                <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenTermsEdit()} className='HomeContentEditIcon' />
+                                <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenAboutEdit()} className='HomeContentEditIcon' />
                             </Stack>
                         </Stack>
                         <Stack className='siteContentBorderBottom'></Stack>
-                        <Stack className='TermsContentTopMar'></Stack>
+                        <Stack className='AboutContentTopMar'></Stack>
                         <Stack>
                             <Typography className='HomeContentHeadingThree '>Title</Typography>
                             <TextField
                                 className='HomeContentInputFiled '
-                                value={termPrivacyDataAdmin?.en?.terms?.title}
+                                value={settingContant?.en?.about?.title}
                                 variant="standard"
                                 fullWidth
-                                InputProps={{ disableUnderline: true }}
+                                InputProps={{ disableUnderline: true, readOnly: true }}
                             />
                         </Stack>
                         <Stack>
                             <Typography className='HomeContentHeadingThree '>عنوان</Typography>
                             <TextField
                                 className='HomeContentInputFiled '
-                                value={termPrivacyDataAdmin?.fa?.terms?.title}
+                                value={settingContant?.fa?.about?.title}
                                 variant="standard"
                                 fullWidth
-                                InputProps={{ disableUnderline: true }}
+                                InputProps={{ disableUnderline: true, readOnly: true }}
                             />
                         </Stack>
                         <Stack className='BorderBottom'></Stack>
+
                         <Stack>
                             <Typography className='HomeContentHeadingThree'>Sub Title 2</Typography>
                             <TextField
                                 className='HomeContentInputFiled'
-                                value={termPrivacyDataAdmin?.en?.terms?.subTitle}
+                                value={settingContant?.en?.about?.subTitle}
                                 variant="standard"
                                 fullWidth
                                 multiline
                                 rows={4}
-                                InputProps={{ disableUnderline: true }}
+                                InputProps={{ disableUnderline: true, readOnly: true }}
                             />
                         </Stack>
                         <Stack>
                             <Typography className='HomeContentHeadingThree'>عنوان فرعی 2</Typography>
                             <TextField
                                 className='HomeContentInputFiled'
-                                value={termPrivacyDataAdmin?.fa?.terms?.subTitle}
+                                value={settingContant?.fa?.about?.subTitle}
                                 variant="standard"
                                 fullWidth
                                 multiline
                                 rows={4}
-                                InputProps={{ disableUnderline: true }}
+                                InputProps={{ disableUnderline: true, readOnly: true }}
                             />
                         </Stack>
                         <Stack className='BorderBottom'></Stack>
@@ -88,42 +89,27 @@ const Terms = () => {
                     </Stack> */}
 
                     {/* Part 1 */}
-                    <Stack className='TermsContentTopMar'>
+                    <Stack className='AboutContentTopMar'>
                         <Stack className='HomeContentEditBtn'>
-                            <Typography className='HomeContentHeadingThree'>Terms Content</Typography>
-                            <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenTermsEdit()} className='HomeContentEditIcon' />
+                            <Typography className='HomeContentHeadingThree'>About Content</Typography>
+                            <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenAboutEdit()} className='HomeContentEditIcon' />
                         </Stack>
                         <Stack className='siteContentBorderBottom'></Stack>
 
                         <Stack style={{ marginTop: '1%', height: '500px', overflow: 'scroll' }}>
-                            <div
-                                className='HomeContentInputFiled'
-                                dangerouslySetInnerHTML={{ __html: settingContant?.terms }}
-                            />
-                        </Stack>
-                        <Stack className='BorderBottom'></Stack>
-                    </Stack>
-                    <Stack className='TermsContentTopMar'>
-                        <Stack className='HomeContentEditBtn'>
-                            <Typography className='HomeContentHeadingThree'>Invoice Terms Content</Typography>
-                            <img src={EditIcon} alt='Edit Icon' onClick={() => handleOpenTermsEdit()} className='HomeContentEditIcon' />
-                        </Stack>
-                        <Stack className='siteContentBorderBottom'></Stack>
 
-                        <Stack style={{ marginTop: '1%', height: '500px', overflow: 'scroll' }}>
                             <div
                                 className='HomeContentInputFiled'
-                                dangerouslySetInnerHTML={{ __html: settingContant?.invoiceTerms }}
+                                dangerouslySetInnerHTML={{ __html: settingContant?.about }}
                             />
                         </Stack>
-                        <Stack className='BorderBottom'></Stack>
                     </Stack>
                 </Stack>
             </Grid>
-            <TermsEdit openTermsEdit={openTermsEdit} handleCloseTermsEdit={handleCloseTermsEdit} />
+            <AboutEdit openAboutEdit={openAboutEdit} handleCloseAboutEdit={handleCloseAboutEdit} />
 
         </div>
     );
 }
 
-export default Terms;
+export default About;

@@ -5,7 +5,7 @@ import Dashboard from '../Admin/Dashboard/Dashboard';
 import UserManagement from '../Admin/UserManagement/UserManagement';
 import BlogManagement from '../Admin/BlogManagement/BlogManagement';
 import HomeContent from '../Admin/SiteContent/HomeContent/HomeContent';
-import AboutContent from '../Admin/SiteContent/AboutContent/AboutContent';
+import About from '../Admin/SiteContent/About/About';
 import ContactContent from '../Admin/SiteContent/ContactContent/ContactContent';
 import Terms from '../Admin/SiteContent/Terms/Terms';
 import Privacy from '../Admin/SiteContent/Privacy/Privacy';
@@ -18,6 +18,8 @@ import SupportManagement from '../Admin/SupportManagement/SupportManagement';
 import VendorManagement from '../Admin/VendorManagement/VendorManagement';
 import BannerManagement from '../Admin/BannerManagement/BannerManagement';
 import VideoLibraryManagement from '../Admin/VideoLibraryManagement/VideoLibraryManagement';
+import FAQ from '../Admin/SiteContent/FAQ/FAQ';
+import SubscriptionPlans from '../Admin/SubScription/Subscription';
 
 const AdminRoutes = () => {
     return (
@@ -36,10 +38,12 @@ const AdminRoutes = () => {
                 <Route path='video-library' element={<VideoLibraryManagement />} />
                 <Route path='blog' element={<BlogManagement />} />
                 <Route path='site-content' element={<HomeContent />} />
-                <Route path='site-content/about' element={<AboutContent />} />
+                <Route path='site-content/about' element={<About />} />
                 <Route path='site-content/contact' element={<ContactContent />} />
                 <Route path='site-content/terms' element={<Terms />} />
                 <Route path='site-content/privacy' element={<Privacy />} />
+                <Route path='site-content/faq' element={<FAQ />} />
+                <Route path='subscription' element={<SubscriptionPlans />} />
                 <Route path='*' />
             </Route>
         </Routes>

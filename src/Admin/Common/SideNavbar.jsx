@@ -10,13 +10,29 @@ import logo from '../../Assets/Images/logo.png';
 import SowiImage from '../../Assets/AdminImages/sowi-img.png';
 import ProjectIcon from '../../Assets/AdminImages/SideNavbar/ProjectIcon.png';
 import ProjectGreenIcon from '../../Assets/AdminImages/SideNavbar/ProjectGreenIcon.png';
-import UserIcon from '../../Assets/AdminImages/SideNavbar/BlogIcon.png';
-import UserGreenIcon from '../../Assets/AdminImages/SideNavbar/BlogGreenIcon.png';
+import UserIcon from '../../Assets/AdminImages/SideNavbar/user-icon.png';
+import UserGreenIcon from '../../Assets/AdminImages/SideNavbar/user-green-icon.png';
+import VendorIcon from '../../Assets/AdminImages/SideNavbar/vendor-icon.png';
+import VendorGreenIcon from '../../Assets/AdminImages/SideNavbar/vendor-green-icon.png';
+import CategoryIcon from '../../Assets/AdminImages/SideNavbar/category-icon.png';
+import CategoryGreenIcon from '../../Assets/AdminImages/SideNavbar/category-green-icon.png';
+import ExpenseCategoryIcon from '../../Assets/AdminImages/SideNavbar/expense-icon.png'
+import ExpenseCategoryGreenIcon from '../../Assets/AdminImages/SideNavbar/expense-green-icon.png';
+import CompanyIcon from '../../Assets/AdminImages/SideNavbar/company-icon.png';
+import CompanyGreenIcon from '../../Assets/AdminImages/SideNavbar/company-green-icon.png';
+import SupportIcon from '../../Assets/AdminImages/SideNavbar/support-icon.png';
+import SupportGreenIcon from '../../Assets/AdminImages/SideNavbar/support-green-icon.png';
+import ServiceIcon from '../../Assets/AdminImages/SideNavbar/service-icon.png';
+import ServiceGreenIcon from '../../Assets/AdminImages/SideNavbar/service-green-icon.png';
 import BlogIcon from '../../Assets/AdminImages/SideNavbar/BlogIcon.png';
 import SiteIcon from '../../Assets/AdminImages/SideNavbar/SiteContent.png';
 import BlogGreenIcon from '../../Assets/AdminImages/SideNavbar/BlogGreenIcon.png';
-import CategoryIcon from '../../Assets/AdminImages/SideNavbar/CategoryIcon.png';
-import CategoryGreenIcon from '../../Assets/AdminImages/SideNavbar/CategoryGreenIcon.png';
+import BannerIcon from '../../Assets/AdminImages/SideNavbar/banner-icon.png';
+import BannerGreenIcon from '../../Assets/AdminImages/SideNavbar/banner-green-icon.png';
+import EmergencyIcon from '../../Assets/AdminImages/SideNavbar/emergency-icon.png';
+import EmergencyGreenIcon from '../../Assets/AdminImages/SideNavbar/emergency-green-icon.png';
+import VideoIcon from '../../Assets/AdminImages/SideNavbar/video-icon.png';
+import VideoGreenIcon from '../../Assets/AdminImages/SideNavbar/video-green-icon.png';
 import SiteIconGreen from '../../Assets/AdminImages/SideNavbar/SiteContentGreen.png';
 import './SideNavbar.css';
 
@@ -39,8 +55,8 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
             path: '/admin/user'
         },
         {
-            icon: UserIcon,
-            iconGreen: UserGreenIcon,
+            icon: VendorIcon,
+            iconGreen: VendorGreenIcon,
             name: 'Vendor Management',
             path: '/admin/vendor'
         },
@@ -51,55 +67,61 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
             path: '/admin/category'
         },
         {
-            icon: CategoryIcon,
-            iconGreen: CategoryGreenIcon,
+            icon: ExpenseCategoryIcon,
+            iconGreen: ExpenseCategoryGreenIcon,
             name: 'Expense-Category Management',
             path: '/admin/expense-category'
         },
         {
-            icon: CategoryIcon,
-            iconGreen: CategoryGreenIcon,
+            icon: CompanyIcon,
+            iconGreen: CompanyGreenIcon,
             name: 'Company Management',
             path: '/admin/company'
         },
         {
-            icon: CategoryIcon,
-            iconGreen: CategoryGreenIcon,
+            icon: ServiceIcon,
+            iconGreen: ServiceGreenIcon,
             name: 'Shop-Service Management',
             path: '/admin/shop-service'
         },
         {
-            icon: CategoryIcon,
-            iconGreen: CategoryGreenIcon,
+            icon: EmergencyIcon,
+            iconGreen: EmergencyGreenIcon,
             name: 'Emergency-Service Management',
             path: '/admin/emergency-service'
         },
         {
-            icon: BlogIcon,
-            iconGreen: BlogGreenIcon,
+            icon: BannerIcon,
+            iconGreen: BannerGreenIcon,
             name: 'Banner Management',
             path: '/admin/banner'
         },
         {
-            icon: BlogIcon,
-            iconGreen: BlogGreenIcon,
+            icon: VideoIcon,
+            iconGreen: VideoGreenIcon,
             name: 'Video-Library Management',
             path: '/admin/video-library'
         },
         {
-            icon: BlogIcon,
-            iconGreen: BlogGreenIcon,
+            icon: SupportIcon,
+            iconGreen: SupportGreenIcon,
             name: 'Support Management',
             path: '/admin/support'
         },
-        // {
-        //     icon: SiteIcon,
-        //     iconGreen: SiteIconGreen,
-        //     name: 'Site Content',
-        //     path: '/admin/site-content',
-        //     arrow: KeyboardArrowRightIcon,
-        //     arrowDown: KeyboardArrowDownIcon,
-        // },
+        {
+            icon: SupportIcon,
+            iconGreen: SupportGreenIcon,
+            name: 'Support Management', 
+            path: '/admin/subscription'
+        },
+        {
+            icon: SiteIcon,
+            iconGreen: SiteIconGreen,
+            name: 'Site Content',
+            path: '/admin/site-content',
+            arrow: KeyboardArrowRightIcon,
+            arrowDown: KeyboardArrowDownIcon,
+        },
     ];
 
     const siteContent = [
@@ -122,6 +144,10 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
         {
             name: 'Privacy',
             path: '/admin/site-content/privacy'
+        },
+        {
+            name: 'FAQ',
+            path: '/admin/site-content/faq'
         },
     ];
 
