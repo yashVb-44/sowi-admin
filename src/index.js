@@ -23,6 +23,7 @@ import { EmergencyServiceDetailProvider } from "./Context/EmergencyServiceDetail
 import { CategoryDetailProvider } from "./Context/CategoryDetails";
 import { ExpenseCategoryDetailProvider } from "./Context/ExpenseCategoryDetails";
 import { CompanyDetailProvider } from "./Context/CompanyDetails";
+import { VehicleDetailProvider } from "./Context/VehicleDetails";
 import { SupportDetailProvider } from "./Context/SupportDetails";
 import { VendorDetailProvider } from "./Context/VendorDetailsContext";
 import { BannerDetailProvider } from "./Context/BannerDetails";
@@ -41,35 +42,37 @@ root.render(
                   <CategoryDetailProvider>
                     <ExpenseCategoryDetailProvider>
                       <CompanyDetailProvider>
-                        <SupportDetailProvider>
-                          <BannerDetailProvider>
-                            <VideoLibraryDetailProvider>
-                              <AddProjectProvider>
-                                <FundraiseProvider>
-                                  <AuthProvider>
-                                    <LanguageProvider>
-                                      <WordOfSupportProvider>
-                                        <AdminSectionProvider>
-                                          <ContentProvider>
-                                            <AddCategoryProvider>
-                                              <AddBlogProvider>
-                                                <AddTeamProvider>
-                                                  <AddContactProvider>
-                                                    <App />
-                                                  </AddContactProvider>
-                                                </AddTeamProvider>
-                                              </AddBlogProvider>
-                                            </AddCategoryProvider>
-                                          </ContentProvider>
-                                        </AdminSectionProvider>
-                                      </WordOfSupportProvider>
-                                    </LanguageProvider>
-                                  </AuthProvider>
-                                </FundraiseProvider>
-                              </AddProjectProvider>
-                            </VideoLibraryDetailProvider>
-                          </BannerDetailProvider>
-                        </SupportDetailProvider>
+                        <VehicleDetailProvider>
+                          <SupportDetailProvider>
+                            <BannerDetailProvider>
+                              <VideoLibraryDetailProvider>
+                                <AddProjectProvider>
+                                  <FundraiseProvider>
+                                    <AuthProvider>
+                                      <LanguageProvider>
+                                        <WordOfSupportProvider>
+                                          <AdminSectionProvider>
+                                            <ContentProvider>
+                                              <AddCategoryProvider>
+                                                <AddBlogProvider>
+                                                  <AddTeamProvider>
+                                                    <AddContactProvider>
+                                                      <App />
+                                                    </AddContactProvider>
+                                                  </AddTeamProvider>
+                                                </AddBlogProvider>
+                                              </AddCategoryProvider>
+                                            </ContentProvider>
+                                          </AdminSectionProvider>
+                                        </WordOfSupportProvider>
+                                      </LanguageProvider>
+                                    </AuthProvider>
+                                  </FundraiseProvider>
+                                </AddProjectProvider>
+                              </VideoLibraryDetailProvider>
+                            </BannerDetailProvider>
+                          </SupportDetailProvider>
+                        </VehicleDetailProvider>
                       </CompanyDetailProvider>
                     </ExpenseCategoryDetailProvider>
                   </CategoryDetailProvider>

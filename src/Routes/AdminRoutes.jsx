@@ -14,6 +14,7 @@ import EmergencyServiceManagement from '../Admin/EmergencyServiceManagement/Emer
 import CategoryManagement from '../Admin/CategoryManagement/CategoryManagement';
 import ExpenseCategoryManagement from '../Admin/ExpenseCategoryManagement/ExpenseCategoryManagement';
 import CompanyManagement from '../Admin/CompanyManagement/CompanyManagement';
+import VehicleManagement from "../Admin/VehicleManagement/VehicleManagement";
 import SupportManagement from '../Admin/SupportManagement/SupportManagement';
 import VendorManagement from '../Admin/VendorManagement/VendorManagement';
 import BannerManagement from '../Admin/BannerManagement/BannerManagement';
@@ -32,6 +33,7 @@ const AdminRoutes = () => {
                 <Route path='emergency-service' element={<EmergencyServiceManagement />} />
                 <Route path='category' element={<CategoryManagement />} />
                 <Route path='company' element={<CompanyManagement />} />
+                <Route path="vehicle" element={<VehicleManagement />} />
                 <Route path='support' element={<SupportManagement />} />
                 <Route path='banner' element={<BannerManagement />} />
                 <Route path='expense-category' element={<ExpenseCategoryManagement />} />

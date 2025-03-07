@@ -34,6 +34,8 @@ import EmergencyGreenIcon from '../../Assets/AdminImages/SideNavbar/emergency-gr
 import VideoIcon from '../../Assets/AdminImages/SideNavbar/video-icon.png';
 import VideoGreenIcon from '../../Assets/AdminImages/SideNavbar/video-green-icon.png';
 import SiteIconGreen from '../../Assets/AdminImages/SideNavbar/SiteContentGreen.png';
+import Vehicle from "../../Assets/AdminImages/SideNavbar/vehicle.png";
+import VehicleGreen from "../../Assets/AdminImages/SideNavbar/vehicleGreen.png";
 import './SideNavbar.css';
 
 const SideNavbar = ({ isOpen, toggleSidebar }) => {
@@ -78,6 +80,12 @@ const SideNavbar = ({ isOpen, toggleSidebar }) => {
             name: 'Company Management',
             path: '/admin/company'
         },
+        {
+            icon: Vehicle,
+            iconGreen: VehicleGreen,
+            name: "Vehicle Management",
+            path: "/admin/vehicle",
+          },
         {
             icon: ServiceIcon,
             iconGreen: ServiceGreenIcon,
